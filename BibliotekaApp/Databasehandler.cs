@@ -324,7 +324,7 @@ namespace BibliotekaApp
             {
                 connection.Open();
                 string query = @"SELECT id, login, name, surname, city, post_number, street, property_number, apartment_number, pesel, date_of_birth, sex, email, phone_number, forgotten 
-                                 FROM users WHERE id = @id AND forgotten = 0";
+                         FROM users WHERE id = @id AND forgotten = 0";
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
@@ -354,6 +354,6 @@ namespace BibliotekaApp
             }
             return null;
         }
-        
+
     }
 }
