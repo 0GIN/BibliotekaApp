@@ -1,7 +1,7 @@
 ﻿
 namespace BibliotekaApp
 {
-    partial class AddUserForm
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,6 +29,7 @@ namespace BibliotekaApp
         /// </summary>
         public void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             txtLogin = new TextBox();
             LoginLabel = new Label();
             ImieLabel = new Label();
@@ -43,7 +44,6 @@ namespace BibliotekaApp
             PlecLabel = new Label();
             EmailLabel = new Label();
             TelefonLabel = new Label();
-            ZapomnianyLabel = new Label();
             txtName = new TextBox();
             txtSurname = new TextBox();
             txtCity = new TextBox();
@@ -55,555 +55,662 @@ namespace BibliotekaApp
             txtPhoneNumber = new TextBox();
             dtpDateOfBirth = new DateTimePicker();
             cmbSex = new ComboBox();
-            chkForgotten = new CheckBox();
             nudApartmentNumber = new NumericUpDown();
             btnAddUser = new Button();
             btnDisplayUsers = new Button();
-            listBoxUsers = new ListBox();
             tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tabPage5 = new TabPage();
-            dataGridView2 = new DataGridView();
+            Wypożycz = new TabPage();
+            Dodaj = new TabPage();
+            txtHaslo = new TextBox();
+            label3 = new Label();
+            Lista = new TabPage();
             btnFindUserByLogin = new Button();
             txtUserLogin = new TextBox();
-            tabPage3 = new TabPage();
-            dataGridView1 = new DataGridView();
-            btnFindUser = new Button();
-            txtUserId = new TextBox();
-            label1 = new Label();
-            tabPage4 = new TabPage();
+            label4 = new Label();
+            dataGridViewUsers = new DataGridView();
+            Zapomnij = new TabPage();
+            label17 = new Label();
             btnForgetUser = new Button();
             txtForgetUserId = new TextBox();
-            tabPage6 = new TabPage();
+            Zapomniani = new TabPage();
+            label2 = new Label();
             dataGridViewForg = new DataGridView();
             btnFindForgottenUser = new Button();
-            txtUserLoginForg = new TextBox();
+            Edytuj = new TabPage();
+            label1 = new Label();
+            comboBoxAccessLevel = new ComboBox();
+            btnSearch = new Button();
+            dataGridViewUser = new DataGridView();
+            txtUserIdEdit = new TextBox();
+            label15 = new Label();
+            btnSave = new Button();
+            tabUprawnienia = new TabPage();
+            label5 = new Label();
+            checkedListBoxUprawnienia = new CheckedListBox();
+            btnSavePermissions = new Button();
+            comboBoxAccessLevels = new ComboBox();
+            logoutbtn = new Button();
+            labelLoggedUser = new Label();
             ((System.ComponentModel.ISupportInitialize)nudApartmentNumber).BeginInit();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage4.SuspendLayout();
-            tabPage6.SuspendLayout();
+            Dodaj.SuspendLayout();
+            Lista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
+            Zapomnij.SuspendLayout();
+            Zapomniani.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewForg).BeginInit();
+            Edytuj.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUser).BeginInit();
+            tabUprawnienia.SuspendLayout();
             SuspendLayout();
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(57, 12);
+            resources.ApplyResources(txtLogin, "txtLogin");
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(240, 23);
-            txtLogin.TabIndex = 1;
-            txtLogin.TextChanged += txtLogin_TextChanged;
             // 
             // LoginLabel
             // 
-            LoginLabel.AutoSize = true;
-            LoginLabel.Location = new Point(11, 15);
+            resources.ApplyResources(LoginLabel, "LoginLabel");
             LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(40, 15);
-            LoginLabel.TabIndex = 2;
-            LoginLabel.Text = "Login:";
-            LoginLabel.Click += label2_Click;
             // 
             // ImieLabel
             // 
-            ImieLabel.AutoSize = true;
-            ImieLabel.Location = new Point(11, 39);
+            resources.ApplyResources(ImieLabel, "ImieLabel");
             ImieLabel.Name = "ImieLabel";
-            ImieLabel.Size = new Size(33, 15);
-            ImieLabel.TabIndex = 3;
-            ImieLabel.Text = "Imię:";
             // 
             // NazwiskoLabel
             // 
-            NazwiskoLabel.AutoSize = true;
-            NazwiskoLabel.Location = new Point(11, 65);
+            resources.ApplyResources(NazwiskoLabel, "NazwiskoLabel");
             NazwiskoLabel.Name = "NazwiskoLabel";
-            NazwiskoLabel.Size = new Size(60, 15);
-            NazwiskoLabel.TabIndex = 4;
-            NazwiskoLabel.Text = "Nazwisko:";
             // 
             // MiastoLabel
             // 
-            MiastoLabel.AutoSize = true;
-            MiastoLabel.Location = new Point(11, 89);
+            resources.ApplyResources(MiastoLabel, "MiastoLabel");
             MiastoLabel.Name = "MiastoLabel";
-            MiastoLabel.Size = new Size(46, 15);
-            MiastoLabel.TabIndex = 5;
-            MiastoLabel.Text = "Miasto:";
-            MiastoLabel.Click += label5_Click;
             // 
             // KodPocztowyLabel
             // 
-            KodPocztowyLabel.AutoSize = true;
-            KodPocztowyLabel.Location = new Point(11, 113);
+            resources.ApplyResources(KodPocztowyLabel, "KodPocztowyLabel");
             KodPocztowyLabel.Name = "KodPocztowyLabel";
-            KodPocztowyLabel.Size = new Size(85, 15);
-            KodPocztowyLabel.TabIndex = 6;
-            KodPocztowyLabel.Text = "Kod pocztowy:";
             // 
             // UlicaLabel
             // 
-            UlicaLabel.AutoSize = true;
-            UlicaLabel.Location = new Point(11, 137);
+            resources.ApplyResources(UlicaLabel, "UlicaLabel");
             UlicaLabel.Name = "UlicaLabel";
-            UlicaLabel.RightToLeft = RightToLeft.No;
-            UlicaLabel.Size = new Size(36, 15);
-            UlicaLabel.TabIndex = 7;
-            UlicaLabel.Text = "Ulica:";
             // 
             // NumerUlicyLabel
             // 
-            NumerUlicyLabel.AutoSize = true;
-            NumerUlicyLabel.Location = new Point(11, 162);
+            resources.ApplyResources(NumerUlicyLabel, "NumerUlicyLabel");
             NumerUlicyLabel.Name = "NumerUlicyLabel";
-            NumerUlicyLabel.Size = new Size(75, 15);
-            NumerUlicyLabel.TabIndex = 8;
-            NumerUlicyLabel.Text = "Numer ulicy:";
             // 
             // NumerLokaluLabel
             // 
-            NumerLokaluLabel.AutoSize = true;
-            NumerLokaluLabel.Location = new Point(11, 186);
+            resources.ApplyResources(NumerLokaluLabel, "NumerLokaluLabel");
             NumerLokaluLabel.Name = "NumerLokaluLabel";
-            NumerLokaluLabel.Size = new Size(82, 15);
-            NumerLokaluLabel.TabIndex = 9;
-            NumerLokaluLabel.Text = "Numer lokalu:";
             // 
             // PeselLabel
             // 
-            PeselLabel.AutoSize = true;
-            PeselLabel.Location = new Point(11, 210);
+            resources.ApplyResources(PeselLabel, "PeselLabel");
             PeselLabel.Name = "PeselLabel";
-            PeselLabel.Size = new Size(37, 15);
-            PeselLabel.TabIndex = 10;
-            PeselLabel.Text = "Pesel:";
             // 
             // DataUrodzeniaLabel
             // 
-            DataUrodzeniaLabel.AutoSize = true;
-            DataUrodzeniaLabel.Location = new Point(11, 235);
+            resources.ApplyResources(DataUrodzeniaLabel, "DataUrodzeniaLabel");
             DataUrodzeniaLabel.Name = "DataUrodzeniaLabel";
-            DataUrodzeniaLabel.Size = new Size(89, 15);
-            DataUrodzeniaLabel.TabIndex = 11;
-            DataUrodzeniaLabel.Text = "Data urodzenia:";
             // 
             // PlecLabel
             // 
-            PlecLabel.AutoSize = true;
-            PlecLabel.Location = new Point(11, 259);
+            resources.ApplyResources(PlecLabel, "PlecLabel");
             PlecLabel.Name = "PlecLabel";
-            PlecLabel.Size = new Size(29, 15);
-            PlecLabel.TabIndex = 12;
-            PlecLabel.Text = "Płeć";
             // 
             // EmailLabel
             // 
-            EmailLabel.AutoSize = true;
-            EmailLabel.Location = new Point(11, 283);
+            resources.ApplyResources(EmailLabel, "EmailLabel");
             EmailLabel.Name = "EmailLabel";
-            EmailLabel.Size = new Size(39, 15);
-            EmailLabel.TabIndex = 13;
-            EmailLabel.Text = "Email:";
             // 
             // TelefonLabel
             // 
-            TelefonLabel.AutoSize = true;
-            TelefonLabel.Location = new Point(11, 307);
+            resources.ApplyResources(TelefonLabel, "TelefonLabel");
             TelefonLabel.Name = "TelefonLabel";
-            TelefonLabel.Size = new Size(48, 15);
-            TelefonLabel.TabIndex = 14;
-            TelefonLabel.Text = "Telefon:";
-            TelefonLabel.Click += label14_Click;
-            // 
-            // ZapomnianyLabel
-            // 
-            ZapomnianyLabel.AutoSize = true;
-            ZapomnianyLabel.Location = new Point(11, 333);
-            ZapomnianyLabel.Name = "ZapomnianyLabel";
-            ZapomnianyLabel.Size = new Size(77, 15);
-            ZapomnianyLabel.TabIndex = 15;
-            ZapomnianyLabel.Text = "Zapomniany:";
             // 
             // txtName
             // 
-            txtName.Location = new Point(50, 36);
+            resources.ApplyResources(txtName, "txtName");
             txtName.Name = "txtName";
-            txtName.Size = new Size(247, 23);
-            txtName.TabIndex = 16;
             // 
             // txtSurname
             // 
-            txtSurname.Location = new Point(77, 62);
+            resources.ApplyResources(txtSurname, "txtSurname");
             txtSurname.Name = "txtSurname";
-            txtSurname.Size = new Size(220, 23);
-            txtSurname.TabIndex = 17;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(63, 86);
+            resources.ApplyResources(txtCity, "txtCity");
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(234, 23);
-            txtCity.TabIndex = 18;
-            txtCity.TextChanged += txtCity_TextChanged;
             // 
             // txtPostNumber
             // 
-            txtPostNumber.Location = new Point(102, 110);
+            resources.ApplyResources(txtPostNumber, "txtPostNumber");
             txtPostNumber.Name = "txtPostNumber";
-            txtPostNumber.Size = new Size(195, 23);
-            txtPostNumber.TabIndex = 19;
             // 
             // txtStreet
             // 
-            txtStreet.Location = new Point(53, 134);
+            resources.ApplyResources(txtStreet, "txtStreet");
             txtStreet.Name = "txtStreet";
-            txtStreet.Size = new Size(244, 23);
-            txtStreet.TabIndex = 20;
             // 
             // txtPropertyNumber
             // 
-            txtPropertyNumber.Location = new Point(92, 159);
+            resources.ApplyResources(txtPropertyNumber, "txtPropertyNumber");
             txtPropertyNumber.Name = "txtPropertyNumber";
-            txtPropertyNumber.Size = new Size(205, 23);
-            txtPropertyNumber.TabIndex = 21;
             // 
             // txtPesel
             // 
-            txtPesel.Location = new Point(50, 207);
+            resources.ApplyResources(txtPesel, "txtPesel");
             txtPesel.Name = "txtPesel";
-            txtPesel.Size = new Size(247, 23);
-            txtPesel.TabIndex = 23;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(53, 280);
+            resources.ApplyResources(txtEmail, "txtEmail");
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(244, 23);
-            txtEmail.TabIndex = 26;
             // 
             // txtPhoneNumber
             // 
-            txtPhoneNumber.Location = new Point(65, 304);
+            resources.ApplyResources(txtPhoneNumber, "txtPhoneNumber");
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(232, 23);
-            txtPhoneNumber.TabIndex = 27;
             // 
             // dtpDateOfBirth
             // 
-            dtpDateOfBirth.Location = new Point(97, 231);
+            resources.ApplyResources(dtpDateOfBirth, "dtpDateOfBirth");
             dtpDateOfBirth.Name = "dtpDateOfBirth";
-            dtpDateOfBirth.Size = new Size(200, 23);
-            dtpDateOfBirth.TabIndex = 29;
-            dtpDateOfBirth.ValueChanged += dtpDateOfBirth_ValueChanged;
             // 
             // cmbSex
             // 
+            resources.ApplyResources(cmbSex, "cmbSex");
             cmbSex.FormattingEnabled = true;
-            cmbSex.Items.AddRange(new object[] { "K", "M" });
-            cmbSex.Location = new Point(46, 256);
+            cmbSex.Items.AddRange(new object[] { resources.GetString("cmbSex.Items"), resources.GetString("cmbSex.Items1") });
             cmbSex.Name = "cmbSex";
-            cmbSex.Size = new Size(70, 23);
-            cmbSex.TabIndex = 30;
-            cmbSex.Text = "Wybierz";
-            // 
-            // chkForgotten
-            // 
-            chkForgotten.AutoSize = true;
-            chkForgotten.Location = new Point(92, 332);
-            chkForgotten.Name = "chkForgotten";
-            chkForgotten.Size = new Size(15, 14);
-            chkForgotten.TabIndex = 31;
-            chkForgotten.UseVisualStyleBackColor = true;
             // 
             // nudApartmentNumber
             // 
-            nudApartmentNumber.Location = new Point(99, 184);
+            resources.ApplyResources(nudApartmentNumber, "nudApartmentNumber");
             nudApartmentNumber.Name = "nudApartmentNumber";
-            nudApartmentNumber.Size = new Size(82, 23);
-            nudApartmentNumber.TabIndex = 32;
             // 
             // btnAddUser
             // 
-            btnAddUser.Location = new Point(222, 365);
+            resources.ApplyResources(btnAddUser, "btnAddUser");
             btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(75, 23);
-            btnAddUser.TabIndex = 33;
-            btnAddUser.Text = "DODAJ";
             btnAddUser.Click += btnAddUser_Click;
             // 
             // btnDisplayUsers
             // 
-            btnDisplayUsers.Location = new Point(6, 6);
+            resources.ApplyResources(btnDisplayUsers, "btnDisplayUsers");
             btnDisplayUsers.Name = "btnDisplayUsers";
-            btnDisplayUsers.Size = new Size(75, 23);
-            btnDisplayUsers.TabIndex = 34;
-            btnDisplayUsers.Text = "Wyświetl użytkowników";
             btnDisplayUsers.UseVisualStyleBackColor = true;
             btnDisplayUsers.Click += btnDisplayUsers_Clickkk;
             // 
-            // listBoxUsers
-            // 
-            listBoxUsers.FormattingEnabled = true;
-            listBoxUsers.Location = new Point(6, 33);
-            listBoxUsers.Name = "listBoxUsers";
-            listBoxUsers.Size = new Size(299, 364);
-            listBoxUsers.TabIndex = 35;
-            // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Controls.Add(tabPage4);
-            tabControl1.Controls.Add(tabPage6);
-            tabControl1.Location = new Point(3, 7);
+            resources.ApplyResources(tabControl1, "tabControl1");
+            tabControl1.Controls.Add(Wypożycz);
+            tabControl1.Controls.Add(Dodaj);
+            tabControl1.Controls.Add(Lista);
+            tabControl1.Controls.Add(Zapomnij);
+            tabControl1.Controls.Add(Zapomniani);
+            tabControl1.Controls.Add(Edytuj);
+            tabControl1.Controls.Add(tabUprawnienia);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(696, 431);
-            tabControl1.TabIndex = 36;
             // 
-            // tabPage1
+            // Wypożycz
             // 
-            tabPage1.Controls.Add(txtPostNumber);
-            tabPage1.Controls.Add(btnAddUser);
-            tabPage1.Controls.Add(txtLogin);
-            tabPage1.Controls.Add(nudApartmentNumber);
-            tabPage1.Controls.Add(LoginLabel);
-            tabPage1.Controls.Add(chkForgotten);
-            tabPage1.Controls.Add(ImieLabel);
-            tabPage1.Controls.Add(cmbSex);
-            tabPage1.Controls.Add(NazwiskoLabel);
-            tabPage1.Controls.Add(dtpDateOfBirth);
-            tabPage1.Controls.Add(MiastoLabel);
-            tabPage1.Controls.Add(txtPhoneNumber);
-            tabPage1.Controls.Add(KodPocztowyLabel);
-            tabPage1.Controls.Add(txtEmail);
-            tabPage1.Controls.Add(UlicaLabel);
-            tabPage1.Controls.Add(txtPesel);
-            tabPage1.Controls.Add(NumerUlicyLabel);
-            tabPage1.Controls.Add(txtPropertyNumber);
-            tabPage1.Controls.Add(NumerLokaluLabel);
-            tabPage1.Controls.Add(txtStreet);
-            tabPage1.Controls.Add(PeselLabel);
-            tabPage1.Controls.Add(DataUrodzeniaLabel);
-            tabPage1.Controls.Add(txtCity);
-            tabPage1.Controls.Add(PlecLabel);
-            tabPage1.Controls.Add(txtSurname);
-            tabPage1.Controls.Add(EmailLabel);
-            tabPage1.Controls.Add(txtName);
-            tabPage1.Controls.Add(TelefonLabel);
-            tabPage1.Controls.Add(ZapomnianyLabel);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(688, 403);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Dodaj";
-            tabPage1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(Wypożycz, "Wypożycz");
+            Wypożycz.Name = "Wypożycz";
+            Wypożycz.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // Dodaj
             // 
-            tabPage2.Controls.Add(listBoxUsers);
-            tabPage2.Controls.Add(btnDisplayUsers);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(688, 403);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Lista";
-            tabPage2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(Dodaj, "Dodaj");
+            Dodaj.BackColor = Color.Transparent;
+            Dodaj.Controls.Add(txtHaslo);
+            Dodaj.Controls.Add(label3);
+            Dodaj.Controls.Add(txtPostNumber);
+            Dodaj.Controls.Add(btnAddUser);
+            Dodaj.Controls.Add(txtLogin);
+            Dodaj.Controls.Add(nudApartmentNumber);
+            Dodaj.Controls.Add(LoginLabel);
+            Dodaj.Controls.Add(ImieLabel);
+            Dodaj.Controls.Add(cmbSex);
+            Dodaj.Controls.Add(NazwiskoLabel);
+            Dodaj.Controls.Add(dtpDateOfBirth);
+            Dodaj.Controls.Add(MiastoLabel);
+            Dodaj.Controls.Add(txtPhoneNumber);
+            Dodaj.Controls.Add(KodPocztowyLabel);
+            Dodaj.Controls.Add(txtEmail);
+            Dodaj.Controls.Add(UlicaLabel);
+            Dodaj.Controls.Add(txtPesel);
+            Dodaj.Controls.Add(NumerUlicyLabel);
+            Dodaj.Controls.Add(txtPropertyNumber);
+            Dodaj.Controls.Add(NumerLokaluLabel);
+            Dodaj.Controls.Add(txtStreet);
+            Dodaj.Controls.Add(PeselLabel);
+            Dodaj.Controls.Add(DataUrodzeniaLabel);
+            Dodaj.Controls.Add(txtCity);
+            Dodaj.Controls.Add(PlecLabel);
+            Dodaj.Controls.Add(txtSurname);
+            Dodaj.Controls.Add(EmailLabel);
+            Dodaj.Controls.Add(txtName);
+            Dodaj.Controls.Add(TelefonLabel);
+            Dodaj.Name = "Dodaj";
             // 
-            // tabPage5
+            // txtHaslo
             // 
-            tabPage5.Controls.Add(dataGridView2);
-            tabPage5.Controls.Add(btnFindUserByLogin);
-            tabPage5.Controls.Add(txtUserLogin);
-            tabPage5.Location = new Point(4, 24);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(688, 403);
-            tabPage5.TabIndex = 4;
-            tabPage5.Text = "Wyszukaj Login";
-            tabPage5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(txtHaslo, "txtHaslo");
+            txtHaslo.Name = "txtHaslo";
             // 
-            // dataGridView2
+            // label3
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(5, 41);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(680, 359);
-            dataGridView2.TabIndex = 2;
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
+            // Lista
+            // 
+            resources.ApplyResources(Lista, "Lista");
+            Lista.Controls.Add(btnFindUserByLogin);
+            Lista.Controls.Add(txtUserLogin);
+            Lista.Controls.Add(label4);
+            Lista.Controls.Add(dataGridViewUsers);
+            Lista.Controls.Add(btnDisplayUsers);
+            Lista.Name = "Lista";
+            Lista.UseVisualStyleBackColor = true;
             // 
             // btnFindUserByLogin
             // 
-            btnFindUserByLogin.Location = new Point(132, 12);
+            resources.ApplyResources(btnFindUserByLogin, "btnFindUserByLogin");
             btnFindUserByLogin.Name = "btnFindUserByLogin";
-            btnFindUserByLogin.Size = new Size(75, 23);
-            btnFindUserByLogin.TabIndex = 1;
-            btnFindUserByLogin.Text = "button1";
             btnFindUserByLogin.UseVisualStyleBackColor = true;
             btnFindUserByLogin.Click += btnFindUserByLogin_Click;
             // 
             // txtUserLogin
             // 
-            txtUserLogin.Location = new Point(14, 12);
+            resources.ApplyResources(txtUserLogin, "txtUserLogin");
             txtUserLogin.Name = "txtUserLogin";
-            txtUserLogin.Size = new Size(100, 23);
-            txtUserLogin.TabIndex = 0;
             // 
-            // tabPage3
+            // label4
             // 
-            tabPage3.Controls.Add(dataGridView1);
-            tabPage3.Controls.Add(btnFindUser);
-            tabPage3.Controls.Add(txtUserId);
-            tabPage3.Controls.Add(label1);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(688, 403);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Wyszukaj ID";
-            tabPage3.UseVisualStyleBackColor = true;
-            tabPage3.Click += tabPage3_Click;
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
             // 
-            // dataGridView1
+            // dataGridViewUsers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(5, 35);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(680, 365);
-            dataGridView1.TabIndex = 4;
+            resources.ApplyResources(dataGridViewUsers, "dataGridViewUsers");
+            dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUsers.Name = "dataGridViewUsers";
             // 
-            // btnFindUser
+            // Zapomnij
             // 
-            btnFindUser.Location = new Point(207, 6);
-            btnFindUser.Name = "btnFindUser";
-            btnFindUser.Size = new Size(75, 23);
-            btnFindUser.TabIndex = 2;
-            btnFindUser.Text = "button1";
-            btnFindUser.UseVisualStyleBackColor = true;
-            btnFindUser.Click += btnFindUser_Click;
+            resources.ApplyResources(Zapomnij, "Zapomnij");
+            Zapomnij.BorderStyle = BorderStyle.Fixed3D;
+            Zapomnij.Controls.Add(label17);
+            Zapomnij.Controls.Add(btnForgetUser);
+            Zapomnij.Controls.Add(txtForgetUserId);
+            Zapomnij.Name = "Zapomnij";
+            Zapomnij.UseVisualStyleBackColor = true;
             // 
-            // txtUserId
+            // label17
             // 
-            txtUserId.Location = new Point(101, 6);
-            txtUserId.Name = "txtUserId";
-            txtUserId.Size = new Size(100, 23);
-            txtUserId.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(5, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Wyszukaj po ID:";
-            // 
-            // tabPage4
-            // 
-            tabPage4.Controls.Add(btnForgetUser);
-            tabPage4.Controls.Add(txtForgetUserId);
-            tabPage4.Location = new Point(4, 24);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(688, 403);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Zapomnij";
-            tabPage4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(label17, "label17");
+            label17.Name = "label17";
             // 
             // btnForgetUser
             // 
-            btnForgetUser.Location = new Point(172, 31);
+            resources.ApplyResources(btnForgetUser, "btnForgetUser");
             btnForgetUser.Name = "btnForgetUser";
-            btnForgetUser.Size = new Size(75, 23);
-            btnForgetUser.TabIndex = 1;
-            btnForgetUser.Text = "button1";
             btnForgetUser.UseVisualStyleBackColor = true;
             btnForgetUser.Click += btnForgetUser_Click;
             // 
             // txtForgetUserId
             // 
-            txtForgetUserId.Location = new Point(41, 32);
+            resources.ApplyResources(txtForgetUserId, "txtForgetUserId");
             txtForgetUserId.Name = "txtForgetUserId";
-            txtForgetUserId.Size = new Size(100, 23);
-            txtForgetUserId.TabIndex = 0;
             // 
-            // tabPage6
+            // Zapomniani
             // 
-            tabPage6.Controls.Add(dataGridViewForg);
-            tabPage6.Controls.Add(btnFindForgottenUser);
-            tabPage6.Controls.Add(txtUserLoginForg);
-            tabPage6.Location = new Point(4, 24);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(688, 403);
-            tabPage6.TabIndex = 5;
-            tabPage6.Text = "Zapomniani ";
-            tabPage6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(Zapomniani, "Zapomniani");
+            Zapomniani.Controls.Add(label2);
+            Zapomniani.Controls.Add(dataGridViewForg);
+            Zapomniani.Controls.Add(btnFindForgottenUser);
+            Zapomniani.Name = "Zapomniani";
+            Zapomniani.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // dataGridViewForg
             // 
+            resources.ApplyResources(dataGridViewForg, "dataGridViewForg");
+            dataGridViewForg.AllowUserToAddRows = false;
+            dataGridViewForg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewForg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewForg.Location = new Point(5, 44);
             dataGridViewForg.Name = "dataGridViewForg";
-            dataGridViewForg.Size = new Size(680, 356);
-            dataGridViewForg.TabIndex = 2;
             // 
             // btnFindForgottenUser
             // 
-            btnFindForgottenUser.Location = new Point(157, 3);
+            resources.ApplyResources(btnFindForgottenUser, "btnFindForgottenUser");
             btnFindForgottenUser.Name = "btnFindForgottenUser";
-            btnFindForgottenUser.Size = new Size(75, 23);
-            btnFindForgottenUser.TabIndex = 1;
-            btnFindForgottenUser.Text = "button1";
             btnFindForgottenUser.UseVisualStyleBackColor = true;
             btnFindForgottenUser.Click += btnFindForgottenUser_Click;
             // 
-            // txtUserLoginForg
+            // Edytuj
             // 
-            txtUserLoginForg.Location = new Point(39, 3);
-            txtUserLoginForg.Name = "txtUserLoginForg";
-            txtUserLoginForg.Size = new Size(100, 23);
-            txtUserLoginForg.TabIndex = 0;
+            resources.ApplyResources(Edytuj, "Edytuj");
+            Edytuj.Controls.Add(label1);
+            Edytuj.Controls.Add(comboBoxAccessLevel);
+            Edytuj.Controls.Add(btnSearch);
+            Edytuj.Controls.Add(dataGridViewUser);
+            Edytuj.Controls.Add(txtUserIdEdit);
+            Edytuj.Controls.Add(label15);
+            Edytuj.Controls.Add(btnSave);
+            Edytuj.Name = "Edytuj";
+            Edytuj.UseVisualStyleBackColor = true;
             // 
-            // AddUserForm
+            // label1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // comboBoxAccessLevel
+            // 
+            resources.ApplyResources(comboBoxAccessLevel, "comboBoxAccessLevel");
+            comboBoxAccessLevel.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("comboBoxAccessLevel.AutoCompleteCustomSource"), resources.GetString("comboBoxAccessLevel.AutoCompleteCustomSource1"), resources.GetString("comboBoxAccessLevel.AutoCompleteCustomSource2") });
+            comboBoxAccessLevel.FormattingEnabled = true;
+            comboBoxAccessLevel.Items.AddRange(new object[] { resources.GetString("comboBoxAccessLevel.Items"), resources.GetString("comboBoxAccessLevel.Items1"), resources.GetString("comboBoxAccessLevel.Items2") });
+            comboBoxAccessLevel.Name = "comboBoxAccessLevel";
+            comboBoxAccessLevel.SelectedIndexChanged += comboBoxAccessLevel_SelectedIndexChanged;
+            // 
+            // btnSearch
+            // 
+            resources.ApplyResources(btnSearch, "btnSearch");
+            btnSearch.Name = "btnSearch";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // dataGridViewUser
+            // 
+            resources.ApplyResources(dataGridViewUser, "dataGridViewUser");
+            dataGridViewUser.AllowUserToAddRows = false;
+            dataGridViewUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUser.Name = "dataGridViewUser";
+            // 
+            // txtUserIdEdit
+            // 
+            resources.ApplyResources(txtUserIdEdit, "txtUserIdEdit");
+            txtUserIdEdit.Name = "txtUserIdEdit";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(label15, "label15");
+            label15.Name = "label15";
+            // 
+            // btnSave
+            // 
+            resources.ApplyResources(btnSave, "btnSave");
+            btnSave.Name = "btnSave";
+            btnSave.Click += btnSave_Click;
+            // 
+            // tabUprawnienia
+            // 
+            resources.ApplyResources(tabUprawnienia, "tabUprawnienia");
+            tabUprawnienia.Controls.Add(label5);
+            tabUprawnienia.Controls.Add(checkedListBoxUprawnienia);
+            tabUprawnienia.Controls.Add(btnSavePermissions);
+            tabUprawnienia.Controls.Add(comboBoxAccessLevels);
+            tabUprawnienia.Name = "tabUprawnienia";
+            tabUprawnienia.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
+            // checkedListBoxUprawnienia
+            // 
+            resources.ApplyResources(checkedListBoxUprawnienia, "checkedListBoxUprawnienia");
+            checkedListBoxUprawnienia.FormattingEnabled = true;
+            checkedListBoxUprawnienia.Name = "checkedListBoxUprawnienia";
+            // 
+            // btnSavePermissions
+            // 
+            resources.ApplyResources(btnSavePermissions, "btnSavePermissions");
+            btnSavePermissions.Name = "btnSavePermissions";
+            btnSavePermissions.UseVisualStyleBackColor = true;
+            btnSavePermissions.Click += btnSavePermissions_Click;
+            // 
+            // comboBoxAccessLevels
+            // 
+            resources.ApplyResources(comboBoxAccessLevels, "comboBoxAccessLevels");
+            comboBoxAccessLevels.FormattingEnabled = true;
+            comboBoxAccessLevels.Items.AddRange(new object[] { resources.GetString("comboBoxAccessLevels.Items"), resources.GetString("comboBoxAccessLevels.Items1"), resources.GetString("comboBoxAccessLevels.Items2") });
+            comboBoxAccessLevels.Name = "comboBoxAccessLevels";
+            comboBoxAccessLevels.SelectedIndexChanged += comboBoxAccessLevels_SelectedIndexChanged;
+            // 
+            // logoutbtn
+            // 
+            resources.ApplyResources(logoutbtn, "logoutbtn");
+            logoutbtn.Name = "logoutbtn";
+            logoutbtn.UseVisualStyleBackColor = true;
+            logoutbtn.Click += logoutbtn_Click;
+            // 
+            // labelLoggedUser
+            // 
+            resources.ApplyResources(labelLoggedUser, "labelLoggedUser");
+            labelLoggedUser.Name = "labelLoggedUser";
+            // 
+            // Form1
+            // 
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(711, 450);
+            BackColor = SystemColors.GradientActiveCaption;
+            Controls.Add(labelLoggedUser);
+            Controls.Add(logoutbtn);
             Controls.Add(tabControl1);
-            Name = "AddUserForm";
-            Text = "Dodaj użytkownika";
-            Load += AddUserForm_Load;
+            ForeColor = Color.CornflowerBlue;
+            Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)nudApartmentNumber).EndInit();
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            tabPage5.ResumeLayout(false);
-            tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
-            tabPage6.ResumeLayout(false);
-            tabPage6.PerformLayout();
+            Dodaj.ResumeLayout(false);
+            Dodaj.PerformLayout();
+            Lista.ResumeLayout(false);
+            Lista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
+            Zapomnij.ResumeLayout(false);
+            Zapomnij.PerformLayout();
+            Zapomniani.ResumeLayout(false);
+            Zapomniani.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewForg).EndInit();
+            Edytuj.ResumeLayout(false);
+            Edytuj.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUser).EndInit();
+            tabUprawnienia.ResumeLayout(false);
+            tabUprawnienia.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
+
+        private void StylizeDodajTab()
+        {
+            // Styl dla zakładki Dodaj
+            Dodaj.BackColor = Color.White;
+
+            // Styl dla wszystkich TextBoxów
+            var textBoxes = new TextBox[] { txtLogin, txtHaslo, txtName, txtSurname, txtCity, txtPostNumber, txtStreet, txtPropertyNumber, txtPesel, txtEmail, txtPhoneNumber };
+            foreach (var tb in textBoxes)
+            {
+                tb.BorderStyle = BorderStyle.FixedSingle;
+                tb.BackColor = Color.WhiteSmoke;
+                tb.Font = new Font("Segoe UI", 11);
+                tb.Margin = new Padding(5);
+            }
+
+            // Styl dla NumericUpDown
+            nudApartmentNumber.Font = new Font("Segoe UI", 11);
+            nudApartmentNumber.BackColor = Color.WhiteSmoke;
+            nudApartmentNumber.BorderStyle = BorderStyle.FixedSingle;
+
+            // Styl dla ComboBox (Płeć)
+            cmbSex.Font = new Font("Segoe UI", 11);
+            cmbSex.BackColor = Color.WhiteSmoke;
+            cmbSex.FlatStyle = FlatStyle.Flat;
+
+            // Styl dla DateTimePicker
+            dtpDateOfBirth.Font = new Font("Segoe UI", 11);
+            dtpDateOfBirth.CalendarMonthBackground = Color.WhiteSmoke;
+            dtpDateOfBirth.Format = DateTimePickerFormat.Short;
+
+            // Styl dla Buttona Dodaj
+            btnAddUser.FlatStyle = FlatStyle.Flat;
+            btnAddUser.FlatAppearance.BorderSize = 0;
+            btnAddUser.BackColor = Color.SteelBlue;
+            btnAddUser.ForeColor = Color.White;
+            btnAddUser.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            //btnAddUser.Padding = new Padding(10);
+            btnAddUser.Cursor = Cursors.Hand;
+            btnAddUser.Height = 25;
+            btnAddUser.Width = 90;
+
+            // Styl dla wszystkich Labeli
+            var labels = new Label[] { LoginLabel, label3, ImieLabel, NazwiskoLabel, MiastoLabel, KodPocztowyLabel, UlicaLabel, NumerUlicyLabel, NumerLokaluLabel, PeselLabel, DataUrodzeniaLabel, PlecLabel, EmailLabel, TelefonLabel };
+            foreach (var lbl in labels)
+            {
+                lbl.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                lbl.ForeColor = Color.Black;
+                lbl.Margin = new Padding(3);
+            }
+        }
+
+        private void ApplyModernTheme()
+        {         
+            // Ustawienia ogólne
+            this.BackColor = Color.WhiteSmoke;
+
+            // TabControl
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new Size(90, 30);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+
+            foreach (TabPage tab in tabControl1.TabPages)
+            {
+                tab.BackColor = Color.White;
+            }
+
+            // Wszystkie przyciski
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button btn)
+                {
+                    StyleButton(btn);
+                }
+            }
+
+            foreach (TabPage tab in tabControl1.TabPages)
+            {
+                foreach (Control control in tab.Controls)
+                {
+                    if (control is Button btn)
+                    {
+                        StyleButton(btn);
+                    }
+                }
+            }
+
+            // DataGridView style
+            StyleDataGridView(dataGridViewUsers);
+            StyleDataGridView(dataGridViewForg);
+            StyleDataGridView(dataGridViewUser);
+        }
+
+        private void StyleButton(Button btn)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = Color.FromArgb(100, 149, 237); // CornflowerBlue lekko pastelowy
+            btn.ForeColor = Color.White;
+            btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btn.Height = 27;
+        }
+
+        private void StyleDataGridView(DataGridView dgv)
+        {
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // Zmienna do przechowywania całkowitej szerokości kolumn dopasowanych do zawartości
+            int totalColumnWidth = 0;
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                totalColumnWidth += column.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, false);
+            }
+
+            // Warunek: Jeżeli szerokość okna jest mniejsza niż szerokość kolumn, włączamy pasek przewijania
+            if (this.Width < totalColumnWidth) // Jeśli okno jest węższe niż szerokość danych
+            {
+                dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Kolumny nie dopasowują się do szerokości
+                dgv.ScrollBars = ScrollBars.Both; // Pojawi się pasek przewijania
+            }
+            else // Okno jest wystarczająco szerokie
+            {
+                dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Kolumny rozciągają się na całą szerokość
+                dgv.ScrollBars = ScrollBars.None; // Usuwamy pasek przewijania
+            }
+
+            dgv.GridColor = Color.LightGray;
+            dgv.RowHeadersVisible = false;
+        }
+
+        private void CustomizeTabControl() // -- Ustawienia wyglądu zakładek (tabs) w TabControl
+        {
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new Size(90, 20);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControl1.DrawItem += (sender, e) =>
+            {
+                TabPage page = tabControl1.TabPages[e.Index];
+                Rectangle rect = tabControl1.GetTabRect(e.Index);
+
+                using (Brush backBrush = new SolidBrush(Color.WhiteSmoke))
+                using (Brush textBrush = new SolidBrush(Color.Black))
+                {
+                    e.Graphics.FillRectangle(backBrush, rect);
+                    StringFormat sf = new StringFormat
+                    {
+                        Alignment = StringAlignment.Center,
+                        LineAlignment = StringAlignment.Center
+                    };
+                    e.Graphics.DrawString(page.Text, new Font("Segoe UI", 10, FontStyle.Bold), textBrush, rect, sf);
+                }
+            };
+        }
+        
 
         #endregion
 
         private Label NumerUlicyLabel;
         private Label NumerLokaluLabel;
         private Label DataUrodzeniaLabel;
-        private Label ZapomnianyLabel;
         private TextBox txtStreet;
         private TextBox txtPropertyNumber;
         private TextBox txtPesel;
@@ -611,7 +718,6 @@ namespace BibliotekaApp
         private TextBox txtPhoneNumber;
         private DateTimePicker dtpDateOfBirth;
         private ComboBox cmbSex;
-        private CheckBox chkForgotten;
         private NumericUpDown nudApartmentNumber;
         private Button btnAddUser;
         // Ensure the correct line is present
@@ -631,26 +737,38 @@ namespace BibliotekaApp
         private Label ImieLabel;
         private Label LoginLabel;
         private TextBox txtLogin;
-        //private TabControl Lista;
-        private ListBox listBoxUsers;
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private Button btnFindUser;
-        private TextBox txtUserId;
-        private Label label1;
-        private DataGridView dataGridView1;
-        private TabPage tabPage4;
+        private TabPage Dodaj;
+        private TabPage Lista;
+        private TabPage Zapomnij;
         private Button btnForgetUser;
         private TextBox txtForgetUserId;
-        private TabPage tabPage5;
-        private TextBox txtUserLogin;
-        private DataGridView dataGridView2;
-        private Button btnFindUserByLogin;
-        private TabPage tabPage6;
+        private TabPage Zapomniani;
         private DataGridView dataGridViewForg;
         private Button btnFindForgottenUser;
-        private TextBox txtUserLoginForg;
+        private TabPage Edytuj;
+        private Button btnSave;
+        private TextBox txtUserIdEdit;
+        private Label label15;
+        private Label label17;
+        private DataGridView dataGridViewUser;
+        private Button btnSearch;
+        private Label label2;
+        private DataGridView dataGridViewUsers;
+        private TextBox txtUserLogin;
+        private Label label3;
+        private TextBox txtHaslo;
+        private Label label4;
+        private Button btnFindUserByLogin;
+        private TabPage Wypożycz;
+        private ComboBox comboBoxAccessLevel;
+        private Label label1;
+        private TabPage tabUprawnienia;
+        private Button btnSavePermissions;
+        private ComboBox comboBoxAccessLevels;
+        private CheckedListBox checkedListBoxUprawnienia;
+        private Label label5;
+        private Button logoutbtn;
+        private Label labelLoggedUser;
     }
 }

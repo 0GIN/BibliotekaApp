@@ -1,359 +1,292 @@
-﻿using System;
-using System.Data.Entity.Migrations.Model;
-using System.Data.SQLite;
-using System.Security.Cryptography;
+﻿using System.DirectoryServices;
+using System.Net.Http;
 using System.Text;
-using Microsoft.Data.Sqlite;
-using SQLitePCL;
+using System.Text.Json;
 
 namespace BibliotekaApp
 {
-    public class Databasehandler
+    public class DatabaseHandler
     {
-        string databasePath = "Data Source=C:\\Users\\janog\\Desktop\\BibliotekaApp\\DATABASE.sqlite";
-        //tworzenie bazy danych
+
+
+        //private readonly string apiBaseUrl = "http://localhost:5185";
+        private readonly string apiBaseUrl = "https://kpxzrf19-5185.euw.devtunnels.ms";
+
         public void CreateDatabase()
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                // Create table users
-                string query = @"CREATE TABLE IF NOT EXISTS users(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                login VARCHAR(30) UNIQUE,
-                name VARCHAR(255),
-                surname VARCHAR(255),
-                city VARCHAR(255),
-                post_number VARCHAR(6),
-                street VARCHAR(255),
-                property_number VARCHAR(10),
-                apartment_number INT,
-                pesel VARCHAR(11) UNIQUE,
-                date_of_birth DATE,
-                sex CHAR,
-                email VARCHAR(255) UNIQUE,
-                phone_number VARCHAR(9),
-                forgotten BOOL)";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var response = client.PostAsync($"{apiBaseUrl}/create-database", null).Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    command.ExecuteNonQuery();
+                    throw new Exception($"Failed to create database: {response.ReasonPhrase}");
                 }
-                Console.WriteLine("TABLE users created");
-
-                // Create table authors
-                query = @"CREATE TABLE IF NOT EXISTS authors(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name VARCHAR(255))";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Console.WriteLine("TABLE authors created");
-
-                // Create table categories
-                query = @"CREATE TABLE IF NOT EXISTS categories(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name VARCHAR(255))";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Console.WriteLine("TABLE categories created");
-
-                // Create table books
-                query = @"CREATE TABLE IF NOT EXISTS books(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title VARCHAR(255),
-                author_id INTAGER,
-                category_id INTAGER,
-                isbn VARCHAR(13) unique,
-                publish_date INTAGER)";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Console.WriteLine("TABLE books created");
-
-                // Create table book_copies
-                query = @"CREATE TABLE IF NOT EXISTS book_copies(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                book_id INTAGER,
-                status VARCHAR(255))";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Console.WriteLine("TABLE book_copies created");
-
-                // Create table loans
-                query = @"CREATE TABLE IF NOT EXISTS loans(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id INTAGER,
-                book_copy_id INTAGER,
-                loan_date DATE,
-                return_date DATE,
-                status VARCHAR(255))";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Console.WriteLine("TABLE loans created");
-
-                // Create table reservations
-                query = @"CREATE TABLE IF NOT EXISTS reservations(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id INTAGER,
-                book_id INTAGER,
-                reservation_date DATE,
-                status VARCHAR(255))";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Console.WriteLine("TABLE reservations created");
-
-                connection.Close();
             }
         }
-        //dodawanie użytkownika
-        public void AddUser(string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber, bool forgotten)
+
+        public void AddUser(string login, string password, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber)
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"INSERT INTO users (login, name, surname, city, post_number, street, property_number, apartment_number, pesel, date_of_birth, sex, email, phone_number, forgotten) 
-                                 VALUES (@login, @name, @surname, @city, @postNumber, @street, @propertyNumber, @apartmentNumber, @pesel, @dateOfBirth, @sex, @Email, @phoneNumber, @forgotten)";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var user = new
                 {
-                    command.Parameters.AddWithValue("@login", login);
-                    command.Parameters.AddWithValue("@name", name);
-                    command.Parameters.AddWithValue("@surname", surname);
-                    command.Parameters.AddWithValue("@city", city);
-                    command.Parameters.AddWithValue("@postNumber", postNumber);
-                    command.Parameters.AddWithValue("@street", street);
-                    command.Parameters.AddWithValue("@propertyNumber", propertyNumber);
-                    command.Parameters.AddWithValue("@apartmentNumber", apartmentNumber);
-                    command.Parameters.AddWithValue("@pesel", pesel);
-                    command.Parameters.AddWithValue("@dateOfBirth", dateOfBirth);
-                    command.Parameters.AddWithValue("@sex", sex);
-                    command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
-                    command.Parameters.AddWithValue("@forgotten", forgotten);
-                    command.ExecuteNonQuery();
+                    Login = login,
+                    Password = password,
+                    Name = name,
+                    Surname = surname,
+                    City = city,
+                    PostNumber = postNumber,
+                    Street = street,
+                    PropertyNumber = propertyNumber,
+                    ApartmentNumber = apartmentNumber,
+                    Pesel = pesel,
+                    DateOfBirth = dateOfBirth,
+                    Sex = sex,
+                    Email = email,
+                    PhoneNumber = phoneNumber
+                };
+                var content = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
+                var response = client.PostAsync($"{apiBaseUrl}/add-user", content).Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to add user: {response.ReasonPhrase}");
                 }
             }
         }
-        //logowanie użytkownika
-        public (string token, bool forgotten) Login(string login, string password)
+
+        public (string token, bool forgotten, bool recovery) Login(string login, string password)
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"SELECT id, forgotten FROM users WHERE login = @login AND password = @password";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var loginDto = new { Login = login, Password = password };
+                var content = new StringContent(JsonSerializer.Serialize(loginDto), Encoding.UTF8, "application/json");
+                var response = client.PostAsync($"{apiBaseUrl}/login", content).Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    command.Parameters.AddWithValue("@login", login);
-                    command.Parameters.AddWithValue("@password", password);
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            int userId = reader.GetInt32(0);
-                            bool forgotten = reader.GetBoolean(1);
-                            if (forgotten == false)
-                            {
-                                string token = GenerateToken(userId);
-                                return (token, forgotten);
-                            }
-                            else
-                            {
-                                throw new Exception("user zapomniany");
-                            }
-                        }
-                        else
-                        {
-                            throw new Exception("złe dane logowania");
-                        }
-                    }
+                    throw new Exception($"Login failed: {response.ReasonPhrase}");
                 }
+                using var doc = JsonDocument.Parse(response.Content.ReadAsStringAsync().Result);
+                var root = doc.RootElement;
+
+                string token = root.GetProperty("token").GetString();
+                bool forgotten = root.GetProperty("forgotten").GetBoolean();
+                bool recovery = root.GetProperty("recovery").GetBoolean();
+
+                return (token, forgotten, recovery);
+
             }
         }
-        //generowanie tokena
-        private string GenerateToken(int userId)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var rawData = $"{userId}-{DateTime.UtcNow.Ticks}";
-                var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-                return Convert.ToBase64String(bytes);
-            }
-        }
-        //zapomnienie użytkownika
+
         public void ForgetUser(int userId)
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"UPDATE users SET forgotten = 1 WHERE id = @userId";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var response = client.PostAsync($"{apiBaseUrl}/forget-user/{userId}", null).Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    command.Parameters.AddWithValue("@userId", userId);
-                    command.ExecuteNonQuery();
+                    throw new Exception($"Failed to forget user: {response.ReasonPhrase}");
                 }
             }
         }
-        //lista użytkowników
-        public List<(int id, string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber, bool forgotten)> GetAllUsers()
+
+        public List<UserDetailsDto> GetAllUsers()
         {
-            var users = new List<(int, string, string, string, string, string, string, string, int, string, DateTime, char, string, string, bool)>();
-
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"SELECT id, login, name, surname, city, post_number, street, property_number, apartment_number, pesel, date_of_birth, sex, email, phone_number, forgotten 
-                                 FROM users WHERE forgotten = 0";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var response = client.GetAsync($"{apiBaseUrl}/get-all-users").Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int id = reader.GetInt32(0);
-                            string login = reader.GetString(1);
-                            string name = reader.GetString(2);
-                            string surname = reader.GetString(3);
-                            string city = reader.GetString(4);
-                            string postNumber = reader.GetString(5);
-                            string street = reader.GetString(6);
-                            string propertyNumber = reader.GetString(7);
-                            int apartmentNumber = reader.GetInt32(8);
-                            string pesel = reader.GetString(9);
-                            DateTime dateOfBirth = reader.GetDateTime(10);
-                            char sex = reader.GetString(11)[0];
-                            string email = reader.GetString(12);
-                            string phoneNumber = reader.GetString(13);
-                            bool forgotten = reader.GetBoolean(14);
-
-                            users.Add((id, login, name, surname, city, postNumber, street, propertyNumber, apartmentNumber, pesel, dateOfBirth, sex, email, phoneNumber, forgotten));
-                        }
-                    }
+                    throw new Exception($"Failed to get all users: {response.ReasonPhrase}");
                 }
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+
+                // Deserializacja odpowiedzi na listę UserDetailsDto
+                return JsonSerializer.Deserialize<List<UserDetailsDto>>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
             }
-            return users;
         }
-        //wyszukiwanie urzytkownika po loginie
-        public (int id, string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber)? FindUserByLogin(string login)
+
+        public UserDetailsDto? FindUserByLogin(string login)
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"SELECT id, login, name, surname, city, post_number, street, property_number, apartment_number, pesel, date_of_birth, sex, email, phone_number, forgotten 
-                                 FROM users WHERE login = @login AND forgotten = 0";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var response = client.GetAsync($"{apiBaseUrl}/find-user-by-login/{login}").Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    command.Parameters.AddWithValue("@login", login);
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            int id = reader.GetInt32(0);
-                            string userLogin = reader.GetString(1);
-                            string name = reader.GetString(2);
-                            string surname = reader.GetString(3);
-                            string city = reader.GetString(4);
-                            string postNumber = reader.GetString(5);
-                            string street = reader.GetString(6);
-                            string propertyNumber = reader.GetString(7);
-                            int apartmentNumber = reader.GetInt32(8);
-                            string pesel = reader.GetString(9);
-                            DateTime dateOfBirth = reader.GetDateTime(10);
-                            char sex = reader.GetString(11)[0];
-                            string email = reader.GetString(12);
-                            string phoneNumber = reader.GetString(13);
-
-
-                            return (id, userLogin, name, surname, city, postNumber, street, propertyNumber, apartmentNumber, pesel, dateOfBirth, sex, email, phoneNumber);
-                        }
-                    }
+                    return null;
                 }
+
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                if (string.IsNullOrWhiteSpace(responseContent))
+                {
+                    return null;
+                }
+
+                var user = JsonSerializer.Deserialize<UserDetailsDto>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return user;
             }
-            return null;
         }
-        //wyszukiwanie zapomnianego użytkownika
-        public (int id, string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber)? FindForgottenUserByLogin(string login)
+
+
+        public (int id, string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber, int accessLevel)? FindForgottenUserByLogin(string login)
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"SELECT id, login, name, surname, city, post_number, street, property_number, apartment_number, pesel, date_of_birth, sex, email, phone_number, forgotten 
-                                 FROM users WHERE login = @login AND forgotten = 1";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var response = client.GetAsync($"{apiBaseUrl}/find-forgotten-user-by-login/{login}").Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    command.Parameters.AddWithValue("@login", login);
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            int id = reader.GetInt32(0);
-                            string userLogin = reader.GetString(1);
-                            string name = reader.GetString(2);
-                            string surname = reader.GetString(3);
-                            string city = reader.GetString(4);
-                            string postNumber = reader.GetString(5);
-                            string street = reader.GetString(6);
-                            string propertyNumber = reader.GetString(7);
-                            int apartmentNumber = reader.GetInt32(8);
-                            string pesel = reader.GetString(9);
-                            DateTime dateOfBirth = reader.GetDateTime(10);
-                            char sex = reader.GetString(11)[0];
-                            string email = reader.GetString(12);
-                            string phoneNumber = reader.GetString(13);
-
-
-                            return (id, userLogin, name, surname, city, postNumber, street, propertyNumber, apartmentNumber, pesel, dateOfBirth, sex, email, phoneNumber);
-                        }
-                    }
+                    return null;
                 }
+
+                // Declare and assign responseContent
+                string responseContent = response.Content.ReadAsStringAsync().Result;
+                if (string.IsNullOrWhiteSpace(responseContent))
+                {
+                    return null; // Handle empty response
+                }
+
+                // Deserialize into UserDetailsDto
+                var user = JsonSerializer.Deserialize<UserDetailsDto>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (user == null)
+                {
+                    return null;
+                }
+
+                return (user.Id, user.Login, user.Name, user.Surname, user.City, user.PostNumber, user.Street, user.PropertyNumber, user.ApartmentNumber ?? 0, user.Pesel, user.DateOfBirth, user.Sex ?? ' ', user.Email, user.PhoneNumber, user.AccessLevel);
             }
-            return null;
         }
-        //wyszukiwanie użytkownika po id
-        public (int id, string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber)? FindUserById(int id)
+
+        public UserDetailsDto? FindUserById(int id)
         {
-            using (SqliteConnection connection = new SqliteConnection(databasePath))
+            using (var client = new HttpClient())
             {
-                connection.Open();
-                string query = @"SELECT id, login, name, surname, city, post_number, street, property_number, apartment_number, pesel, date_of_birth, sex, email, phone_number, forgotten 
-                         FROM users WHERE id = @id AND forgotten = 0";
-                using (SqliteCommand command = new SqliteCommand(query, connection))
+                var response = client.GetAsync($"{apiBaseUrl}/find-user-by-id/{id}").Result;
+                if (!response.IsSuccessStatusCode)
                 {
-                    command.Parameters.AddWithValue("@id", id);
-                    using (SqliteDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            string userLogin = reader.GetString(1);
-                            string name = reader.GetString(2);
-                            string surname = reader.GetString(3);
-                            string city = reader.GetString(4);
-                            string postNumber = reader.GetString(5);
-                            string street = reader.GetString(6);
-                            string propertyNumber = reader.GetString(7);
-                            int apartmentNumber = reader.GetInt32(8);
-                            string pesel = reader.GetString(9);
-                            DateTime dateOfBirth = reader.GetDateTime(10);
-                            char sex = reader.GetString(11)[0];
-                            string email = reader.GetString(12);
-                            string phoneNumber = reader.GetString(13);
-
-
-                            return (id, userLogin, name, surname, city, postNumber, street, propertyNumber, apartmentNumber, pesel, dateOfBirth, sex, email, phoneNumber);
-                        }
-                    }
+                    return null;
                 }
+
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                if (string.IsNullOrWhiteSpace(responseContent))
+                {
+                    return null;
+                }
+
+                var user = JsonSerializer.Deserialize<UserDetailsDto>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return user;
             }
-            return null;
         }
 
+
+        public void ChangeUserData(int userId, string? login = null, string? password = null, string? name = null, string? surname = null, string? city = null, string? postNumber = null, string? street = null, string? propertyNumber = null, int? apartmentNumber = null, string? pesel = null, DateTime? dateOfBirth = null, char? sex = null, string? email = null, string? phoneNumber = null, int? accessLevel = null)
+        {
+            using (var client = new HttpClient())
+            {
+                var user = new
+                {
+                    Login = login,
+                    Password = password,
+                    Name = name,
+                    Surname = surname,
+                    City = city,
+                    PostNumber = postNumber,
+                    Street = street,
+                    PropertyNumber = propertyNumber,
+                    ApartmentNumber = apartmentNumber,
+                    Pesel = pesel,
+                    DateOfBirth = dateOfBirth?.ToString("yyyy-MM-dd"),
+                    Sex = sex?.ToString(),
+                    Email = email,
+                    PhoneNumber = phoneNumber,
+                    AccessLevel = accessLevel
+                };
+                var content = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
+                var response = client.PutAsync($"{apiBaseUrl}/change-user-data/{userId}", content).Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to change user data: {response.ReasonPhrase}");
+                }
+            }
+        }
+
+        public List<UserDetailsDto> GetAllForgotten()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync($"{apiBaseUrl}/get-all-forgotten").Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to get all users: {response.ReasonPhrase}");
+                }
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+
+                // Deserializacja odpowiedzi na listę UserDetailsDto
+                return JsonSerializer.Deserialize<List<UserDetailsDto>>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+        }
+
+        public void UpdateAccessLevel(int userId, int accessLevel)
+        {
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(JsonSerializer.Serialize(accessLevel), Encoding.UTF8, "application/json");
+                var response = client.PutAsync($"{apiBaseUrl}/update-access-level/{userId}", content).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to update access level: {response.ReasonPhrase}");
+                }
+            }
+        }
+        public void RecoverPassword(string email)
+        {
+            using (var client = new HttpClient())
+            {
+                var dto = new { Email = email };
+                var content = new StringContent(JsonSerializer.Serialize(dto), Encoding.UTF8, "application/json");
+                var response = client.PostAsync($"{apiBaseUrl}/recover-password", content).Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to recover password: {response.ReasonPhrase}");
+                }
+            }
+        }
     }
 }
+
+    public class UserDetailsDto
+    {
+        public int Id { get; set; }
+        public string Login { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string City { get; set; }
+        public string PostNumber { get; set; }
+        public string Street { get; set; }
+        public string PropertyNumber { get; set; }
+        public int? ApartmentNumber { get; set; }
+        public string Pesel { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public char? Sex { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public int AccessLevel { get; set; }
+    }
+

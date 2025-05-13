@@ -3,27 +3,70 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using SQLitePCL;
+using Microsoft.VisualBasic;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Web;
 
 namespace BibliotekaApp
 {
     public partial class LoginForm : Form
     {
-
-        private Databasehandler database = new Databasehandler();
+        private DatabaseHandler database = new DatabaseHandler();
+        private readonly string jwtSecret = "super_secret_key_12345678901234567890123456789012";
         public LoginForm()
         {
+
             InitializeComponent();
             Batteries.Init(); // Przeniesienie wywołania Init do konstruktora
             database.CreateDatabase(); // Przeniesienie wywołania CreateDatabase do konstruktora
+            
+        }
+        public (int userId, int accessLevel)? ParseJwtToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(jwtSecret);
+
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                }, out SecurityToken validatedToken);
+
+                var userId = int.Parse(principal.FindFirst("userId").Value);
+                var accessLevel = int.Parse(principal.FindFirst("accessLevel").Value);
+                return (userId, accessLevel);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Błąd JWT: " + ex.Message, "Token", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+        }
+        private (int userId, int accessLevel)? ParseToken(string token)
+        {
+            var parts = token.Split('.');
+            if (parts.Length < 3) return null;
+            if (int.TryParse(parts[0], out int userId) && int.TryParse(parts[1], out int accessLevel))
+            {
+                return (userId, accessLevel);
+            }
+            return null;
         }
 
-        
-       
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -32,34 +75,65 @@ namespace BibliotekaApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string login = txtLogin.Text;  // Zakładając, że masz TextBox do loginu
-            string password = txtPassword.Text;  // Zakładając, że masz TextBox do hasła
+            string login = txtLogin.Text;
+            string password = txtPassword.Text;
 
             try
             {
-                // Wywołanie metody Login z klasy Databasehandler
-                var (token, forgotten) = database.Login(login, password);
+                var (token, forgotten, recovery) = database.Login(login, password);
 
-                // Jeśli dane logowania są poprawne, przenosimy do głównego formularza (Form1)
+                ParseJwtToken(token);
+                if (recovery)
+                {
+                    var user = database.FindUserByLogin(login);
+                    if (user != null)
+                    {
+                        this.Hide();  // Ukryj okno logowania na czas resetu
+                        ResetPasswordForm resetForm = new ResetPasswordForm(user.Id);
+                        resetForm.ShowDialog();
+
+                        // Jeśli użytkownik zmienił hasło, zaloguj go ponownie
+                        // Opcjonalnie: ponowny login lub ponowne pokazanie LoginForm
+                        this.Show();
+                        return;
+                    }
+                }
+
+                // Jeśli nie zapomniany i nie recovery
                 if (!forgotten)
                 {
-                    // Tworzymy instancję Form1
-                    AddUserForm mainForm = new AddUserForm();
-
-                    // Ukrywamy formularz logowania i pokazujemy Form1
-                    this.Hide();  // Ukrywamy formularz logowania
-
-                    // Dodajemy zdarzenie FormClosed, które zamknie LoginForm po zamknięciu Form1
+                    this.Hide();
+                    Form1 mainForm = new Form1(token);
                     mainForm.FormClosed += (s, args) => this.Close();
-                    mainForm.Show();  // Pokazujemy główny formularz
+                    mainForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Użytkownik jest oznaczony jako zapomniany.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                // Obsługa błędów, jeśli użytkownik jest zapomniany lub dane są nieprawidłowe
                 MessageBox.Show(ex.Message, "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvlRecover_Click_1(object sender, EventArgs e)
+        {
+            RecoverPasswordForm recoverForm = new RecoverPasswordForm();
+            recoverForm.ShowDialog();
+        }
     }
 }
