@@ -509,6 +509,7 @@ namespace BibliotekaApp
             // 
             resources.ApplyResources(labelLoggedUser, "labelLoggedUser");
             labelLoggedUser.Name = "labelLoggedUser";
+            labelLoggedUser.Click += labelLoggedUser_Click;
             // 
             // Form1
             // 

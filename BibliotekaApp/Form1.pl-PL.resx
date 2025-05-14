@@ -281,7 +281,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="Dodaj.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 528</value>
+    <value>1234, 533</value>
   </data>
   <data name="Dodaj.Text" xml:space="preserve">
     <value>Dodaj</value>
@@ -317,7 +317,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="Lista.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 528</value>
+    <value>1234, 533</value>
   </data>
   <data name="Lista.Text" xml:space="preserve">
     <value>Lista</value>
@@ -326,7 +326,7 @@
     <value>103, 23</value>
   </data>
   <data name="Zapomnij.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 528</value>
+    <value>1234, 533</value>
   </data>
   <data name="Zapomnij.Text" xml:space="preserve">
     <value>Zapomnij</value>
@@ -335,7 +335,7 @@
     <value>91, 23</value>
   </data>
   <data name="Zapomniani.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 528</value>
+    <value>1234, 533</value>
   </data>
   <data name="Zapomniani.Text" xml:space="preserve">
     <value>Zapomniani</value>
@@ -380,7 +380,7 @@
     <value>91, 23</value>
   </data>
   <data name="Edytuj.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 528</value>
+    <value>1234, 533</value>
   </data>
   <data name="Edytuj.Text" xml:space="preserve">
     <value>Edytuj</value>
@@ -422,7 +422,7 @@
     <value>37, 23</value>
   </data>
   <data name="tabUprawnienia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 528</value>
+    <value>1234, 533</value>
   </data>
   <data name="tabUprawnienia.Text" xml:space="preserve">
     <value>Uprawnienia</value>

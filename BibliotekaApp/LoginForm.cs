@@ -26,8 +26,8 @@ namespace BibliotekaApp
 
             InitializeComponent();
             Batteries.Init(); // Przeniesienie wywołania Init do konstruktora
-            database.CreateDatabase(); // Przeniesienie wywołania CreateDatabase do konstruktora
-            
+                              //database.CreateDatabase(); // Przeniesienie wywołania CreateDatabase do konstruktora
+
         }
         public (int userId, int accessLevel)? ParseJwtToken(string token)
         {
@@ -134,6 +134,11 @@ namespace BibliotekaApp
         {
             RecoverPasswordForm recoverForm = new RecoverPasswordForm();
             recoverForm.ShowDialog();
+        }
+
+        private void LoginForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -119,6 +119,7 @@ namespace BibliotekaApp
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Logowanie";
+            Load += LoginForm_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

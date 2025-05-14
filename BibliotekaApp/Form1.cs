@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic.ApplicationServices;
 
 
 namespace BibliotekaApp
@@ -18,7 +19,7 @@ namespace BibliotekaApp
         private DatabaseHandler database = new DatabaseHandler();
         private readonly string permissionsFile = "permissions.json";
         private readonly string jwtSecret = "super_secret_key_12345678901234567890123456789012";
-
+        public int userId;
         public Form1(string token)
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace BibliotekaApp
             {
                 string json = File.ReadAllText(permissionsFile);
                 accessLevelTabs = JsonSerializer.Deserialize<Dictionary<int, List<string>>>(json);
-                //labelLoggedUser.Text = $"Zalogowany jako: {loggedInLogin}";
+                labelLoggedUser.Text = $"Zalogowany jako: {loggedInLogin}";
             }
             Batteries.Init();
             this.WindowState = FormWindowState.Maximized;
@@ -40,8 +41,9 @@ namespace BibliotekaApp
 
             if (result != null)
             {
-                int userId = result.Value.userId;
+                //int userId = result.Value.userId;
                 userAccessLevel = result.Value.accessLevel;
+                userId = result.Value.userId;
 
                 var user = database.FindUserById(userId);
                 if (user != null)
@@ -57,9 +59,6 @@ namespace BibliotekaApp
                 MessageBox.Show("Nieprawidłowy token!", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //Application.Exit();
             }
-
-
-
 
             CustomizeTabControl();
             ApplyModernTheme();
@@ -184,8 +183,10 @@ namespace BibliotekaApp
         // =============================
         // Obsługa przycisków (eventy)
         // =============================
+        //private int userId;
         private void logoutbtn_Click(object sender, EventArgs e)
         {
+
             var result = MessageBox.Show(
                 "Czy na pewno chcesz się wylogować?",
                 "Wylogowanie",
@@ -195,6 +196,15 @@ namespace BibliotekaApp
 
             if (result == DialogResult.Yes)
             {
+                try
+                {
+                    database.Logout(userId); // <-- Upewnij się, że masz ten ID w polu klasy
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Błąd podczas wylogowania: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 userAccessLevel = 0; // Resetuj poziom dostępu
                 accessLevelTabs.Clear(); // Wyczyść uprawnienia
                 this.Hide(); // ukryj aktualną formę
@@ -795,6 +805,11 @@ namespace BibliotekaApp
             {
                 dataGridViewUsers.Columns["AccessLevel"].Visible = false;
             }
+        }
+
+        private void labelLoggedUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

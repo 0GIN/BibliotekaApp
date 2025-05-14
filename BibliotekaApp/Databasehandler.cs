@@ -10,7 +10,8 @@ namespace BibliotekaApp
 
 
         //private readonly string apiBaseUrl = "http://localhost:5185";
-        private readonly string apiBaseUrl = "https://kpxzrf19-5185.euw.devtunnels.ms";
+        //private readonly string apiBaseUrl = "https://kpxzrf19-5185.euw.devtunnels.ms";
+        private readonly string apiBaseUrl = "https://5sqcn5m9-888.euw.devtunnels.ms";
 
         public void CreateDatabase()
         {
@@ -20,6 +21,18 @@ namespace BibliotekaApp
                 if (!response.IsSuccessStatusCode)
                 {
                     throw new Exception($"Failed to create database: {response.ReasonPhrase}");
+                }
+            }
+        }
+
+        public void Logout(int userId)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.PostAsync($"{apiBaseUrl}/logout/{userId}", null).Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to logout: {response.ReasonPhrase}");
                 }
             }
         }
@@ -68,7 +81,11 @@ namespace BibliotekaApp
                 using var doc = JsonDocument.Parse(response.Content.ReadAsStringAsync().Result);
                 var root = doc.RootElement;
 
-                string token = root.GetProperty("token").GetString();
+                string? token = root.GetProperty("token").GetString();
+                if (token == null)
+                {
+                    throw new Exception("Token is null.");
+                }
                 bool forgotten = root.GetProperty("forgotten").GetBoolean();
                 bool recovery = root.GetProperty("recovery").GetBoolean();
 
@@ -192,7 +209,7 @@ namespace BibliotekaApp
         }
 
 
-        public void ChangeUserData(int userId, string? login = null, string? password = null, string? name = null, string? surname = null, string? city = null, string? postNumber = null, string? street = null, string? propertyNumber = null, int? apartmentNumber = null, string? pesel = null, DateTime? dateOfBirth = null, char? sex = null, string? email = null, string? phoneNumber = null, int? accessLevel = null)
+        public void ChangeUserData(int userId, string? login = null, string? password = null, string? name = null, string? surname = null, string? city = null, string? postNumber = null, string? street = null, string? propertyNumber = null, int? apartmentNumber = null, string? pesel = null, DateTime? dateOfBirth = null, char? sex = null, string? email = null, string? phoneNumber = null, int? accessLevel = null, bool? recovery = null)
         {
             using (var client = new HttpClient())
             {
@@ -212,7 +229,8 @@ namespace BibliotekaApp
                     Sex = sex?.ToString(),
                     Email = email,
                     PhoneNumber = phoneNumber,
-                    AccessLevel = accessLevel
+                    AccessLevel = accessLevel,
+                    recovery
                 };
                 var content = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
                 var response = client.PutAsync($"{apiBaseUrl}/change-user-data/{userId}", content).Result;
@@ -288,5 +306,6 @@ namespace BibliotekaApp
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public int AccessLevel { get; set; }
-    }
+        public bool recovery { get; set; }
+}
 
