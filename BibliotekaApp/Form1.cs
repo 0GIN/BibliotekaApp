@@ -9,6 +9,8 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic.ApplicationServices;
+using BibliotekaApp; // jeśli plik helpera też jest w tym namespace
+
 
 
 namespace BibliotekaApp
@@ -60,15 +62,15 @@ namespace BibliotekaApp
                 //Application.Exit();
             }
 
+            dataGridViewUser.CellContentClick += dataGridViewUser_CellContentClick;
             CustomizeTabControl();
             ApplyModernTheme();
             StylizeDodajTab();
             DisplayAllUsers();
             DisplayUsersDependingOnLogin();
             DisplayAllUsersInUserGrid();
+
         }
-
-
 
         // =============================
         // Metody inicjalizujące i ustawiające
@@ -99,28 +101,43 @@ namespace BibliotekaApp
                 //MessageBox.Show("Błąd JWT: " + ex.Message, "Token", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
-
         }
 
-        private void HideSensitiveColumns(DataGridView grid) // -- Ukrywanie poufnych kolumn w DataGridView
+        private void HideSensitiveColumns(DataGridView grid)
         {
-            if (grid.Columns.Contains("AccessLevel"))
+            if (userAccessLevel < 2)
             {
-                if (userAccessLevel < 2)
+                if (grid.Columns.Contains("AccessLevel"))
                 {
                     grid.Columns["AccessLevel"].Visible = false;
                 }
-                else
+
+                if (grid.Columns.Contains("Password"))
+                {
+                    grid.Columns["Password"].Visible = false;
+                }
+            }
+            else
+            {
+                if (grid.Columns.Contains("AccessLevel"))
                 {
                     grid.Columns["AccessLevel"].Visible = true;
                     grid.Columns["AccessLevel"].SortMode = DataGridViewColumnSortMode.Automatic;
                 }
+
+                if (grid.Columns.Contains("Password"))
+                {
+                    grid.Columns["Password"].Visible = true;
+                    grid.Columns["Password"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
         }
+
 
         private void SetPolishColumnHeaders(DataGridView dgv) // -- Ustawianie polskich nagłówków kolumn w DataGridView
         {
             if (dgv.Columns.Contains("Login")) dgv.Columns["Login"].HeaderText = "Login";
+            if (dgv.Columns.Contains("Password")) dgv.Columns["Password"].HeaderText = "Hasło";
             if (dgv.Columns.Contains("Name")) dgv.Columns["Name"].HeaderText = "Imię";
             if (dgv.Columns.Contains("Surname")) dgv.Columns["Surname"].HeaderText = "Nazwisko";
             if (dgv.Columns.Contains("City")) dgv.Columns["City"].HeaderText = "Miasto";
@@ -276,8 +293,16 @@ namespace BibliotekaApp
             string email = txtEmail.Text.Trim();
             string phoneNumber = txtPhoneNumber.Text.Trim();
 
-            if (!ValidateUserData(login, name, surname, city, postNumber, street, propertyNumber, pesel, dateOfBirth, sexText, email, phoneNumber))
+            string errorMessage;
+            bool isValid = ValidationHelper.ValidateUserData(
+                name, surname, city, postNumber, street, propertyNumber, pesel, dateOfBirth, sexText, email, phoneNumber,
+                out errorMessage
+            );
+
+
+            if (!isValid)
             {
+                MessageBox.Show(errorMessage, "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -340,7 +365,6 @@ namespace BibliotekaApp
                 MessageBox.Show("Brak zapomnianych użytkowników w bazie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridViewForg.DataSource = null;
             }
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e) // -- Wyszukiwanie użytkownika po ID i pokazanie w tabeli
@@ -396,6 +420,7 @@ namespace BibliotekaApp
                 {
                     Id = Convert.ToInt32(row.Cells["ID"].Value),
                     Login = row.Cells["Login"].Value?.ToString(),
+                    Password = row.Cells["Password"].Value?.ToString(),
                     Name = row.Cells["Name"].Value?.ToString(),
                     Surname = row.Cells["Surname"].Value?.ToString(),
                     City = row.Cells["City"].Value?.ToString(),
@@ -493,182 +518,11 @@ namespace BibliotekaApp
             }
         }
 
-        private bool ValidateUserData(string login, string name, string surname, string city, string postNumber, string street,
-            string propertyNumber, string pesel, DateTime dateOfBirth, string sexText, string email, string phoneNumber) // -- Walidacja danych użytkownika (przed dodaniem/edycją)
-        {
-            if (string.IsNullOrWhiteSpace(login) || login.Length < 3 || login.Contains(" "))
-            {
-                MessageBox.Show("Login musi mieć co najmniej 3 znaki i nie może zawierać spacji.");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(name) || name.Length < 2 || !name.All(char.IsLetter))
-            {
-                MessageBox.Show("Imię musi mieć co najmniej 2 litery i zawierać tylko litery.");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(surname) || surname.Length < 2 || !surname.All(char.IsLetter))
-            {
-                MessageBox.Show("Nazwisko musi mieć co najmniej 2 litery i zawierać tylko litery.");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(city) || city.Length < 2)
-            {
-                MessageBox.Show("Miasto musi mieć co najmniej 2 znaki.");
-                return false;
-            }
-
-            if (!System.Text.RegularExpressions.Regex.IsMatch(postNumber, @"^\d{2}-\d{3}$"))
-            {
-                MessageBox.Show("Kod pocztowy musi być w formacie 00-000.");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(street))
-            {
-                MessageBox.Show("Ulica nie może być pusta.");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(propertyNumber))
-            {
-                MessageBox.Show("Numer budynku nie może być pusty.");
-                return false;
-            }
-
-            if (!IsPeselValid(pesel, dateOfBirth, sexText[0]))
-            {
-                MessageBox.Show("PESEL jest niezgodny z datą urodzenia lub płcią.");
-                return false;
-            }
-
-            if (dateOfBirth >= DateTime.Today)
-            {
-                MessageBox.Show("Data urodzenia musi być wcześniejsza niż dzisiaj.");
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(sexText) || (sexText != "M" && sexText != "K"))
-            {
-                MessageBox.Show("Wybierz płeć (M lub K).");
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.Contains("."))
-            {
-                MessageBox.Show("Niepoprawny adres e-mail.");
-                return false;
-            }
-
-            if (!System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^\d{9}$|^\d{3}-\d{3}-\d{3}$"))
-            {
-                MessageBox.Show("Numer telefonu musi mieć 9 cyfr lub format xxx-xxx-xxx.");
-                return false;
-            }
-
-            // Sprawdź unikalność danych
-            var existingUsers = database.GetAllUsers();
-
-            if (existingUsers.Any(u => u.Login.Equals(login, StringComparison.OrdinalIgnoreCase)))
-            {
-                MessageBox.Show("Użytkownik o podanym loginie już istnieje.");
-                return false;
-            }
-            if (existingUsers.Any(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
-            {
-                MessageBox.Show("Użytkownik z tym adresem e-mail już istnieje.");
-                return false;
-            }
-            if (existingUsers.Any(u => u.Pesel == pesel))
-            {
-                MessageBox.Show("Użytkownik z tym numerem PESEL już istnieje.");
-                return false;
-            }
-            if (existingUsers.Any(u => u.PhoneNumber == phoneNumber))
-            {
-                MessageBox.Show("Użytkownik z tym numerem telefonu już istnieje.");
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool IsPeselValid(string pesel, DateTime birthDate, char sex)
-        {
-            if (pesel.Length != 11 || !pesel.All(char.IsDigit))
-                return false;
-
-            // Suma kontrolna
-            int[] weights = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
-            int controlSum = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                controlSum += (pesel[i] - '0') * weights[i];
-            }
-            int lastDigit = (10 - (controlSum % 10)) % 10;
-            if (lastDigit != (pesel[10] - '0'))
-                return false;
-
-            // Data urodzenia z PESEL-a
-            int year = int.Parse(pesel.Substring(0, 2));
-            int month = int.Parse(pesel.Substring(2, 2));
-            int day = int.Parse(pesel.Substring(4, 2));
-
-            int century = 1900;
-            if (month >= 1 && month <= 12)
-                century = 1900;
-            else if (month >= 21 && month <= 32)
-            {
-                century = 2000;
-                month -= 20;
-            }
-            else if (month >= 81 && month <= 92)
-            {
-                century = 1800;
-                month -= 80;
-            }
-            else if (month >= 41 && month <= 52)
-            {
-                century = 2100;
-                month -= 40;
-            }
-            else if (month >= 61 && month <= 72)
-            {
-                century = 2200;
-                month -= 60;
-            }
-            else
-                return false; // nieznany zakres miesięcy
-
-            DateTime parsedDate;
-            try
-            {
-                parsedDate = new DateTime(century + year, month, day);
-            }
-            catch
-            {
-                return false;
-            }
-
-            if (parsedDate.Date != birthDate.Date)
-                return false;
-
-            // Płeć
-            int genderDigit = pesel[9] - '0';
-            char genderFromPesel = (genderDigit % 2 == 1) ? 'M' : 'K';
-            if (char.ToUpper(genderFromPesel) != char.ToUpper(sex))
-                return false;
-
-            return true;
-        }
-
-
         private bool UsersAreEqual(UserDetailsDto edited, UserDetailsDto original) // -- Porównanie edytowanego użytkownika z oryginalnym
         {
             return
                 edited.Login == original.Login &&
+                edited.Password == original.Password &&
                 edited.Name == original.Name &&
                 edited.Surname == original.Surname &&
                 edited.City == original.City &&
@@ -707,7 +561,6 @@ namespace BibliotekaApp
 
             };
 
-
         public void DisplayAllUsers() // -- Wyświetlenie wszystkich użytkowników
         {
             var users = database.GetAllUsers();
@@ -742,7 +595,34 @@ namespace BibliotekaApp
             dataGridViewUser.AllowUserToAddRows = false;
             dataGridViewUser.ReadOnly = false;
             HideSensitiveColumns(dataGridViewForg);
+            if (!dataGridViewUser.Columns.Contains("Password"))
+            {
+                var buttonColumn = new DataGridViewButtonColumn
+                {
+                    Name = "Password",
+                    HeaderText = "Hasło",
+                    Text = "Zmień hasło",
+                    UseColumnTextForButtonValue = true
+                };
+                dataGridViewUser.Columns.Add(buttonColumn);
+            }
         }
+
+        private void dataGridViewUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewUser.Columns[e.ColumnIndex].Name == "Password" && e.RowIndex >= 0)
+            {
+                int userId = Convert.ToInt32(dataGridViewUser.Rows[e.RowIndex].Cells["ID"].Value);
+                using var form = new ResetPasswordForm(userId);
+                var result = form.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show("Hasło zostało zmienione.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
 
         public void UpdateUser(UserDetailsDto user) // -- Aktualizacja danych użytkownika
         {
@@ -751,6 +631,7 @@ namespace BibliotekaApp
                 database.ChangeUserData(
                     userId: user.Id,
                     login: user.Login,
+                    password: user.Password,
                     name: user.Name,
                     surname: user.Surname,
                     city: user.City,
@@ -800,16 +681,22 @@ namespace BibliotekaApp
             StyleDataGridView(dataGridViewUsers);
             dataGridViewUsers.AllowUserToAddRows = false;
             dataGridViewUsers.ReadOnly = true;
-
-            if (dataGridViewUsers.Columns.Contains("AccessLevel") && userAccessLevel < 2)
-            {
-                dataGridViewUsers.Columns["AccessLevel"].Visible = false;
-            }
+            HideSensitiveColumns(dataGridViewUsers);
         }
 
         private void labelLoggedUser_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            var user = database.FindUserById(userId);
+            if (user != null)
+            {
+                var form = new UserProfileForm(user);
+                form.ShowDialog();
+            }
         }
     }
 }

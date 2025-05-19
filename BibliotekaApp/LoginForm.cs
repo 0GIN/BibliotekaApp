@@ -114,20 +114,8 @@ namespace BibliotekaApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLogin_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lvlRecover_Click_1(object sender, EventArgs e)

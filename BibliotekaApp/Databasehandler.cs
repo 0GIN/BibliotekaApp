@@ -9,9 +9,9 @@ namespace BibliotekaApp
     {
 
 
-        //private readonly string apiBaseUrl = "http://localhost:5185";
+        private readonly string apiBaseUrl = "http://localhost:5185";
         //private readonly string apiBaseUrl = "https://kpxzrf19-5185.euw.devtunnels.ms";
-        private readonly string apiBaseUrl = "https://5sqcn5m9-888.euw.devtunnels.ms";
+        //private readonly string apiBaseUrl = "https://5sqcn5m9-5185.euw.devtunnels.ms";
 
         public void CreateDatabase()
         {
@@ -74,25 +74,28 @@ namespace BibliotekaApp
                 var loginDto = new { Login = login, Password = password };
                 var content = new StringContent(JsonSerializer.Serialize(loginDto), Encoding.UTF8, "application/json");
                 var response = client.PostAsync($"{apiBaseUrl}/login", content).Result;
+
                 if (!response.IsSuccessStatusCode)
                 {
+                    if ((int)response.StatusCode == 403)
+                    {
+                        var errorMsg = response.Content.ReadAsStringAsync().Result;
+                        throw new Exception(errorMsg); // Przekazujemy komunikat z serwera
+                    }
                     throw new Exception($"Login failed: {response.ReasonPhrase}");
                 }
+
                 using var doc = JsonDocument.Parse(response.Content.ReadAsStringAsync().Result);
                 var root = doc.RootElement;
 
-                string? token = root.GetProperty("token").GetString();
-                if (token == null)
-                {
-                    throw new Exception("Token is null.");
-                }
+                string token = root.GetProperty("token").GetString();
                 bool forgotten = root.GetProperty("forgotten").GetBoolean();
                 bool recovery = root.GetProperty("recovery").GetBoolean();
 
                 return (token, forgotten, recovery);
-
             }
         }
+
 
         public void ForgetUser(int userId)
         {
@@ -293,6 +296,7 @@ namespace BibliotekaApp
     {
         public int Id { get; set; }
         public string Login { get; set; }
+        public string Password { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string City { get; set; }

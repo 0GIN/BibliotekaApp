@@ -15,7 +15,6 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResetPasswordForm));
             label1 = new Label();
             label2 = new Label();
             txtNewPassword = new TextBox();
@@ -30,9 +29,19 @@
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label1.Location = new Point(30, 25);
             label1.Name = "label1";
-            label1.Size = new Size(116, 19);
+            label1.Size = new Size(91, 19);
             label1.TabIndex = 0;
             label1.Text = "Nowe hasło:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label2.Location = new Point(30, 90);
+            label2.Name = "label2";
+            label2.Size = new Size(160, 19);
+            label2.TabIndex = 2;
+            label2.Text = "Potwierdź nowe hasło:";
             // 
             // txtNewPassword
             // 
@@ -42,16 +51,6 @@
             txtNewPassword.Size = new Size(300, 25);
             txtNewPassword.TabIndex = 1;
             txtNewPassword.UseSystemPasswordChar = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(30, 90);
-            label2.Name = "label2";
-            label2.Size = new Size(184, 19);
-            label2.TabIndex = 2;
-            label2.Text = "Potwierdź nowe hasło:";
             // 
             // txtConfirmPassword
             // 
@@ -106,12 +105,12 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ResetPasswordForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ustaw nowe hasło";
+            Load += ResetPasswordForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -91,6 +91,7 @@ namespace BibliotekaApp
             comboBoxAccessLevels = new ComboBox();
             logoutbtn = new Button();
             labelLoggedUser = new Label();
+            btnProfile = new Button();
             ((System.ComponentModel.ISupportInitialize)nudApartmentNumber).BeginInit();
             tabControl1.SuspendLayout();
             Dodaj.SuspendLayout();
@@ -511,11 +512,19 @@ namespace BibliotekaApp
             labelLoggedUser.Name = "labelLoggedUser";
             labelLoggedUser.Click += labelLoggedUser_Click;
             // 
+            // btnProfile
+            // 
+            resources.ApplyResources(btnProfile, "btnProfile");
+            btnProfile.Name = "btnProfile";
+            btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
+            Controls.Add(btnProfile);
             Controls.Add(labelLoggedUser);
             Controls.Add(logoutbtn);
             Controls.Add(tabControl1);
@@ -771,5 +780,6 @@ namespace BibliotekaApp
         private Label label5;
         private Button logoutbtn;
         private Label labelLoggedUser;
+        private Button btnProfile;
     }
 }

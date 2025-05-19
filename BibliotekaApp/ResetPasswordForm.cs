@@ -20,8 +20,6 @@ namespace BibliotekaApp
 
 
         }
-
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string newPassword = txtNewPassword.Text.Trim();
@@ -29,13 +27,19 @@ namespace BibliotekaApp
 
             if (string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
             {
-                MessageBox.Show("Wprowadź oba pola hasła.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wprowadź hasła w oba pola.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (newPassword != confirmPassword)
             {
                 MessageBox.Show("Hasła się nie zgadzają.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!ValidationHelper.ValidatePassword(newPassword, out string passwordError))
+            {
+                MessageBox.Show(passwordError, "Błąd walidacji hasła", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -64,25 +68,27 @@ namespace BibliotekaApp
                     sex: user.Sex,
                     email: user.Email,
                     phoneNumber: user.PhoneNumber,
-                    //accessLevel: user.AccessLevel
                     recovery: true
                 );
 
                 MessageBox.Show("Hasło zostało zmienione pomyślnie.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
-                this.Close();
-
+                this.Close();  
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hasło musi byc różne od 3 ostatnich.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ResetPasswordForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

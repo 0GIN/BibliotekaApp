@@ -36,7 +36,7 @@ namespace BibliotekaApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nieprawidłowe dane.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
