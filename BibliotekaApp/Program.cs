@@ -13,7 +13,6 @@ namespace BibliotekaApp
             ApplicationConfiguration.Initialize();
             LoginForm form = new LoginForm();
             Application.Run(new LoginForm());
-
         }
     }
 }

@@ -25,9 +25,7 @@ namespace BibliotekaApp
         {
 
             InitializeComponent();
-            Batteries.Init(); // Przeniesienie wywołania Init do konstruktora
-                              //database.CreateDatabase(); // Przeniesienie wywołania CreateDatabase do konstruktora
-
+            Batteries.Init(); 
         }
         public (int userId, int accessLevel)? ParseJwtToken(string token)
         {
@@ -80,7 +78,7 @@ namespace BibliotekaApp
 
             try
             {
-                var (token, forgotten, recovery) = database.Login(login, password);
+                var (token, forgotten, recovery, admin) = database.Login(login, password);
 
                 ParseJwtToken(token);
                 if (recovery)
@@ -88,22 +86,19 @@ namespace BibliotekaApp
                     var user = database.FindUserByLogin(login);
                     if (user != null)
                     {
-                        this.Hide();  // Ukryj okno logowania na czas resetu
+                        this.Hide(); 
                         ResetPasswordForm resetForm = new ResetPasswordForm(user.Id);
                         resetForm.ShowDialog();
 
-                        // Jeśli użytkownik zmienił hasło, zaloguj go ponownie
-                        // Opcjonalnie: ponowny login lub ponowne pokazanie LoginForm
                         this.Show();
                         return;
                     }
                 }
 
-                // Jeśli nie zapomniany i nie recovery
                 if (!forgotten)
                 {
                     this.Hide();
-                    Form1 mainForm = new Form1(token);
+                    Form1 mainForm = new Form1(token, admin);
                     mainForm.FormClosed += (s, args) => this.Close();
                     mainForm.Show();
                 }

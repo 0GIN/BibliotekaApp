@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using BibliotekaApp; // jeśli plik helpera też jest w tym namespace
+using BibliotekaApp;
 
 namespace BibliotekaApp
 {
@@ -51,6 +51,7 @@ namespace BibliotekaApp
             resetForm.ShowDialog();
         }
 
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             string errorMessage;
@@ -67,6 +68,7 @@ namespace BibliotekaApp
                 cmbSex.SelectedItem?.ToString(),
                 txtEmail.Text,
                 txtPhoneNumber.Text,
+
                 out errorMessage))
             {
                 MessageBox.Show(errorMessage, "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Warning);

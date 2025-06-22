@@ -83,8 +83,8 @@ namespace BibliotekaApp
             dataGridViewUser = new DataGridView();
             txtUserIdEdit = new TextBox();
             label15 = new Label();
-            btnSave = new Button();
             tabUprawnienia = new TabPage();
+            labelRoleName = new Label();
             label5 = new Label();
             checkedListBoxUprawnienia = new CheckedListBox();
             btnSavePermissions = new Button();
@@ -414,7 +414,6 @@ namespace BibliotekaApp
             Edytuj.Controls.Add(dataGridViewUser);
             Edytuj.Controls.Add(txtUserIdEdit);
             Edytuj.Controls.Add(label15);
-            Edytuj.Controls.Add(btnSave);
             Edytuj.Name = "Edytuj";
             Edytuj.UseVisualStyleBackColor = true;
             // 
@@ -430,7 +429,6 @@ namespace BibliotekaApp
             comboBoxAccessLevel.FormattingEnabled = true;
             comboBoxAccessLevel.Items.AddRange(new object[] { resources.GetString("comboBoxAccessLevel.Items"), resources.GetString("comboBoxAccessLevel.Items1"), resources.GetString("comboBoxAccessLevel.Items2") });
             comboBoxAccessLevel.Name = "comboBoxAccessLevel";
-            comboBoxAccessLevel.SelectedIndexChanged += comboBoxAccessLevel_SelectedIndexChanged;
             // 
             // btnSearch
             // 
@@ -446,6 +444,7 @@ namespace BibliotekaApp
             dataGridViewUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewUser.Name = "dataGridViewUser";
+            dataGridViewUser.CellContentClick += dataGridViewUser_CellContentClick;
             // 
             // txtUserIdEdit
             // 
@@ -457,21 +456,21 @@ namespace BibliotekaApp
             resources.ApplyResources(label15, "label15");
             label15.Name = "label15";
             // 
-            // btnSave
-            // 
-            resources.ApplyResources(btnSave, "btnSave");
-            btnSave.Name = "btnSave";
-            btnSave.Click += btnSave_Click;
-            // 
             // tabUprawnienia
             // 
             resources.ApplyResources(tabUprawnienia, "tabUprawnienia");
+            tabUprawnienia.Controls.Add(labelRoleName);
             tabUprawnienia.Controls.Add(label5);
             tabUprawnienia.Controls.Add(checkedListBoxUprawnienia);
             tabUprawnienia.Controls.Add(btnSavePermissions);
             tabUprawnienia.Controls.Add(comboBoxAccessLevels);
             tabUprawnienia.Name = "tabUprawnienia";
             tabUprawnienia.UseVisualStyleBackColor = true;
+            // 
+            // labelRoleName
+            // 
+            resources.ApplyResources(labelRoleName, "labelRoleName");
+            labelRoleName.Name = "labelRoleName";
             // 
             // label5
             // 
@@ -489,15 +488,12 @@ namespace BibliotekaApp
             resources.ApplyResources(btnSavePermissions, "btnSavePermissions");
             btnSavePermissions.Name = "btnSavePermissions";
             btnSavePermissions.UseVisualStyleBackColor = true;
-            btnSavePermissions.Click += btnSavePermissions_Click;
             // 
             // comboBoxAccessLevels
             // 
             resources.ApplyResources(comboBoxAccessLevels, "comboBoxAccessLevels");
             comboBoxAccessLevels.FormattingEnabled = true;
-            comboBoxAccessLevels.Items.AddRange(new object[] { resources.GetString("comboBoxAccessLevels.Items"), resources.GetString("comboBoxAccessLevels.Items1"), resources.GetString("comboBoxAccessLevels.Items2") });
             comboBoxAccessLevels.Name = "comboBoxAccessLevels";
-            comboBoxAccessLevels.SelectedIndexChanged += comboBoxAccessLevels_SelectedIndexChanged;
             // 
             // logoutbtn
             // 
@@ -510,7 +506,6 @@ namespace BibliotekaApp
             // 
             resources.ApplyResources(labelLoggedUser, "labelLoggedUser");
             labelLoggedUser.Name = "labelLoggedUser";
-            labelLoggedUser.Click += labelLoggedUser_Click;
             // 
             // btnProfile
             // 
@@ -757,7 +752,6 @@ namespace BibliotekaApp
         private DataGridView dataGridViewForg;
         private Button btnFindForgottenUser;
         private TabPage Edytuj;
-        private Button btnSave;
         private TextBox txtUserIdEdit;
         private Label label15;
         private Label label17;
@@ -781,5 +775,6 @@ namespace BibliotekaApp
         private Button logoutbtn;
         private Label labelLoggedUser;
         private Button btnProfile;
+        private Label labelRoleName;
     }
 }

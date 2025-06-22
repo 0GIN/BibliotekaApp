@@ -72,7 +72,7 @@ namespace BibliotekaApp
                 );
 
                 MessageBox.Show("Hasło zostało zmienione pomyślnie.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
+                //this.DialogResult = DialogResult.OK;
                 this.Close();  
             }
             catch (Exception ex)

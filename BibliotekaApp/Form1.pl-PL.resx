@@ -246,26 +246,11 @@
   <data name="btnDisplayUsers.Text" xml:space="preserve">
     <value>Odśwież</value>
   </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 24</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1242, 561</value>
-  </data>
   <data name="Wypożycz.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 533</value>
   </data>
   <data name="Wypożycz.Text" xml:space="preserve">
     <value>Wypożycz</value>
-  </data>
-  <data name="Dodaj.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="Dodaj.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 533</value>
-  </data>
-  <data name="Dodaj.Text" xml:space="preserve">
-    <value>Dodaj</value>
   </data>
   <data name="txtHaslo.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 86</value>
@@ -292,14 +277,14 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Hasło:</value>
   </data>
-  <data name="Lista.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="Dodaj.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="Lista.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Dodaj.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 533</value>
   </data>
-  <data name="Lista.Text" xml:space="preserve">
-    <value>Lista</value>
+  <data name="Dodaj.Text" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
   <data name="btnFindUserByLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -328,29 +313,32 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Wyszukaj login:</value>
   </data>
+  <data name="Lista.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Lista.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 533</value>
+  </data>
+  <data name="Lista.Text" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="btnForgetUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 23</value>
+  </data>
   <data name="Zapomnij.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 533</value>
   </data>
   <data name="Zapomnij.Text" xml:space="preserve">
     <value>Zapomnij</value>
   </data>
-  <data name="btnForgetUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 23</value>
+  <data name="btnFindForgottenUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
   </data>
   <data name="Zapomniani.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 533</value>
   </data>
   <data name="Zapomniani.Text" xml:space="preserve">
     <value>Zapomniani</value>
-  </data>
-  <data name="btnFindForgottenUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
-  </data>
-  <data name="Edytuj.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 533</value>
-  </data>
-  <data name="Edytuj.Text" xml:space="preserve">
-    <value>Edytuj</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>545, 17</value>
@@ -385,17 +373,20 @@
   <data name="dataGridViewUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>1231, 509</value>
   </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 13</value>
-  </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
-  </data>
-  <data name="tabUprawnienia.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Edytuj.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 533</value>
   </data>
-  <data name="tabUprawnienia.Text" xml:space="preserve">
-    <value>Uprawnienia</value>
+  <data name="Edytuj.Text" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="labelRoleName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelRoleName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 15</value>
+  </data>
+  <data name="labelRoleName.Text" xml:space="preserve">
+    <value>label6</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -418,20 +409,23 @@
   <data name="btnSavePermissions.Text" xml:space="preserve">
     <value>Zapisz</value>
   </data>
-  <data name="comboBoxAccessLevels.Items" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="comboBoxAccessLevels.Items1" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="comboBoxAccessLevels.Items2" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="comboBoxAccessLevels.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 26</value>
   </data>
   <data name="comboBoxAccessLevels.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 23</value>
+  </data>
+  <data name="tabUprawnienia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 533</value>
+  </data>
+  <data name="tabUprawnienia.Text" xml:space="preserve">
+    <value>Uprawnienia</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 24</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1242, 561</value>
   </data>
   <data name="logoutbtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -466,14 +460,8 @@
   <data name="btnProfile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1081, 12</value>
-  </data>
   <data name="btnProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 23</value>
-  </data>
-  <data name="btnProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
   </data>
   <data name="btnProfile.Text" xml:space="preserve">
     <value>Twoje dane</value>

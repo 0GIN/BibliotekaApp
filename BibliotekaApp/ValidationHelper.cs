@@ -9,9 +9,9 @@ namespace BibliotekaApp
     public static class ValidationHelper
     {
         public static bool ValidateUserData(
-            string name, string surname, string city, string postNumber,
-            string street, string propertyNumber, string pesel,
-            DateTime dateOfBirth, string sexText, string email, string phoneNumber, out string errorMessage)
+                string name, string surname, string city, string postNumber,
+                string street, string propertyNumber, string pesel,
+                DateTime dateOfBirth, string sexText, string email, string phoneNumber, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(name) || name.Length < 2 || !name.All(char.IsLetter))
             {
@@ -49,12 +49,6 @@ namespace BibliotekaApp
                 return false;
             }
 
-            if (!IsPeselValid(pesel, dateOfBirth, sexText[0]))
-            {
-                errorMessage = "PESEL jest niezgodny z datą urodzenia lub płcią.";
-                return false;
-            }
-
             if (dateOfBirth >= DateTime.Today)
             {
                 errorMessage = "Data urodzenia musi być wcześniejsza niż dzisiaj.";
@@ -67,28 +61,41 @@ namespace BibliotekaApp
                 return false;
             }
 
+            if (!IsPeselValid(pesel, dateOfBirth, sexText[0], out string peselErrors))
+            {
+                errorMessage = peselErrors;
+                return false;
+            }
+
             if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.Contains("."))
             {
                 errorMessage = "Niepoprawny adres e-mail.";
                 return false;
             }
 
-            if (!Regex.IsMatch(phoneNumber, @"^\d{9}$|^\d{3}-\d{3}-\d{3}$"))
+            if (!Regex.IsMatch(phoneNumber, @"^\d{9}$"))
             {
-                errorMessage = "Numer telefonu musi mieć 9 cyfr lub format xxx-xxx-xxx.";
+                errorMessage = "Numer telefonu musi mieć 9 cyfr.";
                 return false;
             }
 
-
-            errorMessage = null; // ← na koniec
+            errorMessage = null;
             return true;
         }
 
-        public static bool IsPeselValid(string pesel, DateTime birthDate, char sex)
+        public static bool IsPeselValid(string pesel, DateTime birthDate, char sex, out string detailedError)
         {
-            if (pesel.Length != 11 || !pesel.All(char.IsDigit))
-                return false;
+            detailedError = "";
+            var errors = new List<string>();
 
+            if (pesel.Length != 11 || !pesel.All(char.IsDigit))
+            {
+                errors.Add("PESEL musi zawierać dokładnie 11 cyfr.");
+                detailedError = string.Join(" ", errors);
+                return false;
+            }
+
+            // Cyfra kontrolna
             int[] weights = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
             int controlSum = 0;
             for (int i = 0; i < 10; i++)
@@ -97,8 +104,11 @@ namespace BibliotekaApp
             }
             int lastDigit = (10 - (controlSum % 10)) % 10;
             if (lastDigit != (pesel[10] - '0'))
-                return false;
+            {
+                errors.Add("Nieprawidłowa cyfra kontrolna PESEL.");
+            }
 
+            // Data urodzenia z PESEL
             int year = int.Parse(pesel.Substring(0, 2));
             int month = int.Parse(pesel.Substring(2, 2));
             int day = int.Parse(pesel.Substring(4, 2));
@@ -110,25 +120,50 @@ namespace BibliotekaApp
             else if (month >= 81 && month <= 92) { century = 1800; month -= 80; }
             else if (month >= 41 && month <= 52) { century = 2100; month -= 40; }
             else if (month >= 61 && month <= 72) { century = 2200; month -= 60; }
-            else return false;
+            else
+            {
+                errors.Add("Nieprawidłowy miesiąc w PESEL.");
+                detailedError = string.Join(" ", errors);
+                return false;
+            }
 
             DateTime parsedDate;
-            try { parsedDate = new DateTime(century + year, month, day); }
-            catch { return false; }
+            try
+            {
+                parsedDate = new DateTime(century + year, month, day);
+                if (parsedDate.Date != birthDate.Date)
+                {
+                    errors.Add("Data urodzenia nie zgadza się z PESEL.");
+                }
+            }
+            catch
+            {
+                errors.Add("Nieprawidłowa data w PESEL.");
+            }
 
-            if (parsedDate.Date != birthDate.Date)
-                return false;
-
+            // Płeć
             int genderDigit = pesel[9] - '0';
             char genderFromPesel = (genderDigit % 2 == 1) ? 'M' : 'K';
+            if (char.ToUpper(genderFromPesel) != char.ToUpper(sex))
+            {
+                errors.Add("Płeć nie zgadza się z PESEL.");
+            }
 
-            return char.ToUpper(genderFromPesel) == char.ToUpper(sex);
+            detailedError = string.Join(" ", errors);
+            return errors.Count == 0;
         }
+
         public static bool ValidatePassword(string password, out string errorMessage)
         {
             errorMessage = null;
 
             if (string.IsNullOrWhiteSpace(password) || password.Length < 8)
+            {
+                errorMessage = "Hasło musi mieć co najmniej 8 znaków.";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(password) || password.Length > 15)
             {
                 errorMessage = "Hasło musi mieć co najmniej 8 znaków.";
                 return false;

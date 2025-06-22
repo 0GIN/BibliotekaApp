@@ -13,15 +13,20 @@ namespace BibliotekaApp
         //private readonly string apiBaseUrl = "https://kpxzrf19-5185.euw.devtunnels.ms";
         //private readonly string apiBaseUrl = "https://5sqcn5m9-5185.euw.devtunnels.ms";
 
-        public void CreateDatabase()
+        public RoleDto CheckRole(int accessLevel)
         {
             using (var client = new HttpClient())
             {
-                var response = client.PostAsync($"{apiBaseUrl}/create-database", null).Result;
+                var response = client.GetAsync($"{apiBaseUrl}/check-role/{accessLevel}").Result;
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception($"Failed to create database: {response.ReasonPhrase}");
+                    throw new Exception($"Failed to get role: {response.ReasonPhrase}");
                 }
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                return JsonSerializer.Deserialize<RoleDto>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
             }
         }
 
@@ -36,7 +41,6 @@ namespace BibliotekaApp
                 }
             }
         }
-
         public void AddUser(string login, string password, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber)
         {
             using (var client = new HttpClient())
@@ -67,7 +71,7 @@ namespace BibliotekaApp
             }
         }
 
-        public (string token, bool forgotten, bool recovery) Login(string login, string password)
+        public (string token, bool forgotten, bool recovery, bool admin) Login(string login, string password)
         {
             using (var client = new HttpClient())
             {
@@ -91,11 +95,11 @@ namespace BibliotekaApp
                 string token = root.GetProperty("token").GetString();
                 bool forgotten = root.GetProperty("forgotten").GetBoolean();
                 bool recovery = root.GetProperty("recovery").GetBoolean();
+                bool admin = root.GetProperty("admin").GetBoolean();
 
-                return (token, forgotten, recovery);
+                return (token, forgotten, recovery, admin);
             }
         }
-
 
         public void ForgetUser(int userId)
         {
@@ -153,39 +157,6 @@ namespace BibliotekaApp
             }
         }
 
-
-        public (int id, string login, string name, string surname, string city, string postNumber, string street, string propertyNumber, int apartmentNumber, string pesel, DateTime dateOfBirth, char sex, string email, string phoneNumber, int accessLevel)? FindForgottenUserByLogin(string login)
-        {
-            using (var client = new HttpClient())
-            {
-                var response = client.GetAsync($"{apiBaseUrl}/find-forgotten-user-by-login/{login}").Result;
-                if (!response.IsSuccessStatusCode)
-                {
-                    return null;
-                }
-
-                // Declare and assign responseContent
-                string responseContent = response.Content.ReadAsStringAsync().Result;
-                if (string.IsNullOrWhiteSpace(responseContent))
-                {
-                    return null; // Handle empty response
-                }
-
-                // Deserialize into UserDetailsDto
-                var user = JsonSerializer.Deserialize<UserDetailsDto>(responseContent, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                if (user == null)
-                {
-                    return null;
-                }
-
-                return (user.Id, user.Login, user.Name, user.Surname, user.City, user.PostNumber, user.Street, user.PropertyNumber, user.ApartmentNumber ?? 0, user.Pesel, user.DateOfBirth, user.Sex ?? ' ', user.Email, user.PhoneNumber, user.AccessLevel);
-            }
-        }
-
         public UserDetailsDto? FindUserById(int id)
         {
             using (var client = new HttpClient())
@@ -210,8 +181,6 @@ namespace BibliotekaApp
                 return user;
             }
         }
-
-
         public void ChangeUserData(int userId, string? login = null, string? password = null, string? name = null, string? surname = null, string? city = null, string? postNumber = null, string? street = null, string? propertyNumber = null, int? apartmentNumber = null, string? pesel = null, DateTime? dateOfBirth = null, char? sex = null, string? email = null, string? phoneNumber = null, int? accessLevel = null, bool? recovery = null)
         {
             using (var client = new HttpClient())
@@ -243,7 +212,6 @@ namespace BibliotekaApp
                 }
             }
         }
-
         public List<UserDetailsDto> GetAllForgotten()
         {
             using (var client = new HttpClient())
@@ -263,19 +231,6 @@ namespace BibliotekaApp
             }
         }
 
-        public void UpdateAccessLevel(int userId, int accessLevel)
-        {
-            using (var client = new HttpClient())
-            {
-                var content = new StringContent(JsonSerializer.Serialize(accessLevel), Encoding.UTF8, "application/json");
-                var response = client.PutAsync($"{apiBaseUrl}/update-access-level/{userId}", content).Result;
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception($"Failed to update access level: {response.ReasonPhrase}");
-                }
-            }
-        }
         public void RecoverPassword(string email)
         {
             using (var client = new HttpClient())
@@ -292,6 +247,19 @@ namespace BibliotekaApp
     }
 }
 
+public class RoleDto
+{
+    public int id { get; set; }
+    public string role_name { get; set; }
+    public int dodawanie { get; set; }
+    public int listowanie { get; set; }
+    public int zapominanie { get; set; }
+    public int zapomniani { get; set; }
+    public int edycja { get; set; }
+    public int wyporzyczenie { get; set; }
+    public int uprawnienia { get; set; }
+}
+    
     public class UserDetailsDto
     {
         public int Id { get; set; }

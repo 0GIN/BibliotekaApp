@@ -9,9 +9,8 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic.ApplicationServices;
-using BibliotekaApp; // jeśli plik helpera też jest w tym namespace
-
-
+using BibliotekaApp;
+using System.Diagnostics;
 
 namespace BibliotekaApp
 {
@@ -22,10 +21,20 @@ namespace BibliotekaApp
         private readonly string permissionsFile = "permissions.json";
         private readonly string jwtSecret = "super_secret_key_12345678901234567890123456789012";
         public int userId;
-        public Form1(string token)
+        private bool canAdd;
+        private bool canList;
+        private bool canForget;
+        private bool canListForgotten;
+        private bool canEdit;
+        private bool canBorrow;
+        private bool canManagePermissions;
+        private List<RoleDto> allRoles = new List<RoleDto>();
+
+        public Form1(string token, bool admin)
         {
             InitializeComponent();
             ParseJwtToken(token);
+            bool isAdmin = admin;
             checkedListBoxUprawnienia.Items.AddRange(new string[]
             {
             "Dodaj", "Lista", "Zapomnij", "Zapomniani", "Edytuj", "Wypożycz", "Uprawnienia"
@@ -34,7 +43,6 @@ namespace BibliotekaApp
             if (File.Exists(permissionsFile))
             {
                 string json = File.ReadAllText(permissionsFile);
-                accessLevelTabs = JsonSerializer.Deserialize<Dictionary<int, List<string>>>(json);
                 labelLoggedUser.Text = $"Zalogowany jako: {loggedInLogin}";
             }
             Batteries.Init();
@@ -54,7 +62,24 @@ namespace BibliotekaApp
                     labelLoggedUser.Text = $"Zalogowany jako: {loggedInLogin}";
                 }
 
-                SetVisibleTabsForAccessLevel(userAccessLevel);
+                SetVisibleTabsForAccessLevel(userAccessLevel, isAdmin);
+                try
+                {
+                    var role = database.CheckRole(userAccessLevel);
+
+                    canAdd = role.dodawanie == 1;
+                    canList = role.listowanie == 1;
+                    canForget = role.zapominanie == 1;
+                    canListForgotten = role.zapomniani == 1;
+                    canEdit = role.edycja == 1;
+                    canBorrow = role.wyporzyczenie == 1;
+                    canManagePermissions = role.uprawnienia == 1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Błąd pobierania roli: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             else
             {
@@ -69,7 +94,6 @@ namespace BibliotekaApp
             DisplayAllUsers();
             DisplayUsersDependingOnLogin();
             DisplayAllUsersInUserGrid();
-
         }
 
         // =============================
@@ -102,37 +126,35 @@ namespace BibliotekaApp
                 return null;
             }
         }
-
         private void HideSensitiveColumns(DataGridView grid)
         {
             if (userAccessLevel < 2)
             {
                 if (grid.Columns.Contains("AccessLevel"))
                 {
-                    grid.Columns["AccessLevel"].Visible = false;
+                    grid.Columns["AccessLevel"]!.Visible = false; // Use null-forgiving operator
                 }
 
                 if (grid.Columns.Contains("Password"))
                 {
-                    grid.Columns["Password"].Visible = false;
+                    grid.Columns["Password"]!.Visible = false; // Use null-forgiving operator
                 }
             }
             else
             {
                 if (grid.Columns.Contains("AccessLevel"))
                 {
-                    grid.Columns["AccessLevel"].Visible = true;
+                    grid.Columns["AccessLevel"]!.Visible = true; // Use null-forgiving operator
                     grid.Columns["AccessLevel"].SortMode = DataGridViewColumnSortMode.Automatic;
                 }
 
                 if (grid.Columns.Contains("Password"))
                 {
-                    grid.Columns["Password"].Visible = true;
+                    grid.Columns["Password"]!.Visible = true; // Use null-forgiving operator
                     grid.Columns["Password"].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
         }
-
 
         private void SetPolishColumnHeaders(DataGridView dgv) // -- Ustawianie polskich nagłówków kolumn w DataGridView
         {
@@ -223,54 +245,9 @@ namespace BibliotekaApp
                     return;
                 }
                 userAccessLevel = 0; // Resetuj poziom dostępu
-                accessLevelTabs.Clear(); // Wyczyść uprawnienia
                 this.Hide(); // ukryj aktualną formę
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
-            }
-        }
-
-        private void comboBoxAccessLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (int.TryParse(comboBoxAccessLevels.SelectedItem.ToString(), out int selectedLevel))
-            {
-                // Wyczyść wszystkie zaznaczenia
-                for (int i = 0; i < checkedListBoxUprawnienia.Items.Count; i++)
-                {
-                    checkedListBoxUprawnienia.SetItemChecked(i, false);
-                }
-
-                // Zaznacz te, które pasują do poziomu
-                if (accessLevelTabs.TryGetValue(selectedLevel, out var allowedTabs))
-                {
-                    for (int i = 0; i < checkedListBoxUprawnienia.Items.Count; i++)
-                    {
-                        string tabName = checkedListBoxUprawnienia.Items[i].ToString();
-                        if (allowedTabs.Contains(tabName))
-                        {
-                            checkedListBoxUprawnienia.SetItemChecked(i, true);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void btnSavePermissions_Click(object sender, EventArgs e)
-        {
-            if (int.TryParse(comboBoxAccessLevels.SelectedItem.ToString(), out int level))
-            {
-                var selectedTabs = checkedListBoxUprawnienia.CheckedItems.Cast<string>().ToList();
-                accessLevelTabs[level] = selectedTabs;
-
-                string json = JsonSerializer.Serialize(accessLevelTabs);
-                File.WriteAllText(permissionsFile, json);
-
-                MessageBox.Show("Uprawnienia zapisane!");
-
-                if (level == userAccessLevel)
-                {
-                    SetVisibleTabsForAccessLevel(userAccessLevel);
-                }
             }
         }
 
@@ -401,153 +378,39 @@ namespace BibliotekaApp
                 MessageBox.Show("Wpisz poprawne ID (liczbę całkowitą).", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void btnSave_Click(object sender, EventArgs e) // -- Zapisanie zmian użytkowników po edycji
-        {
-            if (dataGridViewUser.Rows.Count == 0)
-            {
-                MessageBox.Show("Brak danych do zapisania.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int savedUsersCount = 0;
-
-            foreach (DataGridViewRow row in dataGridViewUser.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                UserDetailsDto editedUser = new UserDetailsDto
-                {
-                    Id = Convert.ToInt32(row.Cells["ID"].Value),
-                    Login = row.Cells["Login"].Value?.ToString(),
-                    Password = row.Cells["Password"].Value?.ToString(),
-                    Name = row.Cells["Name"].Value?.ToString(),
-                    Surname = row.Cells["Surname"].Value?.ToString(),
-                    City = row.Cells["City"].Value?.ToString(),
-                    PostNumber = row.Cells["PostNumber"].Value?.ToString(),
-                    Street = row.Cells["Street"].Value?.ToString(),
-                    PropertyNumber = row.Cells["PropertyNumber"].Value?.ToString(),
-                    ApartmentNumber = Convert.ToInt32(row.Cells["ApartmentNumber"].Value),
-                    Pesel = row.Cells["Pesel"].Value?.ToString(),
-                    DateOfBirth = Convert.ToDateTime(row.Cells["DateOfBirth"].Value),
-                    Sex = row.Cells["Sex"].Value?.ToString()[0],
-                    Email = row.Cells["Email"].Value?.ToString(),
-                    PhoneNumber = row.Cells["PhoneNumber"].Value?.ToString(),
-                    AccessLevel = Convert.ToInt32(row.Cells["AccessLevel"].Value)
-                };
-
-                var originalUser = database.FindUserById(editedUser.Id);
-
-                if (originalUser != null)
-                {
-                    if (!UsersAreEqual(editedUser, originalUser))
-                    {
-                        UpdateUser(editedUser);
-                        savedUsersCount++;
-                    }
-                }
-            }
-
-            MessageBox.Show($"Zapisano zmiany dla {savedUsersCount} użytkownika(ów)!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DisplayAllUsersInUserGrid();
-        }
-
-        private void comboBoxAccessLevel_SelectedIndexChanged(object sender, EventArgs e) // -- Filtrowanie użytkowników w DataGridView według roli
-        {
-            string selectedRole = comboBoxAccessLevel.SelectedItem.ToString();
-            DataTable dt = (DataTable)dataGridViewUser.DataSource;
-
-            if (dt == null)
-                return;
-
-            if (selectedRole == "Wszyscy")
-            {
-                dt.DefaultView.RowFilter = ""; // Pokaż wszystkich
-            }
-            else if (selectedRole == "Admini")
-            {
-                dt.DefaultView.RowFilter = "AccessLevel = 2";
-            }
-            else if (selectedRole == "Pracownicy")
-            {
-                dt.DefaultView.RowFilter = "AccessLevel = 1";
-            }
-            else if (selectedRole == "Użytkownicy")
-            {
-                dt.DefaultView.RowFilter = "AccessLevel = 0";
-            }
-        }
-
         // =============================
         // Funkcje użytkowe i walidacyjne
         // =============================
-        public void SetVisibleTabsForAccessLevel(int level)
+        private void SetVisibleTabsForAccessLevel(int accessLevel, bool isAdmin)
         {
-            if (allTabs == null || allTabs.Count == 0)
+            if (!isAdmin)
             {
-                allTabs = tabControl1.TabPages.Cast<TabPage>().ToList(); // ratunkowo
+                var role = database.CheckRole(accessLevel);
+
+                // Ukrywamy wszystkie zakładki na początku
+                tabControl1.TabPages.Remove(Wypożycz);
+                tabControl1.TabPages.Remove(Dodaj);
+                tabControl1.TabPages.Remove(Lista);
+                tabControl1.TabPages.Remove(Zapomnij);
+                tabControl1.TabPages.Remove(Zapomniani);
+                tabControl1.TabPages.Remove(Edytuj);
+                tabControl1.TabPages.Remove(tabUprawnienia);
+
+                // Dodajemy tylko te, do których użytkownik ma uprawnienia
+                if (role.wyporzyczenie == 1) tabControl1.TabPages.Add(Wypożycz);
+                if (role.dodawanie == 1) tabControl1.TabPages.Add(Dodaj);
+                if (role.listowanie == 1) tabControl1.TabPages.Add(Lista);
+                if (role.zapominanie == 1) tabControl1.TabPages.Add(Zapomnij);
+                if (role.zapomniani == 1) tabControl1.TabPages.Add(Zapomniani);
+                if (role.edycja == 1) tabControl1.TabPages.Add(Edytuj);
+                if (role.uprawnienia == 1) tabControl1.TabPages.Add(tabUprawnienia);
             }
-
-
-            if (accessLevelTabs.TryGetValue(level, out var allowedTabTexts))
-            {
-                string currentTabText = tabControl1.SelectedTab?.Text;
-
-                tabControl1.TabPages.Clear();
-                TabPage selectedTabToRestore = null;
-
-                foreach (var tab in allTabs)
-                {
-                    if (allowedTabTexts.Contains(tab.Text))
-                    {
-                        tabControl1.TabPages.Add(tab);
-                        if (tab.Text == currentTabText)
-                            selectedTabToRestore = tab;
-                    }
-                }
-
-                if (selectedTabToRestore != null)
-                {
-                    tabControl1.SelectedTab = selectedTabToRestore;
-                }
-
-                if (tabControl1.TabPages.Count == 0)
-                {
-                    MessageBox.Show("Brak dostępnych zakładek dla tego poziomu uprawnień.");
-                }
-            }
-        }
-
-        private bool UsersAreEqual(UserDetailsDto edited, UserDetailsDto original) // -- Porównanie edytowanego użytkownika z oryginalnym
-        {
-            return
-                edited.Login == original.Login &&
-                edited.Password == original.Password &&
-                edited.Name == original.Name &&
-                edited.Surname == original.Surname &&
-                edited.City == original.City &&
-                edited.PostNumber == original.PostNumber &&
-                edited.Street == original.Street &&
-                edited.PropertyNumber == original.PropertyNumber &&
-                (edited.ApartmentNumber ?? 0) == (original.ApartmentNumber ?? 0) &&
-                edited.Pesel == original.Pesel &&
-                edited.DateOfBirth == original.DateOfBirth &&
-                (edited.Sex ?? 'M') == (original.Sex ?? 'M') &&
-                edited.Email == original.Email &&
-                edited.PhoneNumber == original.PhoneNumber &&
-                edited.AccessLevel == original.AccessLevel;
         }
 
         // =============================
         // Funkcje operujące na bazie danych
         // =============================
 
-        private Dictionary<int, List<string>> accessLevelTabs = new Dictionary<int, List<string>>
-            {
-                { 0, new List<string> { "Dodaj", "Lista" } },
-                { 1, new List<string> { "Dodaj", "Lista", "Zapomnij", "Zapomniani", "Edytuj" } },
-                { 2, new List<string> { "Dodaj", "Lista", "Zapomnij", "Zapomniani", "Edytuj", "Wypożycz" } }
-            };
 
         private Dictionary<string, string> tabTextToName = new Dictionary<string, string>
             {
@@ -579,80 +442,62 @@ namespace BibliotekaApp
             HideSensitiveColumns(dataGridViewForg);
         }
 
-        private void DisplayAllUsersInUserGrid() // -- Wyświetlenie wszystkich użytkowników w DataGridView
+        private void DisplayAllUsersInUserGrid()
         {
             var users = database.GetAllUsers();
-            DataTable userTable = CreateUserDataTable();
+            DataTable userTable = new DataTable();
+
+            userTable.Columns.Add("ID", typeof(int));
+            userTable.Columns.Add("Login");
+            userTable.Columns.Add("Imię");
+            userTable.Columns.Add("Nazwisko");
+            userTable.Columns.Add("Rola", typeof(int));
 
             foreach (var user in users)
             {
-                AddUserRow(userTable, user);
+                userTable.Rows.Add(user.Id, user.Login, user.Name, user.Surname, user.AccessLevel);
             }
 
             dataGridViewUser.DataSource = userTable;
-            SetPolishColumnHeaders(dataGridViewUser);
-            StyleDataGridView(dataGridViewUser);
             dataGridViewUser.AllowUserToAddRows = false;
-            dataGridViewUser.ReadOnly = false;
-            HideSensitiveColumns(dataGridViewForg);
-            if (!dataGridViewUser.Columns.Contains("Password"))
+            dataGridViewUser.ReadOnly = true;
+
+            // Dodaj przycisk "Edytuj"
+            if (!dataGridViewUser.Columns.Contains("Edit"))
             {
                 var buttonColumn = new DataGridViewButtonColumn
                 {
-                    Name = "Password",
-                    HeaderText = "Hasło",
-                    Text = "Zmień hasło",
+                    Name = "Edit",
+                    HeaderText = "Akcje",
+                    Text = "Edytuj",
                     UseColumnTextForButtonValue = true
                 };
                 dataGridViewUser.Columns.Add(buttonColumn);
+            }
+
+            // Ukryj inne kolumny jeśli istnieją
+            foreach (DataGridViewColumn col in dataGridViewUser.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
 
         private void dataGridViewUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewUser.Columns[e.ColumnIndex].Name == "Password" && e.RowIndex >= 0)
+            if (dataGridViewUser.Columns[e.ColumnIndex].Name == "Edit" && e.RowIndex >= 0)
             {
                 int userId = Convert.ToInt32(dataGridViewUser.Rows[e.RowIndex].Cells["ID"].Value);
-                using var form = new ResetPasswordForm(userId);
-                var result = form.ShowDialog();
-
-                if (result == DialogResult.OK)
+                var user = database.FindUserById(userId);
+                if (user != null)
                 {
-                    MessageBox.Show("Hasło zostało zmienione.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var profileForm = new UserProfileForm(user);
+                    profileForm.ShowDialog();
+
+                    // Odśwież dane po edycji
+                    DisplayAllUsersInUserGrid();
                 }
             }
         }
-
-
-        public void UpdateUser(UserDetailsDto user) // -- Aktualizacja danych użytkownika
-        {
-            try
-            {
-                database.ChangeUserData(
-                    userId: user.Id,
-                    login: user.Login,
-                    password: user.Password,
-                    name: user.Name,
-                    surname: user.Surname,
-                    city: user.City,
-                    postNumber: user.PostNumber,
-                    street: user.Street,
-                    propertyNumber: user.PropertyNumber,
-                    apartmentNumber: user.ApartmentNumber ?? 0,
-                    pesel: user.Pesel,
-                    dateOfBirth: user.DateOfBirth,
-                    sex: user.Sex ?? 'M',
-                    email: user.Email,
-                    phoneNumber: user.PhoneNumber,
-                    accessLevel: user.AccessLevel
-                );
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Błąd podczas aktualizacji użytkownika: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         public void DisplayUsersDependingOnLogin() // -- Wyświetlenie użytkowników w zależności od loginu
         {
             string login = txtUserLogin.Text.Trim();
@@ -682,11 +527,6 @@ namespace BibliotekaApp
             dataGridViewUsers.AllowUserToAddRows = false;
             dataGridViewUsers.ReadOnly = true;
             HideSensitiveColumns(dataGridViewUsers);
-        }
-
-        private void labelLoggedUser_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
