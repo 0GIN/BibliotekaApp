@@ -118,779 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 13</value>
+  </data>
+  <data name="ImieLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 39</value>
+  </data>
+  <data name="lblPermissions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="comboBoxRoleAssign.Items" xml:space="preserve">
+    <value>-</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1266, 597</value>
   </data>
-  <data name="&gt;&gt;txtStreet.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="&gt;&gt;txtCity.Name" xml:space="preserve">
-    <value>txtCity</value>
-  </data>
-  <data name="UlicaLabel.Text" xml:space="preserve">
-    <value>Ulica:</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNewRole.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtSurname.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="txtStreet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 23</value>
-  </data>
-  <data name="&gt;&gt;PeselLabel.Name" xml:space="preserve">
-    <value>PeselLabel</value>
-  </data>
-  <data name="&gt;&gt;dtpDateOfBirth.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;labelRoleName.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnFindForgottenUser.Name" xml:space="preserve">
-    <value>btnFindForgottenUser</value>
-  </data>
-  <data name="NumerUlicyLabel.Text" xml:space="preserve">
-    <value>Numer ulicy:</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 17</value>
-  </data>
-  <data name="&gt;&gt;EmailLabel.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;lblRoleList.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ImieLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;Zapomniani.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtSurname.Name" xml:space="preserve">
-    <value>txtSurname</value>
-  </data>
-  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevel.Name" xml:space="preserve">
-    <value>comboBoxAccessLevel</value>
-  </data>
-  <data name="&gt;&gt;PeselLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnSearch.Text" xml:space="preserve">
-    <value>Wyszukaj</value>
-  </data>
-  <data name="tabPage6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="&gt;&gt;txtNewRoleName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cmbSex.Items1" xml:space="preserve">
-    <value>M</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSearchBy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabUprawnienia.Name" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtNewRoleName.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="comboBoxAccessLevel.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblUserAssign.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="comboBoxAccessLevels.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="dataGridViewUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1231, 79</value>
-  </data>
-  <data name="&gt;&gt;MiastoLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;btnAddRole.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;btnDisplayUsers.Name" xml:space="preserve">
-    <value>btnDisplayUsers</value>
-  </data>
-  <data name="logoutbtn.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="clbPermissions.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="txtLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtPesel.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="NumerLokaluLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 15</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="btnSaveRole.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="cmbSex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
-  </data>
-  <data name="ImieLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 15</value>
-  </data>
-  <data name="txtUserId.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;labelRoleName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtUserIdEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 14</value>
-  </data>
-  <data name="comboBoxAccessLevels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 35</value>
-  </data>
-  <data name="MiastoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 15</value>
-  </data>
-  <data name="&gt;&gt;listBoxRoles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DataUrodzeniaLabel.Text" xml:space="preserve">
-    <value>Data urodzenia:</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Wpisz ID użytkownika:</value>
-  </data>
-  <data name="comboBoxAccessLevel.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtHaslo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 40</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogin.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnSaveRole.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="dtpDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 231</value>
-  </data>
-  <data name="btnSavePermissions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 289</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtUserLoginddd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage7.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblPermissions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 20</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 15</value>
-  </data>
-  <data name="&gt;&gt;DataUrodzeniaLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;Zapomniani.Name" xml:space="preserve">
-    <value>Zapomniani</value>
-  </data>
-  <data name="&gt;&gt;btnAddRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lista.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtPropertyNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="clbPermissions.Items" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="txtForgetUserId.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;clbPermissions.Name" xml:space="preserve">
-    <value>clbPermissions</value>
-  </data>
-  <data name="&gt;&gt;cmbSex.Name" xml:space="preserve">
-    <value>cmbSex</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 280</value>
-  </data>
-  <data name="btnDisplayUsers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnForgetUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;LoginLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="txtPostNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;btnProfile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;NumerUlicyLabel.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="comboBoxSearchBy.Items" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="&gt;&gt;txtStreet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Wypożycz.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="btnSavePermissions.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="logoutbtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1174, 0</value>
-  </data>
-  <data name="comboBoxAccessLevels.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblRoleList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="dataGridViewForg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1228, 513</value>
-  </data>
-  <data name="&gt;&gt;txtUserIdEdit.Name" xml:space="preserve">
-    <value>txtUserIdEdit</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="&gt;&gt;btnSavePermissions.Name" xml:space="preserve">
-    <value>btnSavePermissions</value>
-  </data>
-  <data name="btnFindForgottenUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;btnForgetUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtSurname.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;logoutbtn.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;KodPocztowyLabel.Name" xml:space="preserve">
-    <value>KodPocztowyLabel</value>
-  </data>
-  <data name="&gt;&gt;btnFindUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRoleList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage7.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 37</value>
-  </data>
-  <data name="&gt;&gt;labelLoggedUser.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="txtPropertyNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;txtUserLoginddd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSaveRole.Name" xml:space="preserve">
-    <value>btnSaveRole</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUser.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="lblUserAssign.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="UlicaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 15</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1228, 94</value>
-  </data>
-  <data name="comboBoxSearchBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="&gt;&gt;lblPermissions.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;btnAssignRole.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="TelefonLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 15</value>
-  </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnForgetUser.Name" xml:space="preserve">
-    <value>btnForgetUser</value>
-  </data>
-  <data name="tabUprawnienia.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="clbPermissions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 50</value>
-  </data>
-  <data name="&gt;&gt;comboBoxUsers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtForgetUserId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUserLoginddd.Name" xml:space="preserve">
-    <value>txtUserLoginddd</value>
-  </data>
-  <data name="lblUserAssign.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 20</value>
-  </data>
-  <data name="clbPermissions.Items2" xml:space="preserve">
-    <value>Zapomnij</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogina.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabUprawnienia.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRoleAssign.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="txtNewRoleName.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnSavePermissions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;loggedInLogin.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnAssignRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 130</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;UlicaLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="listBoxRoles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 50</value>
-  </data>
-  <data name="btnFindUserByLogina.Location" type="System.Drawing.Point, System.Drawing">
-    <value>656, 265</value>
-  </data>
-  <data name="&gt;&gt;TelefonLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="comboBoxAccessLevel.AutoCompleteCustomSource1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
   <data name="TelefonLabel.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;Wypożycz.Name" xml:space="preserve">
-    <value>Wypożycz</value>
-  </data>
-  <data name="&gt;&gt;btnSearchUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="&gt;&gt;Zapomnij.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="NumerUlicyLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 15</value>
-  </data>
-  <data name="&gt;&gt;txtPostNumber.Name" xml:space="preserve">
-    <value>txtPostNumber</value>
-  </data>
-  <data name="&gt;&gt;PlecLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnAddUser.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="clbPermissions.Items4" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <data name="KodPocztowyLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 15</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRoleAssign.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>tabUprawnienia</value>
   </data>
-  <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
-    <value>txtEmail</value>
-  </data>
-  <data name="&gt;&gt;btnFindUser.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="ImieLabel.Text" xml:space="preserve">
-    <value>Imię:</value>
-  </data>
-  <data name="btnAddUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="txtForgetUserId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="&gt;&gt;txtPesel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;btnSaveRole.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="Lista.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="&gt;&gt;LoginLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;KodPocztowyLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtCity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAddRole.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="DataUrodzeniaLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtCity.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="labelRoleName.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtUserId.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;EmailLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cmbSex.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="comboBoxSearchBy.Items2" xml:space="preserve">
-    <value>Nazwisko</value>
-  </data>
-  <data name="&gt;&gt;btnSavePermissions.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="MiastoLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="clbPermissions.Items3" xml:space="preserve">
-    <value>Zapomniani</value>
-  </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 12</value>
-  </data>
-  <data name="&gt;&gt;txtUserLogin.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ImieLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnAddRole.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 34</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Wyświetl liste zapomnianych użytkowników:</value>
-  </data>
-  <data name="dataGridViewUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 43</value>
-  </data>
-  <data name="&gt;&gt;KodPocztowyLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="btnDisplayUsers.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevels.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="MiastoLabel.Text" xml:space="preserve">
+    <value>Miasto:</value>
   </data>
   <data name="comboBoxAccessLevel.AutoCompleteCustomSource2" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="NumerUlicyLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
   </data>
-  <data name="dtpDateOfBirth.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+  <data name="btnFindUserByLogina.Location" type="System.Drawing.Point, System.Drawing">
+    <value>656, 265</value>
   </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1242, 580</value>
-  </data>
-  <data name="txtSurname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 62</value>
-  </data>
-  <data name="UlicaLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Zapomnij</value>
-  </data>
-  <data name="&gt;&gt;txtStreet.Name" xml:space="preserve">
-    <value>txtStreet</value>
-  </data>
-  <data name="btnSearchUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 7</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>ID:</value>
-  </data>
-  <data name="&gt;&gt;NumerLokaluLabel.Name" xml:space="preserve">
-    <value>NumerLokaluLabel</value>
-  </data>
-  <data name="PlecLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 259</value>
-  </data>
-  <data name="btnDisplayUsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="comboBoxSearchBy.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="&gt;&gt;btnAssignRole.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;cmbSex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tabPage6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cmbSex.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;btnAddUser.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;btnFindForgottenUser.Parent" xml:space="preserve">
-    <value>Zapomniani</value>
-  </data>
-  <data name="txtUserIdEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 23</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>Zapomniani</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Wyszukaj ID</value>
-  </data>
-  <data name="&gt;&gt;DataUrodzeniaLabel.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;txtHaslo.Name" xml:space="preserve">
-    <value>txtHaslo</value>
-  </data>
-  <data name="comboBoxUsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 50</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblPermissions.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="dataGridViewUser.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
-  <data name="&gt;&gt;KodPocztowyLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxRoles.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="EmailLabel.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 36</value>
-  </data>
-  <data name="&gt;&gt;Zapomniani.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;Zapomnij.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtUserLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NumerLokaluLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;UlicaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 23</value>
+  </data>
+  <data name="txtStreet.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtNewRoleName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnDeleteRole_Click.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnFindUserByLogina.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;txtSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelRoleName.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUser.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="&gt;&gt;comboBoxUsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmailLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 283</value>
+  </data>
+  <data name="lblUserFound.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
+  <data name="&gt;&gt;lblPermissions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PlecLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 15</value>
+  <data name="comboBoxAccessLevels.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnAddUser.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtStreet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 134</value>
+  <data name="DataUrodzeniaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="txtUserId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 6</value>
+  <data name="comboBoxRoleAssign.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="DataUrodzeniaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 15</value>
   </data>
   <data name="&gt;&gt;Lista.Name" xml:space="preserve">
     <value>Lista</value>
@@ -898,1423 +221,2214 @@
   <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;Edytuj.Name" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="DataUrodzeniaLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;logoutbtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnFindForgottenUser.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="PlecLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="UlicaLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 137</value>
-  </data>
-  <data name="&gt;&gt;UlicaLabel.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUser.Name" xml:space="preserve">
-    <value>dataGridViewUser</value>
-  </data>
-  <data name="&gt;&gt;txtLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 6</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRoleAssign.Name" xml:space="preserve">
-    <value>comboBoxRoleAssign</value>
-  </data>
-  <data name="tabPage7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="&gt;&gt;txtUserLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevels.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;btnSavePermissions.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="clbPermissions.Items1" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="&gt;&gt;ImieLabel.Name" xml:space="preserve">
-    <value>ImieLabel</value>
-  </data>
-  <data name="lblNewRole.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="LoginLabel.Text" xml:space="preserve">
-    <value>Login:</value>
-  </data>
-  <data name="&gt;&gt;tabPage6.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="ImieLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 39</value>
-  </data>
-  <data name="&gt;&gt;NumerUlicyLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;nudApartmentNumber.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="KodPocztowyLabel.Text" xml:space="preserve">
-    <value>Kod pocztowy:</value>
-  </data>
-  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnDisplayUsers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
-    <value>txtSearch</value>
-  </data>
-  <data name="&gt;&gt;Zapomnij.Name" xml:space="preserve">
-    <value>Zapomnij</value>
-  </data>
-  <data name="labelLoggedUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 0</value>
-  </data>
-  <data name="comboBoxAccessLevel.AutoCompleteCustomSource" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dtpDateOfBirth.Name" xml:space="preserve">
-    <value>dtpDateOfBirth</value>
-  </data>
-  <data name="comboBoxAccessLevel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="comboBoxAccessLevels.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 23</value>
   </data>
-  <data name="&gt;&gt;txtPhoneNumber.Name" xml:space="preserve">
-    <value>txtPhoneNumber</value>
+  <data name="&gt;&gt;clbPermissions.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;Dodaj.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;comboBoxRoleAssign.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="&gt;&gt;EmailLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSearchBy.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="loggedInLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 0</value>
-  </data>
-  <data name="dataGridViewForg.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnAssignRole.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;NumerUlicyLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;LoginLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblNewRole.Name" xml:space="preserve">
-    <value>lblNewRole</value>
+  <data name="&gt;&gt;txtUserIdEdit.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="txtPostNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 23</value>
+  <data name="txtUserId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 6</value>
   </data>
-  <data name="KodPocztowyLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 113</value>
+  <data name="NumerUlicyLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 162</value>
   </data>
-  <data name="PeselLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 210</value>
-  </data>
-  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUserIdEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LoginLabel.Name" xml:space="preserve">
-    <value>LoginLabel</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 10</value>
-  </data>
-  <data name="NumerLokaluLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 186</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="&gt;&gt;txtPropertyNumber.Name" xml:space="preserve">
-    <value>txtPropertyNumber</value>
-  </data>
-  <data name="nudApartmentNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 23</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSearchBy.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="&gt;&gt;EmailLabel.Name" xml:space="preserve">
-    <value>EmailLabel</value>
-  </data>
-  <data name="DataUrodzeniaLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 235</value>
-  </data>
-  <data name="&gt;&gt;txtUserLogin.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="btnAddRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;txtUserId.Name" xml:space="preserve">
-    <value>txtUserId</value>
-  </data>
-  <data name="EmailLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 283</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="comboBoxSearchBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 7</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="txtUserIdEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;btnAddUser.Name" xml:space="preserve">
-    <value>btnAddUser</value>
-  </data>
-  <data name="&gt;&gt;btnAddUser.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 23</value>
-  </data>
-  <data name="&gt;&gt;loggedInLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Zapomnij.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabUprawnienia.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="&gt;&gt;tabPage7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtUserLogin.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;loggedInLogin.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="dataGridViewUsers.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
+  <data name="&gt;&gt;btnProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImieLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="tabPage6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 36</value>
+  </data>
+  <data name="&gt;&gt;txtHaslo.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtHaslo.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnAddRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 290</value>
+  <data name="&gt;&gt;nudApartmentNumber.Name" xml:space="preserve">
+    <value>nudApartmentNumber</value>
   </data>
-  <data name="txtPropertyNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 23</value>
+  <data name="lblRoleList.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NazwiskoLabel.Text" xml:space="preserve">
-    <value>Nazwisko:</value>
+  <data name="PlecLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 259</value>
   </data>
-  <data name="&gt;&gt;txtUserLoginddd.ZOrder" xml:space="preserve">
+  <data name="comboBoxSearchBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 7</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUsers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 15</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="btnFindForgottenUser.Text" xml:space="preserve">
+    <value>Wyświetl</value>
+  </data>
+  <data name="DataUrodzeniaLabel.Text" xml:space="preserve">
+    <value>Data urodzenia:</value>
+  </data>
+  <data name="&gt;&gt;tabPage7.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtPostNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridView2.Name" xml:space="preserve">
     <value>dataGridView2</value>
   </data>
-  <data name="&gt;&gt;checkedListBoxUprawnienia.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
+  <data name="&gt;&gt;txtPropertyNumber.Parent" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="&gt;&gt;txtSurname.ZOrder" xml:space="preserve">
-    <value>25</value>
+  <data name="&gt;&gt;btnAddUser.Parent" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>Wyszukaj Login</value>
+  <data name="&gt;&gt;ImieLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="&gt;&gt;Dodaj.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewForg.Name" xml:space="preserve">
-    <value>dataGridViewForg</value>
-  </data>
-  <data name="&gt;&gt;Wypożycz.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="comboBoxSearchBy.Items3" xml:space="preserve">
-    <value>PESEL</value>
-  </data>
-  <data name="&gt;&gt;Edytuj.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtPhoneNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;PlecLabel.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="comboBoxAccessLevel.TabIndex" type="System.Int32, mscorlib">
-    <value>67</value>
-  </data>
-  <data name="&gt;&gt;Zapomnij.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="checkedListBoxUprawnienia.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnSaveRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 210</value>
+  <data name="&gt;&gt;lblRoleList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="NazwiskoLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;nudApartmentNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="&gt;&gt;Edytuj.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnFindUserByLogina.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>BibliotekaApp</value>
-  </data>
-  <data name="&gt;&gt;UlicaLabel.Name" xml:space="preserve">
-    <value>UlicaLabel</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkedListBoxUprawnienia.Name" xml:space="preserve">
-    <value>checkedListBoxUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;lblNewRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabUprawnienia.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="txtPostNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 110</value>
-  </data>
-  <data name="dataGridViewUser.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="dtpDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
-  </data>
-  <data name="Edytuj.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProfile.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnAssignRole.Name" xml:space="preserve">
-    <value>btnAssignRole</value>
-  </data>
-  <data name="Wypożycz.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="txtUserId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="btnAddUser.Text" xml:space="preserve">
-    <value>DODAJ</value>
-  </data>
-  <data name="&gt;&gt;loggedInLogin.Name" xml:space="preserve">
-    <value>loggedInLogin</value>
-  </data>
   <data name="txtName.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="btnFindUserByLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;txtStreet.Parent" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="Edytuj.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
   </data>
-  <data name="&gt;&gt;UlicaLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;comboBoxUsers.Name" xml:space="preserve">
+    <value>comboBoxUsers</value>
+  </data>
+  <data name="&gt;&gt;NazwiskoLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabPage7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Wyszukaj Login</value>
+  </data>
+  <data name="&gt;&gt;btnDisplayUsers.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.Name" xml:space="preserve">
+    <value>EmailLabel</value>
+  </data>
+  <data name="&gt;&gt;Dodaj.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNewRole.Name" xml:space="preserve">
+    <value>lblNewRole</value>
   </data>
   <data name="PlecLabel.Text" xml:space="preserve">
     <value>Płeć</value>
   </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;txtUserId.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnFindForgottenUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtPostNumber.Parent" xml:space="preserve">
+  <data name="&gt;&gt;NumerUlicyLabel.Parent" xml:space="preserve">
     <value>Dodaj</value>
   </data>
-  <data name="TelefonLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="PeselLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 210</value>
   </data>
-  <data name="&gt;&gt;txtLogin.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;txtPropertyNumber.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="comboBoxSearchBy.Items1" xml:space="preserve">
-    <value>Imię</value>
-  </data>
-  <data name="&gt;&gt;lblUserAssign.Parent" xml:space="preserve">
+  <data name="&gt;&gt;comboBoxUsers.Parent" xml:space="preserve">
     <value>tabUprawnienia</value>
-  </data>
-  <data name="btnFindUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 6</value>
-  </data>
-  <data name="tabPage7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;txtUserIdEdit.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="ImieLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;txtUserLogin.Name" xml:space="preserve">
-    <value>txtUserLogin</value>
   </data>
   <data name="&gt;&gt;Lista.Parent" xml:space="preserve">
     <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;comboBoxUsers.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;comboBoxAccessLevel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtPostNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 110</value>
   </data>
-  <data name="&gt;&gt;btnForgetUser.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="ImieLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
   </data>
-  <data name="&gt;&gt;txtStreet.ZOrder" xml:space="preserve">
-    <value>20</value>
+  <data name="txtPropertyNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="&gt;&gt;tabPage7.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;txtNewRoleName.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
-    <value>btnSearch</value>
-  </data>
-  <data name="&gt;&gt;txtHaslo.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;MiastoLabel.Name" xml:space="preserve">
-    <value>MiastoLabel</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelLoggedUser.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnFindUserByLogina.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnDisplayUsers.ZOrder" xml:space="preserve">
+  <data name="nudApartmentNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 23</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 34</value>
+  </data>
+  <data name="clbPermissions.Items2" xml:space="preserve">
+    <value>Zapomnij</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridViewUser.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="tabUprawnienia.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="dataGridViewUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1231, 79</value>
+  </data>
+  <data name="&gt;&gt;nudApartmentNumber.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Edytuj.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="PeselLabel.Text" xml:space="preserve">
+    <value>Pesel:</value>
+  </data>
+  <data name="&gt;&gt;txtPhoneNumber.Name" xml:space="preserve">
+    <value>txtPhoneNumber</value>
+  </data>
+  <data name="txtNewRoleName.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtStreet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAssignRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUserAssign.Name" xml:space="preserve">
+    <value>lblUserAssign</value>
+  </data>
+  <data name="comboBoxAccessLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1101, 9</value>
+  </data>
+  <data name="txtPropertyNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 159</value>
+  </data>
+  <data name="btnSearchUser.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>Zapomniani</value>
+  </data>
+  <data name="&gt;&gt;lblUserFound.Name" xml:space="preserve">
+    <value>lblUserFound</value>
+  </data>
+  <data name="&gt;&gt;PeselLabel.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;btnAddRole.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="dataGridViewForg.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtHaslo.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;tabUprawnienia.Name" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dtpDateOfBirth.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="cmbSex.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TelefonLabel.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;btnForgetUser.Name" xml:space="preserve">
+    <value>btnForgetUser</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginSearch.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="&gt;&gt;txtForgetUserId.Parent" xml:space="preserve">
     <value>Zapomnij</value>
   </data>
-  <data name="btnFindUserByLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lblUserAssign.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="Zapomnij.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Zaktualizuj</value>
-  </data>
-  <data name="txtSurname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 23</value>
-  </data>
-  <data name="Lista.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NumerUlicyLabel.Name" xml:space="preserve">
-    <value>NumerUlicyLabel</value>
+  <data name="&gt;&gt;txtUserLoginddd.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="NumerLokaluLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txtUserIdEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
   </data>
-  <data name="&gt;&gt;btnProfile.Type" xml:space="preserve">
+  <data name="txtUserLoginddd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Edytuj.Name" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="&gt;&gt;btnAssignRole.Name" xml:space="preserve">
+    <value>btnAssignRole</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogin.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NumerLokaluLabel.Text" xml:space="preserve">
-    <value>Numer lokalu:</value>
+  <data name="loggedInLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 0</value>
   </data>
-  <data name="&gt;&gt;txtForgetUserId.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRoleAssign.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 15</value>
-  </data>
-  <data name="&gt;&gt;txtCity.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="btnFindUserByLogina.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="txtPesel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 23</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;Zapomnij.Name" xml:space="preserve">
+    <value>Zapomnij</value>
   </data>
   <data name="&gt;&gt;txtNewRoleName.Name" xml:space="preserve">
     <value>txtNewRoleName</value>
   </data>
-  <data name="&gt;&gt;PlecLabel.Name" xml:space="preserve">
-    <value>PlecLabel</value>
+  <data name="&gt;&gt;EmailLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="UlicaLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="NazwiskoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 15</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;comboBoxAccessLevel.Name" xml:space="preserve">
+    <value>comboBoxAccessLevel</value>
   </data>
-  <data name="&gt;&gt;comboBoxSearchBy.Name" xml:space="preserve">
-    <value>comboBoxSearchBy</value>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>Lista</value>
   </data>
-  <data name="nudApartmentNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+  <data name="&gt;&gt;txtSurname.Name" xml:space="preserve">
+    <value>txtSurname</value>
   </data>
-  <data name="btnDisplayUsers.Text" xml:space="preserve">
-    <value>Wyświetl użytkowników</value>
-  </data>
-  <data name="&gt;&gt;txtHaslo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUsers.Name" xml:space="preserve">
-    <value>dataGridViewUsers</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;txtPostNumber.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="comboBoxAccessLevels.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 10</value>
-  </data>
-  <data name="txtHaslo.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="txtPhoneNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 23</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;clbPermissions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImieLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblPermissions.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="clbPermissions.Items6" xml:space="preserve">
-    <value>Uprawnienia</value>
-  </data>
-  <data name="txtPesel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 207</value>
-  </data>
-  <data name="lblPermissions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 11</value>
-  </data>
-  <data name="cmbSex.Items" xml:space="preserve">
-    <value>K</value>
-  </data>
-  <data name="btnFindForgottenUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 5</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevels.Name" xml:space="preserve">
-    <value>comboBoxAccessLevels</value>
-  </data>
-  <data name="comboBoxUsers.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnAddUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 333</value>
-  </data>
-  <data name="&gt;&gt;NazwiskoLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="txtPesel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUsers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cmbSex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 256</value>
-  </data>
-  <data name="&gt;&gt;txtLogin.Name" xml:space="preserve">
-    <value>txtLogin</value>
-  </data>
-  <data name="LoginLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;loggedInLogin.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="tabPage7.Text" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="PeselLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblPermissions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProfile.Name" xml:space="preserve">
-    <value>btnProfile</value>
-  </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1228, 78</value>
-  </data>
-  <data name="&gt;&gt;cmbSex.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewForg.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnFindUser.Text" xml:space="preserve">
-    <value>Wyszukaj</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1174, 0</value>
-  </data>
-  <data name="btnFindUser.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="nudApartmentNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 184</value>
-  </data>
-  <data name="&gt;&gt;checkedListBoxUprawnienia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="&gt;&gt;lblRoleList.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Login:</value>
-  </data>
-  <data name="&gt;&gt;logoutbtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PlecLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="comboBoxAccessLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1101, 9</value>
-  </data>
-  <data name="&gt;&gt;labelLoggedUser.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Dodaj.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSaveRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataUrodzeniaLabel.Name" xml:space="preserve">
-    <value>DataUrodzeniaLabel</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;txtPostNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1081, 12</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogina.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpDateOfBirth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DataUrodzeniaLabel.Parent" xml:space="preserve">
     <value>Dodaj</value>
   </data>
-  <data name="KodPocztowyLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;Zapomnij.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="loggedInLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
+  <data name="&gt;&gt;btnFindForgottenUser.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="lblNewRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>ID:</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnFindForgottenUser.Text" xml:space="preserve">
-    <value>Wyświetl</value>
-  </data>
-  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 23</value>
-  </data>
-  <data name="txtPropertyNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 159</value>
-  </data>
-  <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;LoginLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 15</value>
-  </data>
-  <data name="dataGridView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;lblPermissions.Name" xml:space="preserve">
-    <value>lblPermissions</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="btnProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="txtStreet.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="tabUprawnienia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="Dodaj.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="txtUserLoginddd.Location" type="System.Drawing.Point, System.Drawing">
     <value>51, 8</value>
   </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="&gt;&gt;sqliteCommand1.Type" xml:space="preserve">
+    <value>Microsoft.Data.Sqlite.SqliteCommand, Microsoft.Data.Sqlite, Culture=neutral, PublicKeyToken=adb9793829ddae60</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="txtCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 23</value>
+  </data>
+  <data name="txtUserIdEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 14</value>
+  </data>
+  <data name="&gt;&gt;txtPhoneNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Zapomnij.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnFindUserByLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="txtPesel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 23</value>
+  </data>
+  <data name="&gt;&gt;Lista.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblUserFound.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ImieLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnSaveRole.Name" xml:space="preserve">
+    <value>btnSaveRole</value>
+  </data>
+  <data name="dtpDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 231</value>
+  </data>
+  <data name="&gt;&gt;NumerUlicyLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginSearch.Name" xml:space="preserve">
+    <value>txtUserLoginSearch</value>
+  </data>
   <data name="NumerUlicyLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnFindUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="txtPostNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 23</value>
   </data>
-  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
-    <value>tabPage4</value>
+  <data name="&gt;&gt;txtUserId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dataGridViewForg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 36</value>
+  </data>
+  <data name="txtSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 62</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNewRoleName.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="txtStreet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 23</value>
+  </data>
+  <data name="&gt;&gt;txtUserLogin.Name" xml:space="preserve">
+    <value>txtUserLogin</value>
+  </data>
+  <data name="&gt;&gt;btnFindUser.Name" xml:space="preserve">
+    <value>btnFindUser</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="MiastoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 89</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginddd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;labelRoleName.Name" xml:space="preserve">
+    <value>labelRoleName</value>
+  </data>
+  <data name="&gt;&gt;Dodaj.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;nudApartmentNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage7.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUser.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LoginLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="dataGridViewUsers.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 35</value>
   </data>
-  <data name="&gt;&gt;btnAddUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NazwiskoLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;clbPermissions.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;txtUserLoginddd.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="btnFindUserByLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 8</value>
-  </data>
-  <data name="&gt;&gt;txtPropertyNumber.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="txtUserLoginddd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="btnFindUserByLogin.Text" xml:space="preserve">
-    <value>Wyszukaj</value>
-  </data>
-  <data name="&gt;&gt;dtpDateOfBirth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dataGridViewUsers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="MiastoLabel.Text" xml:space="preserve">
-    <value>Miasto:</value>
-  </data>
-  <data name="&gt;&gt;txtUserIdEdit.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;labelRoleName.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="comboBoxAccessLevels.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TelefonLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 307</value>
-  </data>
-  <data name="LoginLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;labelLoggedUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MiastoLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Wypożycz.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 15</value>
-  </data>
-  <data name="tabPage6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="PeselLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 15</value>
   </data>
-  <data name="btnSearchUser.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+  <data name="&gt;&gt;btnFindUserByLogin.Parent" xml:space="preserve">
+    <value>Lista</value>
   </data>
-  <data name="&gt;&gt;TelefonLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelLoggedUser.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Zapomnij</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFindUser.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="Lista.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="NazwiskoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 65</value>
+  </data>
+  <data name="&gt;&gt;KodPocztowyLabel.Name" xml:space="preserve">
+    <value>KodPocztowyLabel</value>
+  </data>
+  <data name="&gt;&gt;Dodaj.Name" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUser.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="btnSaveRole.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KodPocztowyLabel.Text" xml:space="preserve">
+    <value>Kod pocztowy:</value>
+  </data>
+  <data name="btnSearchUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 7</value>
+  </data>
+  <data name="&gt;&gt;labelLoggedUser.Name" xml:space="preserve">
+    <value>labelLoggedUser</value>
+  </data>
+  <data name="comboBoxSearchBy.Items3" xml:space="preserve">
+    <value>PESEL</value>
+  </data>
+  <data name="clbPermissions.Items5" xml:space="preserve">
+    <value>Wypożycz</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmbSex.Text" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="clbPermissions.Items4" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="lblUserAssign.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 20</value>
+  </data>
+  <data name="btnDisplayUsers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="comboBoxAccessLevels.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUser.Name" xml:space="preserve">
+    <value>btnSearchUser</value>
+  </data>
+  <data name="&gt;&gt;txtUserIdEdit.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="&gt;&gt;NazwiskoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnFindUserByLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;Edytuj.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnForgetUser.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;loggedInLogin.Name" xml:space="preserve">
+    <value>loggedInLogin</value>
+  </data>
+  <data name="txtSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 23</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Wyświetl liste zapomnianych użytkowników:</value>
+  </data>
+  <data name="&gt;&gt;PlecLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PlecLabel.Parent" xml:space="preserve">
     <value>Dodaj</value>
   </data>
-  <data name="&gt;&gt;tabPage6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtSurname.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="cmbSex.Text" xml:space="preserve">
-    <value>Wybierz</value>
-  </data>
-  <data name="lblRoleList.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tabPage7.Name" xml:space="preserve">
-    <value>tabPage7</value>
-  </data>
-  <data name="txtForgetUserId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 7</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;comboBoxUsers.Name" xml:space="preserve">
-    <value>comboBoxUsers</value>
-  </data>
-  <data name="lblRoleList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="Wypożycz.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="&gt;&gt;DataUrodzeniaLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSearchUser.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="clbPermissions.Items5" xml:space="preserve">
-    <value>Wypożycz</value>
-  </data>
-  <data name="&gt;&gt;lblNewRole.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="NumerLokaluLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="checkedListBoxUprawnienia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 82</value>
-  </data>
-  <data name="dataGridViewForg.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;NumerLokaluLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="NazwiskoLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogin.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="comboBoxAccessLevels.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnFindUser.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 15</value>
-  </data>
-  <data name="&gt;&gt;Edytuj.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 5</value>
-  </data>
-  <data name="&gt;&gt;txtPhoneNumber.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="NazwiskoLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 65</value>
-  </data>
-  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 13</value>
-  </data>
-  <data name="&gt;&gt;PeselLabel.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="btnForgetUser.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listBoxRoles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUsers.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;listBoxRoles.Name" xml:space="preserve">
-    <value>listBoxRoles</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="dataGridViewUsers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1228, 514</value>
-  </data>
-  <data name="&gt;&gt;btnSavePermissions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="MiastoLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;Dodaj.Name" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="EmailLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;txtPesel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelRoleName.Name" xml:space="preserve">
-    <value>labelRoleName</value>
-  </data>
   <data name="labelRoleName.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 31</value>
   </data>
-  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 6</value>
   </data>
-  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
-    <value>btnSave</value>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>Zapomnij</value>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;logoutbtn.Name" xml:space="preserve">
-    <value>logoutbtn</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PeselLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtSurname.Parent" xml:space="preserve">
     <value>Dodaj</value>
-  </data>
-  <data name="&gt;&gt;lblRoleList.Name" xml:space="preserve">
-    <value>lblRoleList</value>
-  </data>
-  <data name="&gt;&gt;txtPhoneNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
-    <value>txtName</value>
-  </data>
-  <data name="&gt;&gt;checkedListBoxUprawnienia.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="lblUserAssign.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="&gt;&gt;txtLogin.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 10</value>
-  </data>
-  <data name="PeselLabel.Text" xml:space="preserve">
-    <value>Pesel:</value>
   </data>
   <data name="&gt;&gt;txtForgetUserId.Name" xml:space="preserve">
     <value>txtForgetUserId</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 29</value>
-  </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;NazwiskoLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="EmailLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="txtNewRoleName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 260</value>
-  </data>
-  <data name="txtPhoneNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 304</value>
-  </data>
-  <data name="&gt;&gt;MiastoLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;comboBoxUsers.Parent" xml:space="preserve">
-    <value>tabUprawnienia</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevels.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DataUrodzeniaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 15</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LoginLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 15</value>
-  </data>
-  <data name="&gt;&gt;NumerLokaluLabel.Parent" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="comboBoxAccessLevel.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Dodaj.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="&gt;&gt;dataGridViewForg.Parent" xml:space="preserve">
-    <value>Zapomniani</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="labelLoggedUser.TabIndex" type="System.Int32, mscorlib">
+  <data name="loggedInLogin.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
-  </data>
-  <data name="btnForgetUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 6</value>
-  </data>
-  <data name="&gt;&gt;btnForgetUser.Parent" xml:space="preserve">
-    <value>Zapomnij</value>
-  </data>
-  <data name="PeselLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="UlicaLabel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="txtUserLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 8</value>
-  </data>
-  <data name="&gt;&gt;labelLoggedUser.Name" xml:space="preserve">
-    <value>labelLoggedUser</value>
-  </data>
-  <data name="&gt;&gt;clbPermissions.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 23</value>
-  </data>
-  <data name="&gt;&gt;Zapomniani.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lista.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUserId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUserAssign.Name" xml:space="preserve">
-    <value>lblUserAssign</value>
-  </data>
-  <data name="LoginLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 15</value>
-  </data>
-  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 23</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogin.Name" xml:space="preserve">
-    <value>btnFindUserByLogin</value>
-  </data>
-  <data name="btnAssignRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="dataGridViewUser.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="comboBoxRoleAssign.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 90</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 13</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TelefonLabel.Name" xml:space="preserve">
-    <value>TelefonLabel</value>
-  </data>
-  <data name="tabPage6.Text" xml:space="preserve">
-    <value>Zapomniani </value>
-  </data>
-  <data name="listBoxRoles.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="comboBoxRoleAssign.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="txtCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 86</value>
-  </data>
-  <data name="MiastoLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 89</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewForg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUserAssign.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="EmailLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 15</value>
-  </data>
-  <data name="&gt;&gt;btnSearchUser.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;TelefonLabel.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
-  <data name="KodPocztowyLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="NazwiskoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 15</value>
-  </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 6</value>
-  </data>
-  <data name="NumerUlicyLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 162</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;btnSearchUser.Name" xml:space="preserve">
-    <value>btnSearchUser</value>
-  </data>
-  <data name="lblNewRole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 230</value>
-  </data>
-  <data name="btnSaveRole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;txtPesel.Name" xml:space="preserve">
-    <value>txtPesel</value>
-  </data>
-  <data name="&gt;&gt;btnDisplayUsers.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;btnFindForgottenUser.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 43</value>
-  </data>
-  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1234, 552</value>
-  </data>
-  <data name="&gt;&gt;btnAssignRole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage6.Name" xml:space="preserve">
-    <value>tabPage6</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUsers.Parent" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewUser.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnFindUser.Name" xml:space="preserve">
-    <value>btnFindUser</value>
-  </data>
-  <data name="dataGridViewForg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 36</value>
-  </data>
-  <data name="txtUserLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
-  </data>
-  <data name="&gt;&gt;btnFindUserByLogina.Name" xml:space="preserve">
-    <value>btnFindUserByLogina</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="TelefonLabel.Text" xml:space="preserve">
-    <value>Telefon:</value>
-  </data>
-  <data name="&gt;&gt;comboBoxAccessLevel.Parent" xml:space="preserve">
-    <value>Edytuj</value>
-  </data>
-  <data name="Zapomniani.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="btnForgetUser.Text" xml:space="preserve">
-    <value>Zapomnij</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;tabUprawnienia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPhoneNumber.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;nudApartmentNumber.Name" xml:space="preserve">
-    <value>nudApartmentNumber</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Lista</value>
   </data>
-  <data name="Zapomniani.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NazwiskoLabel.Name" xml:space="preserve">
-    <value>NazwiskoLabel</value>
+  <data name="&gt;&gt;dataGridViewForg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtCity.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="&gt;&gt;txtPostNumber.Name" xml:space="preserve">
+    <value>txtPostNumber</value>
   </data>
-  <data name="&gt;&gt;nudApartmentNumber.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPhoneNumber.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBoxAccessLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;btnAddUser.Name" xml:space="preserve">
+    <value>btnAddUser</value>
+  </data>
+  <data name="&gt;&gt;clbPermissions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnDisplayUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;btnSavePermissions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxUprawnienia.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="txtPhoneNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="comboBoxSearchBy.Items1" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRoleName.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBoxSearchBy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtRoleName.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevels.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="dataGridViewForg.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewForg.Parent" xml:space="preserve">
+    <value>Zapomniani</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Wyszukaj ID</value>
+  </data>
+  <data name="&gt;&gt;Wypożycz.Name" xml:space="preserve">
+    <value>Wypożycz</value>
+  </data>
+  <data name="&gt;&gt;DataUrodzeniaLabel.Name" xml:space="preserve">
+    <value>DataUrodzeniaLabel</value>
+  </data>
+  <data name="&gt;&gt;ImieLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Lista.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="btnDeleteRole_Click.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 394</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteRole_Click.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;tabPage6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSavePermissions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 289</value>
+  </data>
+  <data name="&gt;&gt;KodPocztowyLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;tabUprawnienia.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage6.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 94</value>
+  </data>
+  <data name="clbPermissions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 50</value>
+  </data>
+  <data name="&gt;&gt;lblNewRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnFindForgottenUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;tabPage6.Name" xml:space="preserve">
+    <value>tabPage6</value>
+  </data>
+  <data name="&gt;&gt;logoutbtn.Name" xml:space="preserve">
+    <value>logoutbtn</value>
+  </data>
+  <data name="&gt;&gt;txtNewRoleName.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;Dodaj.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="clbPermissions.Items1" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="&gt;&gt;txtPostNumber.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="btnFindForgottenUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 5</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 15</value>
+  </data>
+  <data name="DataUrodzeniaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 235</value>
+  </data>
+  <data name="&gt;&gt;btnSearchUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1081, 12</value>
+  </data>
+  <data name="txtUserIdEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 23</value>
+  </data>
+  <data name="NumerLokaluLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PlecLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnSavePermissions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnFindUser.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="dataGridViewForg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 513</value>
+  </data>
+  <data name="&gt;&gt;labelLoggedUser.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblNewRole.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnAssignRole.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="dataGridViewUser.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 280</value>
+  </data>
+  <data name="&gt;&gt;clbPermissions.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogina.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;btnAssignRole.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;btnDisplayUsers.Name" xml:space="preserve">
+    <value>btnDisplayUsers</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginddd.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="logoutbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;btnSaveRole.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="cmbSex.Items1" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 91</value>
+  </data>
+  <data name="&gt;&gt;txtLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSaveRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 210</value>
+  </data>
+  <data name="btnFindUser.Text" xml:space="preserve">
+    <value>Wyszukaj</value>
+  </data>
+  <data name="MiastoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;listBoxRoles.Name" xml:space="preserve">
+    <value>listBoxRoles</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;btnFindUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnDeleteRole_Click.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="btnAddUser.Text" xml:space="preserve">
+    <value>DODAJ</value>
+  </data>
+  <data name="txtPostNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;dtpDateOfBirth.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogina.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 15</value>
+  </data>
+  <data name="dataGridViewUsers.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;btnForgetUser.Parent" xml:space="preserve">
+    <value>Zapomnij</value>
+  </data>
+  <data name="Wypożycz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;lblUserFound.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PlecLabel.Name" xml:space="preserve">
+    <value>PlecLabel</value>
+  </data>
+  <data name="labelLoggedUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 0</value>
+  </data>
+  <data name="btnAssignRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="dataGridViewUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 43</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;txtHaslo.Name" xml:space="preserve">
+    <value>txtHaslo</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevels.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="DataUrodzeniaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
+    <value>txtSearch</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 10</value>
+  </data>
+  <data name="&gt;&gt;NumerUlicyLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MiastoLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNewRole.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnForgetUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 6</value>
+  </data>
+  <data name="comboBoxAccessLevel.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TelefonLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="txtPropertyNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 23</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 6</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRoleAssign.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUser.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="ImieLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtLogin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblPermissions.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;TelefonLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TelefonLabel.Name" xml:space="preserve">
+    <value>TelefonLabel</value>
+  </data>
+  <data name="EmailLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtPostNumber.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NumerLokaluLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="comboBoxAccessLevel.Items2" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Zapomnij.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="TelefonLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 307</value>
+  </data>
+  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;lblPermissions.Name" xml:space="preserve">
+    <value>lblPermissions</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogina.Name" xml:space="preserve">
+    <value>btnFindUserByLogina</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
+  </data>
+  <data name="tabPage7.Text" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="&gt;&gt;Zapomnij.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="nudApartmentNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;Wypożycz.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="cmbSex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 256</value>
+  </data>
+  <data name="&gt;&gt;txtCity.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="UlicaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 137</value>
+  </data>
+  <data name="clbPermissions.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tabPage7.Name" xml:space="preserve">
+    <value>tabPage7</value>
+  </data>
+  <data name="&gt;&gt;lblUserAssign.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;tabPage7.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="btnFindUserByLogina.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="comboBoxAccessLevels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 35</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="comboBoxAccessLevel.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtUserId.Name" xml:space="preserve">
+    <value>txtUserId</value>
+  </data>
+  <data name="&gt;&gt;txtUserIdEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KodPocztowyLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 15</value>
+  </data>
+  <data name="&gt;&gt;listBoxRoles.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="ImieLabel.Text" xml:space="preserve">
+    <value>Imię:</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;cmbSex.Name" xml:space="preserve">
+    <value>cmbSex</value>
+  </data>
+  <data name="NumerLokaluLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 15</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NumerUlicyLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="txtUserId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="&gt;&gt;UlicaLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="comboBoxRoleAssign.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 90</value>
+  </data>
+  <data name="&gt;&gt;cmbSex.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 17</value>
+  </data>
+  <data name="txtStreet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 134</value>
+  </data>
+  <data name="&gt;&gt;sqliteCommand1.Name" xml:space="preserve">
+    <value>sqliteCommand1</value>
   </data>
   <data name="&gt;&gt;btnAddRole.Name" xml:space="preserve">
     <value>btnAddRole</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>pl-PL</value>
+  <data name="&gt;&gt;lblPermissions.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtUserIdEdit.Name" xml:space="preserve">
+    <value>txtUserIdEdit</value>
+  </data>
+  <data name="PlecLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 15</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewForg.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;NumerLokaluLabel.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="LoginLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 15</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnFindForgottenUser.Name" xml:space="preserve">
+    <value>btnFindForgottenUser</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 11</value>
+  </data>
+  <data name="txtUserLoginddd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;btnProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSaveRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabUprawnienia.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Zaktualizuj</value>
+  </data>
+  <data name="clbPermissions.Items6" xml:space="preserve">
+    <value>Uprawnienia</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="lblUserAssign.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;NumerLokaluLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="comboBoxAccessLevel.AutoCompleteCustomSource1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblUserFound.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;listBoxRoles.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="comboBoxUsers.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;btnFindForgottenUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LoginLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRoleAssign.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtStreet.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="txtSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="logoutbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1174, 0</value>
+  </data>
+  <data name="clbPermissions.Items3" xml:space="preserve">
+    <value>Zapomniani</value>
+  </data>
+  <data name="&gt;&gt;txtPesel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnFindUserByLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 8</value>
+  </data>
+  <data name="LoginLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 15</value>
+  </data>
+  <data name="&gt;&gt;txtSurname.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="cmbSex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 23</value>
+  </data>
+  <data name="&gt;&gt;txtHaslo.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;txtUserId.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="comboBoxUsers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 50</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPropertyNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblUserFound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 91</value>
+  </data>
+  <data name="btnFindForgottenUser.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmbSex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dataGridViewUsers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="txtRoleName.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteRole_Click.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;LoginLabel.Name" xml:space="preserve">
+    <value>LoginLabel</value>
+  </data>
+  <data name="lblNewRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 43</value>
+  </data>
+  <data name="btnFindUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 6</value>
+  </data>
+  <data name="txtUserId.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>Zapomniani </value>
+  </data>
+  <data name="comboBoxAccessLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="PeselLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="NumerUlicyLabel.Text" xml:space="preserve">
+    <value>Numer ulicy:</value>
+  </data>
+  <data name="btnForgetUser.Text" xml:space="preserve">
+    <value>Zapomnij</value>
+  </data>
+  <data name="EmailLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnFindUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteRole_Click.Name" xml:space="preserve">
+    <value>btnDeleteRole_Click</value>
+  </data>
+  <data name="&gt;&gt;nudApartmentNumber.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="checkedListBoxUprawnienia.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;KodPocztowyLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PeselLabel.Name" xml:space="preserve">
+    <value>PeselLabel</value>
+  </data>
+  <data name="&gt;&gt;txtForgetUserId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtUserLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 8</value>
+  </data>
+  <data name="&gt;&gt;txtLogin.Name" xml:space="preserve">
+    <value>txtLogin</value>
+  </data>
+  <data name="&gt;&gt;PeselLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="UlicaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogin.Name" xml:space="preserve">
+    <value>btnFindUserByLogin</value>
+  </data>
+  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="labelLoggedUser.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="cmbSex.Items" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="&gt;&gt;txtLogin.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;txtUserLogin.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnAddUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 333</value>
+  </data>
+  <data name="&gt;&gt;btnForgetUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSaveRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;Zapomniani.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Edytuj.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblRoleList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="&gt;&gt;txtCity.Name" xml:space="preserve">
+    <value>txtCity</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserByLogina.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnFindUserByLogin.Text" xml:space="preserve">
+    <value>Wyszukaj</value>
+  </data>
+  <data name="Zapomniani.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Wpisz ID użytkownika:</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevels.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnAssignRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 130</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1174, 0</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxUprawnienia.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ImieLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UlicaLabel.Name" xml:space="preserve">
+    <value>UlicaLabel</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;btnProfile.Name" xml:space="preserve">
+    <value>btnProfile</value>
+  </data>
+  <data name="UlicaLabel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;txtRoleName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="clbPermissions.Items" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;txtUserLogin.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 10</value>
+  </data>
+  <data name="&gt;&gt;Zapomniani.Name" xml:space="preserve">
+    <value>Zapomniani</value>
+  </data>
+  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 29</value>
+  </data>
+  <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 78</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevel.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="txtUserLoginSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;btnAssignRole.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;txtUserId.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;DataUrodzeniaLabel.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="txtPhoneNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 304</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1242, 580</value>
+  </data>
+  <data name="LoginLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnAddRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;lblNewRole.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteRole_Click.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MiastoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblUserAssign.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listBoxRoles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 23</value>
+  </data>
+  <data name="txtForgetUserId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 7</value>
+  </data>
+  <data name="&gt;&gt;lblUserAssign.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;btnFindUser.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtUserLoginSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtPesel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 207</value>
+  </data>
+  <data name="NazwiskoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="txtUserLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="PeselLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxAccessLevels.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtPesel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;tabUprawnienia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dataGridView2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;Edytuj.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;clbPermissions.Name" xml:space="preserve">
+    <value>clbPermissions</value>
+  </data>
+  <data name="&gt;&gt;Lista.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtNewRoleName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 260</value>
+  </data>
+  <data name="txtUserLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>BibliotekaApp</value>
+  </data>
+  <data name="&gt;&gt;loggedInLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 23</value>
+  </data>
+  <data name="LoginLabel.Text" xml:space="preserve">
+    <value>Login:</value>
+  </data>
+  <data name="&gt;&gt;cmbSex.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;labelRoleName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelRoleName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TelefonLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Dodaj.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;btnAddRole.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="TelefonLabel.Text" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="&gt;&gt;comboBoxSearchBy.Name" xml:space="preserve">
+    <value>comboBoxSearchBy</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>Zapomnij</value>
+  </data>
+  <data name="&gt;&gt;Wypożycz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUsers.Name" xml:space="preserve">
+    <value>dataGridViewUsers</value>
+  </data>
+  <data name="lblPermissions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 20</value>
+  </data>
+  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="Dodaj.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LoginLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblRoleList.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBoxSearchBy.Items" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="btnAddUser.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;txtCity.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginSearch.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="dataGridViewUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 514</value>
+  </data>
+  <data name="tabPage6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;logoutbtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="dtpDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Zapomnij.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxUprawnienia.Name" xml:space="preserve">
+    <value>checkedListBoxUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;MiastoLabel.Name" xml:space="preserve">
+    <value>MiastoLabel</value>
+  </data>
+  <data name="MiastoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="NumerUlicyLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 15</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="txtCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 86</value>
+  </data>
+  <data name="&gt;&gt;txtRoleName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSavePermissions.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="KodPocztowyLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="txtUserLoginSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>538, 50</value>
+  </data>
+  <data name="&gt;&gt;comboBoxSearchBy.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="txtPhoneNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUsers.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="btnForgetUser.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;btnSavePermissions.Name" xml:space="preserve">
+    <value>btnSavePermissions</value>
+  </data>
+  <data name="txtPesel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;PlecLabel.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;Zapomniani.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="btnForgetUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="comboBoxSearchBy.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="EmailLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 15</value>
+  </data>
+  <data name="txtRoleName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 369</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>Wyszukaj</value>
+  </data>
+  <data name="checkedListBoxUprawnienia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 82</value>
+  </data>
+  <data name="lblRoleList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;txtPesel.Name" xml:space="preserve">
+    <value>txtPesel</value>
+  </data>
+  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnAddUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 15</value>
+  </data>
+  <data name="&gt;&gt;NazwiskoLabel.Name" xml:space="preserve">
+    <value>NazwiskoLabel</value>
+  </data>
+  <data name="listBoxRoles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 50</value>
+  </data>
+  <data name="&gt;&gt;comboBoxUsers.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="UlicaLabel.Text" xml:space="preserve">
+    <value>Ulica:</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 13</value>
+  </data>
+  <data name="tabPage6.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevels.Name" xml:space="preserve">
+    <value>comboBoxAccessLevels</value>
+  </data>
+  <data name="&gt;&gt;btnDisplayUsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 12</value>
+  </data>
+  <data name="&gt;&gt;comboBoxAccessLevel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;logoutbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFindForgottenUser.Parent" xml:space="preserve">
+    <value>Zapomniani</value>
+  </data>
+  <data name="&gt;&gt;btnProfile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Wypożycz.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UlicaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxUprawnienia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtRoleName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;txtPesel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="comboBoxAccessLevel.AutoCompleteCustomSource" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAddRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 290</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="&gt;&gt;dtpDateOfBirth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Zapomniani.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NazwiskoLabel.Text" xml:space="preserve">
+    <value>Nazwisko:</value>
+  </data>
+  <data name="&gt;&gt;txtUserLoginddd.Name" xml:space="preserve">
+    <value>txtUserLoginddd</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewForg.Name" xml:space="preserve">
+    <value>dataGridViewForg</value>
+  </data>
+  <data name="btnDisplayUsers.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
+    <value>txtEmail</value>
+  </data>
+  <data name="UlicaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 15</value>
+  </data>
+  <data name="&gt;&gt;NumerUlicyLabel.Name" xml:space="preserve">
+    <value>NumerUlicyLabel</value>
+  </data>
+  <data name="txtCity.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="tabPage7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;txtPropertyNumber.Name" xml:space="preserve">
+    <value>txtPropertyNumber</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;txtForgetUserId.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="comboBoxSearchBy.Items2" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmailLabel.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="lblNewRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 230</value>
+  </data>
+  <data name="btnAddRole.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Edytuj.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddUser.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Zapomniani.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="&gt;&gt;txtPropertyNumber.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 5</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MiastoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBoxAccessLevels.Items2" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPermissions.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtRoleName.Name" xml:space="preserve">
+    <value>txtRoleName</value>
+  </data>
+  <data name="listBoxRoles.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 15</value>
+  </data>
+  <data name="&gt;&gt;DataUrodzeniaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 552</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="txtHaslo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 40</value>
+  </data>
+  <data name="NumerLokaluLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 186</value>
+  </data>
+  <data name="&gt;&gt;comboBoxSearchBy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nudApartmentNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 184</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 10</value>
+  </data>
+  <data name="&gt;&gt;ImieLabel.Name" xml:space="preserve">
+    <value>ImieLabel</value>
+  </data>
+  <data name="&gt;&gt;txtStreet.Name" xml:space="preserve">
+    <value>txtStreet</value>
+  </data>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;NumerLokaluLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logoutbtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Login:</value>
+  </data>
+  <data name="txtForgetUserId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="Wypożycz.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="dataGridViewUser.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;NazwiskoLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRoleAssign.Name" xml:space="preserve">
+    <value>comboBoxRoleAssign</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;KodPocztowyLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;loggedInLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSavePermissions.Parent" xml:space="preserve">
+    <value>tabUprawnienia</value>
+  </data>
+  <data name="&gt;&gt;UlicaLabel.Parent" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewUser.Name" xml:space="preserve">
+    <value>dataGridViewUser</value>
+  </data>
+  <data name="KodPocztowyLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 37</value>
+  </data>
+  <data name="txtForgetUserId.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="KodPocztowyLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 113</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnDisplayUsers.Parent" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="&gt;&gt;MiastoLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="NumerLokaluLabel.Text" xml:space="preserve">
+    <value>Numer lokalu:</value>
+  </data>
+  <data name="btnDisplayUsers.Text" xml:space="preserve">
+    <value>Wyświetl użytkowników</value>
+  </data>
+  <data name="&gt;&gt;btnSaveRole.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnSavePermissions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBoxSearchBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="&gt;&gt;lblRoleList.Name" xml:space="preserve">
+    <value>lblRoleList</value>
+  </data>
+  <data name="&gt;&gt;lblRoleList.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="dtpDateOfBirth.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;dtpDateOfBirth.Name" xml:space="preserve">
+    <value>dtpDateOfBirth</value>
+  </data>
+  <data name="&gt;&gt;NumerLokaluLabel.Name" xml:space="preserve">
+    <value>NumerLokaluLabel</value>
+  </data>
+  <data name="&gt;&gt;PeselLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TelefonLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 15</value>
+  </data>
+  <metadata name="sqliteCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqliteCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>pl-PL</value>
   </metadata>
 </root>

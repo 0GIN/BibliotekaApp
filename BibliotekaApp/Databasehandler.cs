@@ -27,63 +27,54 @@ namespace BibliotekaApp
                 });
             }
         }
-        public void UpdateRole(int id, string roleName, int dodaj, int lista, int zapomnij, int zapomniani, int edytuj, int wypozycz, int uprawnienia)
+
+
+        public void UpdateRole(int accessLevel, string roleName, bool dodawanie, bool listowanie, bool zapominanie, bool zapomniani, bool edycja, bool wyporzyczenie, bool uprawnienia)
         {
             using (var client = new HttpClient())
             {
-                var rola = new
+                var role = new
                 {
-                    id = id,
-                    role_name = roleName,
-                    dodawanie = dodaj,
-                    listowanie = lista,
-                    zapominanie = zapomnij,
-                    zapomniani = zapomniani,
-                    edycja = edytuj,
-                    wyporzyczenie = wypozycz,
-                    uprawnienia = uprawnienia
+                    RoleName = roleName,
+                    Dodawanie = dodawanie,
+                    Listowanie = listowanie,
+                    Zapominanie = zapominanie,
+                    Zapomniani = zapomniani,
+                    Edycja = edycja,
+                    Wyporzyczenie = wyporzyczenie,
+                    Uprawnienia = uprawnienia
                 };
-
-                var content = new StringContent(JsonSerializer.Serialize(rola), Encoding.UTF8, "application/json");
-                var response = client.PutAsync($"{apiBaseUrl}/update-role", content).Result;
+                var content = new StringContent(JsonSerializer.Serialize(role), Encoding.UTF8, "application/json");
+                var response = client.PutAsync($"{apiBaseUrl}/edit-role/{accessLevel}", content).Result;
                 if (!response.IsSuccessStatusCode)
-                    throw new Exception($"Nie udało się zaktualizować roli: {response.ReasonPhrase}");
+                {
+                    throw new Exception($"Failed to edit role: {response.ReasonPhrase}");
+                }
             }
         }
 
-        public void CreateRole(string roleName, int dodaj, int lista, int zapomnij, int zapomniani, int edytuj, int wypozycz, int uprawnienia)
+        public void CreateRole(string roleName, int accessLevel, bool dodawanie, bool listowanie, bool zapominanie, bool zapomniani, bool edycja, bool wyporzyczenie, bool uprawnienia)
         {
             using (var client = new HttpClient())
             {
-                var rola = new
+                var role = new
                 {
-                    role_name = roleName,
-                    dodawanie = dodaj,
-                    listowanie = lista,
-                    zapominanie = zapomnij,
-                    zapomniani = zapomniani,
-                    edycja = edytuj,
-                    wyporzyczenie = wypozycz,
-                    uprawnienia = uprawnienia
+                    RoleName = roleName,
+                    AccessLevel = accessLevel,
+                    Dodawanie = dodawanie,
+                    Listowanie = listowanie,
+                    Zapominanie = zapominanie,
+                    Zapomniani = zapomniani,
+                    Edycja = edycja,
+                    Wyporzyczenie = wyporzyczenie,
+                    Uprawnienia = uprawnienia
                 };
-
-                var content = new StringContent(JsonSerializer.Serialize(rola), Encoding.UTF8, "application/json");
-                var response = client.PostAsync($"{apiBaseUrl}/create-role", content).Result;
+                var content = new StringContent(JsonSerializer.Serialize(role), Encoding.UTF8, "application/json");
+                var response = client.PostAsync($"{apiBaseUrl}/add-role", content).Result;
                 if (!response.IsSuccessStatusCode)
-                    throw new Exception($"Nie udało się utworzyć roli: {response.ReasonPhrase}");
-            }
-        }
-
-        public List<RoleDto> GetAllRoles()
-        {
-            using (var client = new HttpClient())
-            {
-                var response = client.GetAsync($"{apiBaseUrl}/get-all-roles").Result;
-                if (!response.IsSuccessStatusCode)
-                    throw new Exception($"Nie udało się pobrać ról: {response.ReasonPhrase}");
-
-                var json = response.Content.ReadAsStringAsync().Result;
-                return JsonSerializer.Deserialize<List<RoleDto>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                {
+                    throw new Exception($"Failed to add role: {response.ReasonPhrase}");
+                }
             }
         }
 
@@ -269,6 +260,31 @@ namespace BibliotekaApp
                 }
             }
         }
+
+        public void UpdateAccessLevel(int userId, int accessLevel)
+        {
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(JsonSerializer.Serialize(accessLevel), Encoding.UTF8, "application/json");
+                var response = client.PutAsync($"{apiBaseUrl}/update-access-level/{userId}", content).Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to update access level: {response.ReasonPhrase}");
+                }
+            }
+        }
+        public void DeleteRole(int accessLevel)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.DeleteAsync($"{apiBaseUrl}/delete-role/{accessLevel}").Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to delete role: {response.ReasonPhrase}");
+                }
+            }
+        }
         public List<UserDetailsDto> GetAllForgotten()
         {
             using (var client = new HttpClient())
@@ -301,8 +317,28 @@ namespace BibliotekaApp
                 }
             }
         }
+
+        public List<RoleDetailsDto> GetAllRoles()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync($"{apiBaseUrl}/get-all-roles").Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Failed to get all roles: {response.ReasonPhrase}");
+                }
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                return JsonSerializer.Deserialize<List<RoleDetailsDto>>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+        }
+
+        
     }
 }
+
 
 public class RoleDto
 {
@@ -335,6 +371,20 @@ public class RoleDto
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public int AccessLevel { get; set; }
+        public string RoleName { get; set; } // <- dodaj to
         public bool recovery { get; set; }
-}
+    }
 
+public class RoleDetailsDto
+{
+    public int Id { get; set; }
+    public string RoleName { get; set; }
+    public int AccessLevel { get; set; }
+    public bool Dodawanie { get; set; }
+    public bool Listowanie { get; set; }
+    public bool Zapominanie { get; set; }
+    public bool Zapomniani { get; set; }
+    public bool Edycja { get; set; }
+    public bool Wyporzyczenie { get; set; }
+    public bool Uprawnienia { get; set; }
+}

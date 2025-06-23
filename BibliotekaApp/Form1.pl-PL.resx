@@ -376,6 +376,57 @@
   <data name="Edytuj.Text" xml:space="preserve">
     <value>Edytuj</value>
   </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 376</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 15</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Usuń zaznaczoną role:</value>
+  </data>
+  <data name="btnDeleteRole_Click.Text" xml:space="preserve">
+    <value>USUŃ</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 53</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 15</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Wyszukaj po loginie</value>
+  </data>
+  <data name="lblUserFound.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUserFound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 90</value>
+  </data>
+  <data name="lblUserFound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 15</value>
+  </data>
+  <data name="lblUserFound.Text" xml:space="preserve">
+    <value>Zmień role dla:</value>
+  </data>
+  <data name="btnFindUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>644, 50</value>
+  </data>
+  <data name="btnFindUser.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
   <data name="lblRoleList.Text" xml:space="preserve">
     <value>Lista ról:</value>
   </data>
@@ -403,11 +454,17 @@
   <data name="lblUserAssign.Text" xml:space="preserve">
     <value>Przypisz rolę użytkownikowi:</value>
   </data>
-  <data name="comboBoxUsers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 23</value>
+  <data name="comboBoxRoleAssign.Items" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="comboBoxRoleAssign.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 118</value>
   </data>
   <data name="comboBoxRoleAssign.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
+  </data>
+  <data name="btnAssignRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 147</value>
   </data>
   <data name="btnAssignRole.Text" xml:space="preserve">
     <value>Nadaj rolę</value>

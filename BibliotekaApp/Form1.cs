@@ -36,6 +36,7 @@ namespace BibliotekaApp
             ParseJwtToken(token);
             bool isAdmin = admin;
             System.Threading.Thread.Sleep(1000);
+
             if (File.Exists(permissionsFile))
             {
                 string json = File.ReadAllText(permissionsFile);
@@ -76,8 +77,8 @@ namespace BibliotekaApp
                     MessageBox.Show($"Błąd pobierania roli: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                //LoadRolesToUI();
-                //LoadUsersToUI();
+                LoadRolesToUI();
+
             }
             else
             {
@@ -92,6 +93,7 @@ namespace BibliotekaApp
             DisplayAllUsers();
             DisplayUsersDependingOnLogin();
             DisplayAllUsersInUserGrid();
+            LoadAccessLevelComboBox();
         }
 
         // =============================
@@ -101,37 +103,31 @@ namespace BibliotekaApp
 
         private void LoadRolesToUI()
         {
-            var roles = database.GetAllRoles();
+            var roles = database.GetAllRoles(); // List<RoleDetailsDto>
+
             listBoxRoles.DataSource = roles;
-            listBoxRoles.DisplayMember = "role_name";
-            listBoxRoles.ValueMember = "id";
+            listBoxRoles.DisplayMember = "RoleName"; // <- DUŻA litera!
+            listBoxRoles.ValueMember = "AccessLevel"; // <- zamiast id
 
             comboBoxRoleAssign.DataSource = roles.ToList();
-            comboBoxRoleAssign.DisplayMember = "role_name";
-            comboBoxRoleAssign.ValueMember = "id";
-        }
-
-        private void LoadUsersToUI()
-        {
-            var users = database.GetAllUsers();
-            comboBoxUsers.DataSource = users;
-            comboBoxUsers.DisplayMember = "Login";
-            comboBoxUsers.ValueMember = "Id";
+            comboBoxRoleAssign.DisplayMember = "RoleName";
+            comboBoxRoleAssign.ValueMember = "AccessLevel";
         }
 
         private void listBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxRoles.SelectedItem is RoleDto role)
+            if (listBoxRoles.SelectedItem is RoleDetailsDto role)
             {
-                clbPermissions.SetItemChecked(0, role.dodawanie == 1);
-                clbPermissions.SetItemChecked(1, role.listowanie == 1);
-                clbPermissions.SetItemChecked(2, role.zapominanie == 1);
-                clbPermissions.SetItemChecked(3, role.zapomniani == 1);
-                clbPermissions.SetItemChecked(4, role.edycja == 1);
-                clbPermissions.SetItemChecked(5, role.wyporzyczenie == 1);
-                clbPermissions.SetItemChecked(6, role.uprawnienia == 1);
+                clbPermissions.SetItemChecked(0, role.Dodawanie);
+                clbPermissions.SetItemChecked(1, role.Listowanie);
+                clbPermissions.SetItemChecked(2, role.Zapominanie);
+                clbPermissions.SetItemChecked(3, role.Zapomniani);
+                clbPermissions.SetItemChecked(4, role.Edycja);
+                clbPermissions.SetItemChecked(5, role.Wyporzyczenie);
+                clbPermissions.SetItemChecked(6, role.Uprawnienia);
             }
         }
+
 
         private void btnAddRole_Click(object sender, EventArgs e)
         {
@@ -142,31 +138,108 @@ namespace BibliotekaApp
             for (int i = 0; i < clbPermissions.Items.Count; i++)
                 permissions[i] = clbPermissions.GetItemChecked(i) ? 1 : 0;
 
-            database.CreateRole(roleName, permissions[0], permissions[1], permissions[2], permissions[3], permissions[4], permissions[5], permissions[6]);
+            database.CreateRole(
+                roleName,
+                accessLevel: GetNextAccessLevel(), // np. metoda która generuje unikalny level
+                dodawanie: permissions[0] == 1,
+                listowanie: permissions[1] == 1,
+                zapominanie: permissions[2] == 1,
+                zapomniani: permissions[3] == 1,
+                edycja: permissions[4] == 1,
+                wyporzyczenie: permissions[5] == 1,
+                uprawnienia: permissions[6] == 1
+            );
             MessageBox.Show("Dodano nową rolę.");
             LoadRolesToUI();
         }
 
+        private int GetNextAccessLevel()
+        {
+            var roles = database.GetAllRoles();
+            return roles.Max(r => r.AccessLevel) + 1;
+        }
+
+
         private void btnSaveRole_Click(object sender, EventArgs e)
         {
-            if (listBoxRoles.SelectedItem is RoleDto role)
+            if (listBoxRoles.SelectedItem is RoleDetailsDto role)
             {
-                int[] permissions = new int[7];
+                bool[] updatedPermissions = new bool[7];
                 for (int i = 0; i < clbPermissions.Items.Count; i++)
-                    permissions[i] = clbPermissions.GetItemChecked(i) ? 1 : 0;
+                    updatedPermissions[i] = clbPermissions.GetItemChecked(i);
 
-                database.UpdateRole(role.id, role.role_name, permissions[0], permissions[1], permissions[2], permissions[3], permissions[4], permissions[5], permissions[6]);
-                MessageBox.Show("Zaktualizowano rolę.");
+                database.UpdateRole(
+                    role.AccessLevel,
+                    role.RoleName,
+                    updatedPermissions[0],
+                    updatedPermissions[1],
+                    updatedPermissions[2],
+                    updatedPermissions[3],
+                    updatedPermissions[4],
+                    updatedPermissions[5],
+                    updatedPermissions[6]
+                );
+
+                MessageBox.Show("Zaktualizowano rolę.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadRolesToUI();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz rolę do edycji!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        UserDetailsDto? foundUser = null;
+
+        private void btnFindUser_Click(object sender, EventArgs e)
+        {
+            string login = txtUserLoginSearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(login))
+            {
+                MessageBox.Show("Wpisz login użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var user = database.FindUserByLogin(login);
+            if (user == null)
+            {
+                lblUserFound.Text = "Nie znaleziono użytkownika.";
+                foundUser = null;
+            }
+            else
+            {
+                foundUser = user;
+                lblUserFound.Text = $"Zmień role dla: {user.Name} {user.Surname} ({user.Login})";
+            }
+        }
         private void btnAssignRole_Click(object sender, EventArgs e)
         {
-            if (comboBoxUsers.SelectedItem is UserDetailsDto user && comboBoxRoleAssign.SelectedItem is RoleDto role)
+            if (foundUser == null)
             {
-                database.ChangeUserData(user.Id, accessLevel: role.id);
-                MessageBox.Show($"Zmieniono rolę użytkownika {user.Login} na: {role.role_name}");
+                MessageBox.Show("Najpierw znajdź użytkownika!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBoxRoleAssign.SelectedItem is RoleDetailsDto role)
+            {
+                try
+                {
+                    database.UpdateAccessLevel(foundUser.Id, role.AccessLevel);
+                    MessageBox.Show($"Zmieniono rolę użytkownika {foundUser.Login} na: {role.RoleName}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nie udało się zmienić roli: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                foundUser = null;
+                lblUserFound.Text = "Użytkownik:";
+                txtUserLoginSearch.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Wybierz rolę z listy!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -278,7 +351,7 @@ namespace BibliotekaApp
             userTable.Columns.Add("Sex");
             userTable.Columns.Add("Email");
             userTable.Columns.Add("PhoneNumber");
-            userTable.Columns.Add("AccessLevel", typeof(int));
+            userTable.Columns.Add("Rola", typeof(string));
             return userTable;
         }
 
@@ -299,7 +372,7 @@ namespace BibliotekaApp
                 user.Sex,
                 user.Email,
                 user.PhoneNumber,
-                user.AccessLevel
+                user.RoleName
             );
         }
 
@@ -425,40 +498,102 @@ namespace BibliotekaApp
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e) // -- Wyszukiwanie użytkownika po ID i pokazanie w tabeli
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUserIdEdit.Text))
+            string search = txtUserIdEdit.Text.Trim().ToLower();
+
+            if (int.TryParse(search, out int id))
             {
-                DisplayAllUsersInUserGrid();
+                DisplaySingleUserShort(id);
                 return;
             }
 
-            if (int.TryParse(txtUserIdEdit.Text.Trim(), out int id))
-            {
-                var user = database.FindUserById(id);
+            var users = database.GetAllUsers();
+            var roles = database.GetAllRoles();
 
-                if (user != null)
-                {
-                    var u = user;
-                    DataTable dt = CreateUserDataTable();
-                    AddUserRow(dt, u);
-
-                    dataGridViewUser.DataSource = dt;
-                    dataGridViewUser.AllowUserToAddRows = false;
-                    dataGridViewUser.ReadOnly = false;
-                    HideSensitiveColumns(dataGridViewForg);
-                }
-                else
-                {
-                    MessageBox.Show("Użytkownik nie znaleziony. Wyświetlam wszystkich.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DisplayAllUsersInUserGrid();
-                }
-            }
-            else
+            foreach (var user in users)
             {
-                MessageBox.Show("Wpisz poprawne ID (liczbę całkowitą).", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var role = roles.FirstOrDefault(r => r.AccessLevel == user.AccessLevel);
+                user.RoleName = role?.RoleName ?? "(brak)";
             }
+
+            var filtered = users
+                .Where(u =>
+                    u.Login.ToLower().Contains(search) ||
+                    u.Name.ToLower().Contains(search) ||
+                    u.Surname.ToLower().Contains(search) ||
+                    u.Pesel.ToLower().Contains(search))
+                .ToList();
+
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Login");
+            table.Columns.Add("Imię");
+            table.Columns.Add("Nazwisko");
+            table.Columns.Add("Rola");
+
+            foreach (var user in filtered)
+            {
+                table.Rows.Add(user.Id, user.Login, user.Name, user.Surname, user.RoleName);
+            }
+
+            dataGridViewUser.Columns.Clear();
+            dataGridViewUser.DataSource = table;
+
+            var buttonColumn = new DataGridViewButtonColumn
+            {
+                Name = "Edit",
+                HeaderText = "Akcje",
+                Text = "Edytuj",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridViewUser.Columns.Add(buttonColumn);
+
+            dataGridViewUser.AllowUserToAddRows = false;
+            dataGridViewUser.ReadOnly = true;
+            dataGridViewUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void DisplaySingleUserShort(int userId)
+        {
+            var user = database.GetAllUsers().FirstOrDefault(u => u.Id == userId);
+            if (user == null)
+            {
+                MessageBox.Show($"Nie znaleziono użytkownika o ID: {userId}");
+                return;
+            }
+
+            var roles = database.GetAllRoles();
+            var role = roles.FirstOrDefault(r => r.AccessLevel == user.AccessLevel);
+            user.RoleName = role?.RoleName ?? "(brak)";
+
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Login");
+            table.Columns.Add("Imię");
+            table.Columns.Add("Nazwisko");
+            table.Columns.Add("Rola");
+
+            table.Rows.Add(user.Id, user.Login, user.Name, user.Surname, user.RoleName);
+
+            dataGridViewUser.Columns.Clear();
+            dataGridViewUser.DataSource = table;
+
+            var buttonColumn = new DataGridViewButtonColumn
+            {
+                Name = "Edit",
+                HeaderText = "Akcje",
+                Text = "Edytuj",
+                UseColumnTextForButtonValue = true
+            };
+            dataGridViewUser.Columns.Add(buttonColumn);
+
+            dataGridViewUser.AllowUserToAddRows = false;
+            dataGridViewUser.ReadOnly = true;
+            dataGridViewUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+
         // =============================
         // Funkcje użytkowe i walidacyjne
         // =============================
@@ -508,6 +643,14 @@ namespace BibliotekaApp
         public void DisplayAllUsers() // -- Wyświetlenie wszystkich użytkowników
         {
             var users = database.GetAllUsers();
+            var roles = database.GetAllRoles();
+
+            foreach (var user in users)
+            {
+                var matchingRole = roles.FirstOrDefault(r => r.AccessLevel == user.AccessLevel);
+                user.RoleName = matchingRole?.RoleName ?? "(brak)";
+            }
+
             DataTable userTable = CreateUserDataTable();
 
             foreach (var user in users)
@@ -526,24 +669,30 @@ namespace BibliotekaApp
         private void DisplayAllUsersInUserGrid()
         {
             var users = database.GetAllUsers();
-            DataTable userTable = new DataTable();
+            var roles = database.GetAllRoles();
 
+            foreach (var user in users)
+            {
+                var matchingRole = roles.FirstOrDefault(r => r.AccessLevel == user.AccessLevel);
+                user.RoleName = matchingRole?.RoleName ?? "(brak)";
+            }
+
+            DataTable userTable = new DataTable();
             userTable.Columns.Add("ID", typeof(int));
             userTable.Columns.Add("Login");
             userTable.Columns.Add("Imię");
             userTable.Columns.Add("Nazwisko");
-            userTable.Columns.Add("Rola", typeof(int));
+            userTable.Columns.Add("Rola"); // teraz string, nie int
 
             foreach (var user in users)
             {
-                userTable.Rows.Add(user.Id, user.Login, user.Name, user.Surname, user.AccessLevel);
+                userTable.Rows.Add(user.Id, user.Login, user.Name, user.Surname, user.RoleName);
             }
 
             dataGridViewUser.DataSource = userTable;
             dataGridViewUser.AllowUserToAddRows = false;
             dataGridViewUser.ReadOnly = true;
 
-            // Dodaj przycisk "Edytuj"
             if (!dataGridViewUser.Columns.Contains("Edit"))
             {
                 var buttonColumn = new DataGridViewButtonColumn
@@ -556,12 +705,73 @@ namespace BibliotekaApp
                 dataGridViewUser.Columns.Add(buttonColumn);
             }
 
-            // Ukryj inne kolumny jeśli istnieją
             foreach (DataGridViewColumn col in dataGridViewUser.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
+        private void LoadAccessLevelComboBox()
+        {
+            var roles = database.GetAllRoles();
+
+            // Dodaj "Wszyscy" jako sztuczną rolę z AccessLevel = -1
+            roles.Insert(0, new RoleDetailsDto
+            {
+                AccessLevel = -1,
+                RoleName = "Wszyscy"
+            });
+
+            comboBoxAccessLevel.DataSource = roles;
+            comboBoxAccessLevel.DisplayMember = "RoleName";
+            comboBoxAccessLevel.ValueMember = "AccessLevel";
+            comboBoxAccessLevel.SelectedIndex = 0;
+        }
+
+
+        private void comboBoxAccessLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxAccessLevel.SelectedItem is RoleDetailsDto selectedRole)
+            {
+                if (selectedRole.AccessLevel == -1)
+                {
+                    DisplayAllUsersInUserGrid();
+                }
+                else
+                {
+                    DisplayFilteredUsersByAccessLevel(selectedRole.AccessLevel);
+                }
+            }
+        }
+
+
+        private void DisplayFilteredUsersByAccessLevel(int accessLevel)
+        {
+            var users = database.GetAllUsers();
+            var roles = database.GetAllRoles();
+
+            foreach (var user in users)
+            {
+                var role = roles.FirstOrDefault(r => r.AccessLevel == user.AccessLevel);
+                user.RoleName = role?.RoleName ?? "(brak)";
+            }
+
+            var filtered = users.Where(u => u.AccessLevel == accessLevel).ToList();
+
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Login");
+            table.Columns.Add("Imię");
+            table.Columns.Add("Nazwisko");
+            table.Columns.Add("Rola");
+
+            foreach (var user in filtered)
+            {
+                table.Rows.Add(user.Id, user.Login, user.Name, user.Surname, user.RoleName);
+            }
+
+            dataGridViewUser.DataSource = table;
+        }
+
 
         private void dataGridViewUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -674,6 +884,37 @@ namespace BibliotekaApp
         private void Zapomniani_Enter(object sender, EventArgs e)
         {
             btnFindForgottenUser.PerformClick(); // jeśli chcesz wywołać kliknięcie
+        }
+
+        private void btnDeleteRole_Click_Click(object sender, EventArgs e)
+        {
+            if (listBoxRoles.SelectedItem is RoleDetailsDto role)
+            {
+                if (role.AccessLevel == userAccessLevel) // Changed from "accessLevel" to "userAccessLevel"
+                {
+                    MessageBox.Show("Nie możesz usunąć roli, z której aktualnie korzystasz.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var confirm = MessageBox.Show($"Na pewno usunąć rolę: {role.RoleName}?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        database.DeleteRole(role.AccessLevel);
+                        MessageBox.Show("Rola została usunięta.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadRolesToUI();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Błąd usuwania roli: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Najpierw wybierz rolę!", "Uwaga", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
     }

@@ -85,6 +85,11 @@ namespace BibliotekaApp
             txtUserIdEdit = new TextBox();
             label15 = new Label();
             tabUprawnienia = new TabPage();
+            btnDeleteRole_Click = new Button();
+            label5 = new Label();
+            lblUserFound = new Label();
+            btnFindUser = new Button();
+            txtUserLoginSearch = new TextBox();
             lblRoleList = new Label();
             listBoxRoles = new ListBox();
             lblPermissions = new Label();
@@ -94,12 +99,13 @@ namespace BibliotekaApp
             txtNewRoleName = new TextBox();
             btnAddRole = new Button();
             lblUserAssign = new Label();
-            comboBoxUsers = new ComboBox();
             comboBoxRoleAssign = new ComboBox();
             btnAssignRole = new Button();
             logoutbtn = new Button();
             labelLoggedUser = new Label();
             btnProfile = new Button();
+            sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)nudApartmentNumber).BeginInit();
             tabControl1.SuspendLayout();
             Dodaj.SuspendLayout();
@@ -270,7 +276,6 @@ namespace BibliotekaApp
             tabControl1.Controls.Add(tabUprawnienia);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            Zapomniani.Enter += Zapomniani_Enter;
             // 
             // Wypożycz
             // 
@@ -402,6 +407,7 @@ namespace BibliotekaApp
             Zapomniani.Controls.Add(btnFindForgottenUser);
             Zapomniani.Name = "Zapomniani";
             Zapomniani.UseVisualStyleBackColor = true;
+            Zapomniani.Enter += Zapomniani_Enter;
             // 
             // label2
             // 
@@ -448,6 +454,8 @@ namespace BibliotekaApp
             comboBoxAccessLevel.FormattingEnabled = true;
             comboBoxAccessLevel.Items.AddRange(new object[] { resources.GetString("comboBoxAccessLevel.Items"), resources.GetString("comboBoxAccessLevel.Items1"), resources.GetString("comboBoxAccessLevel.Items2") });
             comboBoxAccessLevel.Name = "comboBoxAccessLevel";
+            comboBoxAccessLevel.SelectedIndexChanged += comboBoxAccessLevel_SelectedIndexChanged;
+
             // 
             // btnSearch
             // 
@@ -478,6 +486,12 @@ namespace BibliotekaApp
             // tabUprawnienia
             // 
             resources.ApplyResources(tabUprawnienia, "tabUprawnienia");
+            tabUprawnienia.Controls.Add(label6);
+            tabUprawnienia.Controls.Add(btnDeleteRole_Click);
+            tabUprawnienia.Controls.Add(label5);
+            tabUprawnienia.Controls.Add(lblUserFound);
+            tabUprawnienia.Controls.Add(btnFindUser);
+            tabUprawnienia.Controls.Add(txtUserLoginSearch);
             tabUprawnienia.Controls.Add(lblRoleList);
             tabUprawnienia.Controls.Add(listBoxRoles);
             tabUprawnienia.Controls.Add(lblPermissions);
@@ -487,11 +501,39 @@ namespace BibliotekaApp
             tabUprawnienia.Controls.Add(txtNewRoleName);
             tabUprawnienia.Controls.Add(btnAddRole);
             tabUprawnienia.Controls.Add(lblUserAssign);
-            tabUprawnienia.Controls.Add(comboBoxUsers);
             tabUprawnienia.Controls.Add(comboBoxRoleAssign);
             tabUprawnienia.Controls.Add(btnAssignRole);
             tabUprawnienia.Name = "tabUprawnienia";
             tabUprawnienia.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteRole_Click
+            // 
+            resources.ApplyResources(btnDeleteRole_Click, "btnDeleteRole_Click");
+            btnDeleteRole_Click.Name = "btnDeleteRole_Click";
+            btnDeleteRole_Click.UseVisualStyleBackColor = true;
+            btnDeleteRole_Click.Click += btnDeleteRole_Click_Click;
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
+            // lblUserFound
+            // 
+            resources.ApplyResources(lblUserFound, "lblUserFound");
+            lblUserFound.Name = "lblUserFound";
+            // 
+            // btnFindUser
+            // 
+            resources.ApplyResources(btnFindUser, "btnFindUser");
+            btnFindUser.Name = "btnFindUser";
+            btnFindUser.UseVisualStyleBackColor = true;
+            btnFindUser.Click += btnFindUser_Click;
+            // 
+            // txtUserLoginSearch
+            // 
+            resources.ApplyResources(txtUserLoginSearch, "txtUserLoginSearch");
+            txtUserLoginSearch.Name = "txtUserLoginSearch";
             // 
             // lblRoleList
             // 
@@ -542,14 +584,10 @@ namespace BibliotekaApp
             resources.ApplyResources(lblUserAssign, "lblUserAssign");
             lblUserAssign.Name = "lblUserAssign";
             // 
-            // comboBoxUsers
-            // 
-            resources.ApplyResources(comboBoxUsers, "comboBoxUsers");
-            comboBoxUsers.Name = "comboBoxUsers";
-            // 
             // comboBoxRoleAssign
             // 
             resources.ApplyResources(comboBoxRoleAssign, "comboBoxRoleAssign");
+            comboBoxRoleAssign.Items.AddRange(new object[] { resources.GetString("comboBoxRoleAssign.Items") });
             comboBoxRoleAssign.Name = "comboBoxRoleAssign";
             // 
             // btnAssignRole
@@ -576,6 +614,18 @@ namespace BibliotekaApp
             btnProfile.Name = "btnProfile";
             btnProfile.UseVisualStyleBackColor = true;
             btnProfile.Click += btnProfile_Click;
+            // 
+            // sqliteCommand1
+            // 
+            sqliteCommand1.CommandTimeout = 30;
+            sqliteCommand1.Connection = null;
+            sqliteCommand1.Transaction = null;
+            sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
             // 
             // Form1
             // 
@@ -843,9 +893,15 @@ namespace BibliotekaApp
         private TextBox txtNewRoleName;
         private Button btnAddRole;
         private Label lblUserAssign;
-        private ComboBox comboBoxUsers;
         private ComboBox comboBoxRoleAssign;
         private Button btnAssignRole;
         private ComboBox comboBoxSearchBy;
+        private Label label5;
+        private Label lblUserFound;
+        private Button btnFindUser;
+        private TextBox txtUserLoginSearch;
+        private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
+        private Button btnDeleteRole_Click;
+        private Label label6;
     }
 }

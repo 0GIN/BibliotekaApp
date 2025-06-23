@@ -67,11 +67,13 @@ namespace BibliotekaApp
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.Contains("."))
+            if (string.IsNullOrWhiteSpace(email) ||
+                !Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 errorMessage = "Niepoprawny adres e-mail.";
                 return false;
             }
+
 
             if (!Regex.IsMatch(phoneNumber, @"^\d{9}$"))
             {
