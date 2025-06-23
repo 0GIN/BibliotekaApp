@@ -27,6 +27,65 @@ namespace BibliotekaApp
                 });
             }
         }
+        public void UpdateRole(int id, string roleName, int dodaj, int lista, int zapomnij, int zapomniani, int edytuj, int wypozycz, int uprawnienia)
+        {
+            using (var client = new HttpClient())
+            {
+                var rola = new
+                {
+                    id = id,
+                    role_name = roleName,
+                    dodawanie = dodaj,
+                    listowanie = lista,
+                    zapominanie = zapomnij,
+                    zapomniani = zapomniani,
+                    edycja = edytuj,
+                    wyporzyczenie = wypozycz,
+                    uprawnienia = uprawnienia
+                };
+
+                var content = new StringContent(JsonSerializer.Serialize(rola), Encoding.UTF8, "application/json");
+                var response = client.PutAsync($"{apiBaseUrl}/update-role", content).Result;
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception($"Nie udało się zaktualizować roli: {response.ReasonPhrase}");
+            }
+        }
+
+        public void CreateRole(string roleName, int dodaj, int lista, int zapomnij, int zapomniani, int edytuj, int wypozycz, int uprawnienia)
+        {
+            using (var client = new HttpClient())
+            {
+                var rola = new
+                {
+                    role_name = roleName,
+                    dodawanie = dodaj,
+                    listowanie = lista,
+                    zapominanie = zapomnij,
+                    zapomniani = zapomniani,
+                    edycja = edytuj,
+                    wyporzyczenie = wypozycz,
+                    uprawnienia = uprawnienia
+                };
+
+                var content = new StringContent(JsonSerializer.Serialize(rola), Encoding.UTF8, "application/json");
+                var response = client.PostAsync($"{apiBaseUrl}/create-role", content).Result;
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception($"Nie udało się utworzyć roli: {response.ReasonPhrase}");
+            }
+        }
+
+        public List<RoleDto> GetAllRoles()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync($"{apiBaseUrl}/get-all-roles").Result;
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception($"Nie udało się pobrać ról: {response.ReasonPhrase}");
+
+                var json = response.Content.ReadAsStringAsync().Result;
+                return JsonSerializer.Deserialize<List<RoleDto>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            }
+        }
 
         public void Logout(int userId)
         {

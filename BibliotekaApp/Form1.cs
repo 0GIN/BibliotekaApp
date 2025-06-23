@@ -35,10 +35,6 @@ namespace BibliotekaApp
             InitializeComponent();
             ParseJwtToken(token);
             bool isAdmin = admin;
-            checkedListBoxUprawnienia.Items.AddRange(new string[]
-            {
-            "Dodaj", "Lista", "Zapomnij", "Zapomniani", "Edytuj", "Wypożycz", "Uprawnienia"
-            });
             System.Threading.Thread.Sleep(1000);
             if (File.Exists(permissionsFile))
             {
@@ -80,6 +76,8 @@ namespace BibliotekaApp
                     MessageBox.Show($"Błąd pobierania roli: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                //LoadRolesToUI();
+                //LoadUsersToUI();
             }
             else
             {
@@ -99,6 +97,78 @@ namespace BibliotekaApp
         // =============================
         // Metody inicjalizujące i ustawiające
         // =============================
+        // Dodaj to do Form1.cs lub jako osobne metody w klasie Form1
+
+        private void LoadRolesToUI()
+        {
+            var roles = database.GetAllRoles();
+            listBoxRoles.DataSource = roles;
+            listBoxRoles.DisplayMember = "role_name";
+            listBoxRoles.ValueMember = "id";
+
+            comboBoxRoleAssign.DataSource = roles.ToList();
+            comboBoxRoleAssign.DisplayMember = "role_name";
+            comboBoxRoleAssign.ValueMember = "id";
+        }
+
+        private void LoadUsersToUI()
+        {
+            var users = database.GetAllUsers();
+            comboBoxUsers.DataSource = users;
+            comboBoxUsers.DisplayMember = "Login";
+            comboBoxUsers.ValueMember = "Id";
+        }
+
+        private void listBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxRoles.SelectedItem is RoleDto role)
+            {
+                clbPermissions.SetItemChecked(0, role.dodawanie == 1);
+                clbPermissions.SetItemChecked(1, role.listowanie == 1);
+                clbPermissions.SetItemChecked(2, role.zapominanie == 1);
+                clbPermissions.SetItemChecked(3, role.zapomniani == 1);
+                clbPermissions.SetItemChecked(4, role.edycja == 1);
+                clbPermissions.SetItemChecked(5, role.wyporzyczenie == 1);
+                clbPermissions.SetItemChecked(6, role.uprawnienia == 1);
+            }
+        }
+
+        private void btnAddRole_Click(object sender, EventArgs e)
+        {
+            string roleName = txtNewRoleName.Text.Trim();
+            if (string.IsNullOrWhiteSpace(roleName)) return;
+
+            int[] permissions = new int[7];
+            for (int i = 0; i < clbPermissions.Items.Count; i++)
+                permissions[i] = clbPermissions.GetItemChecked(i) ? 1 : 0;
+
+            database.CreateRole(roleName, permissions[0], permissions[1], permissions[2], permissions[3], permissions[4], permissions[5], permissions[6]);
+            MessageBox.Show("Dodano nową rolę.");
+            LoadRolesToUI();
+        }
+
+        private void btnSaveRole_Click(object sender, EventArgs e)
+        {
+            if (listBoxRoles.SelectedItem is RoleDto role)
+            {
+                int[] permissions = new int[7];
+                for (int i = 0; i < clbPermissions.Items.Count; i++)
+                    permissions[i] = clbPermissions.GetItemChecked(i) ? 1 : 0;
+
+                database.UpdateRole(role.id, role.role_name, permissions[0], permissions[1], permissions[2], permissions[3], permissions[4], permissions[5], permissions[6]);
+                MessageBox.Show("Zaktualizowano rolę.");
+                LoadRolesToUI();
+            }
+        }
+
+        private void btnAssignRole_Click(object sender, EventArgs e)
+        {
+            if (comboBoxUsers.SelectedItem is UserDetailsDto user && comboBoxRoleAssign.SelectedItem is RoleDto role)
+            {
+                database.ChangeUserData(user.Id, accessLevel: role.id);
+                MessageBox.Show($"Zmieniono rolę użytkownika {user.Login} na: {role.role_name}");
+            }
+        }
 
         public (int userId, int accessLevel)? ParseJwtToken(string token)
         {
@@ -329,11 +399,6 @@ namespace BibliotekaApp
             }
         }
 
-        private void btnFindUserByLogin_Click(object sender, EventArgs e) // -- Wyświetlanie użytkowników w zależności od loginu
-        {
-            DisplayUsersDependingOnLogin();
-        }
-
         private void btnFindForgottenUser_Click(object sender, EventArgs e) // -- Wyświetlenie wszystkich zapomnianych użytkowników
         {
             var forgottenUsers = database.GetAllForgotten();
@@ -516,7 +581,7 @@ namespace BibliotekaApp
         }
         public void DisplayUsersDependingOnLogin() // -- Wyświetlenie użytkowników w zależności od loginu
         {
-            string login = txtUserLogin.Text.Trim();
+            string login = txtSearch.Text.Trim();
             DataTable userTable = CreateUserDataTable();
 
             if (string.IsNullOrEmpty(login))
@@ -554,5 +619,62 @@ namespace BibliotekaApp
                 form.ShowDialog();
             }
         }
+        private void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            string value = txtSearch.Text.Trim();
+            if (string.IsNullOrEmpty(value))
+            {
+                DisplayAllUsers();
+                return;
+            }
+
+            string filter = comboBoxSearchBy.SelectedItem.ToString();
+            List<UserDetailsDto> result = new();
+
+            var users = database.GetAllUsers();
+
+            switch (filter)
+            {
+                case "Login":
+                    result = users.Where(u => u.Login.Contains(value, StringComparison.OrdinalIgnoreCase)).ToList();
+                    break;
+                case "Imię":
+                    result = users.Where(u => u.Name.Contains(value, StringComparison.OrdinalIgnoreCase)).ToList();
+                    break;
+                case "Nazwisko":
+                    result = users.Where(u => u.Surname.Contains(value, StringComparison.OrdinalIgnoreCase)).ToList();
+                    break;
+                case "PESEL":
+                    result = users.Where(u => u.Pesel.Contains(value)).ToList();
+                    break;
+            }
+
+            DataTable userTable = CreateUserDataTable();
+            foreach (var user in result)
+            {
+                AddUserRow(userTable, user);
+            }
+
+            dataGridViewUsers.DataSource = userTable;
+            SetPolishColumnHeaders(dataGridViewUsers);
+            StyleDataGridView(dataGridViewUsers);
+            dataGridViewUsers.AllowUserToAddRows = false;
+            dataGridViewUsers.ReadOnly = true;
+        }
+        private void Lista_Enter(object sender, EventArgs e)
+        {
+            DisplayAllUsers();
+        }
+
+        private void Edytuj_Enter(object sender, EventArgs e)
+        {
+            DisplayAllUsersInUserGrid();
+        }
+
+        private void Zapomniani_Enter(object sender, EventArgs e)
+        {
+            btnFindForgottenUser.PerformClick(); // jeśli chcesz wywołać kliknięcie
+        }
+
     }
 }

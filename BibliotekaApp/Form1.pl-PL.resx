@@ -236,12 +236,8 @@
   <data name="btnAddUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnDisplayUsers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnDisplayUsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1153, 6</value>
+    <value>369, 6</value>
   </data>
   <data name="btnDisplayUsers.Text" xml:space="preserve">
     <value>Odśwież</value>
@@ -265,6 +261,7 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -286,32 +283,32 @@
   <data name="Dodaj.Text" xml:space="preserve">
     <value>Dodaj</value>
   </data>
-  <data name="btnFindUserByLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="comboBoxSearchBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 23</value>
+  </data>
+  <data name="btnSearchUser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnFindUserByLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 6</value>
+  <data name="btnSearchUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 6</value>
   </data>
-  <data name="btnFindUserByLogin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnSearchUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 23</value>
   </data>
-  <data name="btnFindUserByLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+  <data name="btnSearchUser.Text" xml:space="preserve">
+    <value>Wyszukaj</value>
   </data>
-  <data name="txtUserLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 7</value>
-  </data>
-  <data name="txtUserLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
+  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 6</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 15</value>
+    <value>59, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Wyszukaj login:</value>
+    <value>Wyszukaj:</value>
   </data>
   <data name="Lista.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -379,41 +376,41 @@
   <data name="Edytuj.Text" xml:space="preserve">
     <value>Edytuj</value>
   </data>
-  <data name="labelRoleName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lblRoleList.Text" xml:space="preserve">
+    <value>Lista ról:</value>
   </data>
-  <data name="labelRoleName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 15</value>
+  <data name="listBoxRoles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 139</value>
   </data>
-  <data name="labelRoleName.Text" xml:space="preserve">
-    <value>label6</value>
+  <data name="lblPermissions.Text" xml:space="preserve">
+    <value>Dostęp do zakładek:</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="clbPermissions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 148</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 15</value>
+  <data name="btnSaveRole.Text" xml:space="preserve">
+    <value>Zapisz zmiany</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Poziom uprawnień:</value>
+  <data name="lblNewRole.Text" xml:space="preserve">
+    <value>Nowa rola:</value>
   </data>
-  <data name="checkedListBoxUprawnienia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 64</value>
+  <data name="txtNewRoleName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
   </data>
-  <data name="checkedListBoxUprawnienia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 274</value>
+  <data name="btnAddRole.Text" xml:space="preserve">
+    <value>Dodaj rolę</value>
   </data>
-  <data name="btnSavePermissions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 355</value>
+  <data name="lblUserAssign.Text" xml:space="preserve">
+    <value>Przypisz rolę użytkownikowi:</value>
   </data>
-  <data name="btnSavePermissions.Text" xml:space="preserve">
-    <value>Zapisz</value>
+  <data name="comboBoxUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
   </data>
-  <data name="comboBoxAccessLevels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 26</value>
+  <data name="comboBoxRoleAssign.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
   </data>
-  <data name="comboBoxAccessLevels.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 23</value>
+  <data name="btnAssignRole.Text" xml:space="preserve">
+    <value>Nadaj rolę</value>
   </data>
   <data name="tabUprawnienia.Size" type="System.Drawing.Size, System.Drawing">
     <value>1234, 533</value>
@@ -460,8 +457,11 @@
   <data name="btnProfile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="btnProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1068, 12</value>
+  </data>
   <data name="btnProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
+    <value>100, 23</value>
   </data>
   <data name="btnProfile.Text" xml:space="preserve">
     <value>Twoje dane</value>

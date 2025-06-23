@@ -64,8 +64,9 @@ namespace BibliotekaApp
             txtHaslo = new TextBox();
             label3 = new Label();
             Lista = new TabPage();
-            btnFindUserByLogin = new Button();
-            txtUserLogin = new TextBox();
+            comboBoxSearchBy = new ComboBox();
+            btnSearchUser = new Button();
+            txtSearch = new TextBox();
             label4 = new Label();
             dataGridViewUsers = new DataGridView();
             Zapomnij = new TabPage();
@@ -84,11 +85,18 @@ namespace BibliotekaApp
             txtUserIdEdit = new TextBox();
             label15 = new Label();
             tabUprawnienia = new TabPage();
-            labelRoleName = new Label();
-            label5 = new Label();
-            checkedListBoxUprawnienia = new CheckedListBox();
-            btnSavePermissions = new Button();
-            comboBoxAccessLevels = new ComboBox();
+            lblRoleList = new Label();
+            listBoxRoles = new ListBox();
+            lblPermissions = new Label();
+            clbPermissions = new CheckedListBox();
+            btnSaveRole = new Button();
+            lblNewRole = new Label();
+            txtNewRoleName = new TextBox();
+            btnAddRole = new Button();
+            lblUserAssign = new Label();
+            comboBoxUsers = new ComboBox();
+            comboBoxRoleAssign = new ComboBox();
+            btnAssignRole = new Button();
             logoutbtn = new Button();
             labelLoggedUser = new Label();
             btnProfile = new Button();
@@ -262,6 +270,7 @@ namespace BibliotekaApp
             tabControl1.Controls.Add(tabUprawnienia);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
+            Zapomniani.Enter += Zapomniani_Enter;
             // 
             // Wypożycz
             // 
@@ -317,25 +326,34 @@ namespace BibliotekaApp
             // Lista
             // 
             resources.ApplyResources(Lista, "Lista");
-            Lista.Controls.Add(btnFindUserByLogin);
-            Lista.Controls.Add(txtUserLogin);
+            Lista.Controls.Add(comboBoxSearchBy);
+            Lista.Controls.Add(btnSearchUser);
+            Lista.Controls.Add(txtSearch);
             Lista.Controls.Add(label4);
             Lista.Controls.Add(dataGridViewUsers);
             Lista.Controls.Add(btnDisplayUsers);
             Lista.Name = "Lista";
             Lista.UseVisualStyleBackColor = true;
+            Lista.Enter += Lista_Enter;
             // 
-            // btnFindUserByLogin
+            // comboBoxSearchBy
             // 
-            resources.ApplyResources(btnFindUserByLogin, "btnFindUserByLogin");
-            btnFindUserByLogin.Name = "btnFindUserByLogin";
-            btnFindUserByLogin.UseVisualStyleBackColor = true;
-            btnFindUserByLogin.Click += btnFindUserByLogin_Click;
+            resources.ApplyResources(comboBoxSearchBy, "comboBoxSearchBy");
+            comboBoxSearchBy.FormattingEnabled = true;
+            comboBoxSearchBy.Items.AddRange(new object[] { resources.GetString("comboBoxSearchBy.Items"), resources.GetString("comboBoxSearchBy.Items1"), resources.GetString("comboBoxSearchBy.Items2"), resources.GetString("comboBoxSearchBy.Items3") });
+            comboBoxSearchBy.Name = "comboBoxSearchBy";
             // 
-            // txtUserLogin
+            // btnSearchUser
             // 
-            resources.ApplyResources(txtUserLogin, "txtUserLogin");
-            txtUserLogin.Name = "txtUserLogin";
+            resources.ApplyResources(btnSearchUser, "btnSearchUser");
+            btnSearchUser.Name = "btnSearchUser";
+            btnSearchUser.UseVisualStyleBackColor = true;
+            btnSearchUser.Click += btnSearchUser_Click;
+            // 
+            // txtSearch
+            // 
+            resources.ApplyResources(txtSearch, "txtSearch");
+            txtSearch.Name = "txtSearch";
             // 
             // label4
             // 
@@ -416,6 +434,7 @@ namespace BibliotekaApp
             Edytuj.Controls.Add(label15);
             Edytuj.Name = "Edytuj";
             Edytuj.UseVisualStyleBackColor = true;
+            Edytuj.Enter += Edytuj_Enter;
             // 
             // label1
             // 
@@ -459,41 +478,85 @@ namespace BibliotekaApp
             // tabUprawnienia
             // 
             resources.ApplyResources(tabUprawnienia, "tabUprawnienia");
-            tabUprawnienia.Controls.Add(labelRoleName);
-            tabUprawnienia.Controls.Add(label5);
-            tabUprawnienia.Controls.Add(checkedListBoxUprawnienia);
-            tabUprawnienia.Controls.Add(btnSavePermissions);
-            tabUprawnienia.Controls.Add(comboBoxAccessLevels);
+            tabUprawnienia.Controls.Add(lblRoleList);
+            tabUprawnienia.Controls.Add(listBoxRoles);
+            tabUprawnienia.Controls.Add(lblPermissions);
+            tabUprawnienia.Controls.Add(clbPermissions);
+            tabUprawnienia.Controls.Add(btnSaveRole);
+            tabUprawnienia.Controls.Add(lblNewRole);
+            tabUprawnienia.Controls.Add(txtNewRoleName);
+            tabUprawnienia.Controls.Add(btnAddRole);
+            tabUprawnienia.Controls.Add(lblUserAssign);
+            tabUprawnienia.Controls.Add(comboBoxUsers);
+            tabUprawnienia.Controls.Add(comboBoxRoleAssign);
+            tabUprawnienia.Controls.Add(btnAssignRole);
             tabUprawnienia.Name = "tabUprawnienia";
             tabUprawnienia.UseVisualStyleBackColor = true;
             // 
-            // labelRoleName
+            // lblRoleList
             // 
-            resources.ApplyResources(labelRoleName, "labelRoleName");
-            labelRoleName.Name = "labelRoleName";
+            resources.ApplyResources(lblRoleList, "lblRoleList");
+            lblRoleList.Name = "lblRoleList";
             // 
-            // label5
+            // listBoxRoles
             // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
+            resources.ApplyResources(listBoxRoles, "listBoxRoles");
+            listBoxRoles.Name = "listBoxRoles";
+            listBoxRoles.SelectedIndexChanged += listBoxRoles_SelectedIndexChanged;
             // 
-            // checkedListBoxUprawnienia
+            // lblPermissions
             // 
-            resources.ApplyResources(checkedListBoxUprawnienia, "checkedListBoxUprawnienia");
-            checkedListBoxUprawnienia.FormattingEnabled = true;
-            checkedListBoxUprawnienia.Name = "checkedListBoxUprawnienia";
+            resources.ApplyResources(lblPermissions, "lblPermissions");
+            lblPermissions.Name = "lblPermissions";
             // 
-            // btnSavePermissions
+            // clbPermissions
             // 
-            resources.ApplyResources(btnSavePermissions, "btnSavePermissions");
-            btnSavePermissions.Name = "btnSavePermissions";
-            btnSavePermissions.UseVisualStyleBackColor = true;
+            resources.ApplyResources(clbPermissions, "clbPermissions");
+            clbPermissions.Items.AddRange(new object[] { resources.GetString("clbPermissions.Items"), resources.GetString("clbPermissions.Items1"), resources.GetString("clbPermissions.Items2"), resources.GetString("clbPermissions.Items3"), resources.GetString("clbPermissions.Items4"), resources.GetString("clbPermissions.Items5"), resources.GetString("clbPermissions.Items6") });
+            clbPermissions.Name = "clbPermissions";
             // 
-            // comboBoxAccessLevels
+            // btnSaveRole
             // 
-            resources.ApplyResources(comboBoxAccessLevels, "comboBoxAccessLevels");
-            comboBoxAccessLevels.FormattingEnabled = true;
-            comboBoxAccessLevels.Name = "comboBoxAccessLevels";
+            resources.ApplyResources(btnSaveRole, "btnSaveRole");
+            btnSaveRole.Name = "btnSaveRole";
+            btnSaveRole.Click += btnSaveRole_Click;
+            // 
+            // lblNewRole
+            // 
+            resources.ApplyResources(lblNewRole, "lblNewRole");
+            lblNewRole.Name = "lblNewRole";
+            // 
+            // txtNewRoleName
+            // 
+            resources.ApplyResources(txtNewRoleName, "txtNewRoleName");
+            txtNewRoleName.Name = "txtNewRoleName";
+            // 
+            // btnAddRole
+            // 
+            resources.ApplyResources(btnAddRole, "btnAddRole");
+            btnAddRole.Name = "btnAddRole";
+            btnAddRole.Click += btnAddRole_Click;
+            // 
+            // lblUserAssign
+            // 
+            resources.ApplyResources(lblUserAssign, "lblUserAssign");
+            lblUserAssign.Name = "lblUserAssign";
+            // 
+            // comboBoxUsers
+            // 
+            resources.ApplyResources(comboBoxUsers, "comboBoxUsers");
+            comboBoxUsers.Name = "comboBoxUsers";
+            // 
+            // comboBoxRoleAssign
+            // 
+            resources.ApplyResources(comboBoxRoleAssign, "comboBoxRoleAssign");
+            comboBoxRoleAssign.Name = "comboBoxRoleAssign";
+            // 
+            // btnAssignRole
+            // 
+            resources.ApplyResources(btnAssignRole, "btnAssignRole");
+            btnAssignRole.Name = "btnAssignRole";
+            btnAssignRole.Click += btnAssignRole_Click;
             // 
             // logoutbtn
             // 
@@ -759,22 +822,30 @@ namespace BibliotekaApp
         private Button btnSearch;
         private Label label2;
         private DataGridView dataGridViewUsers;
-        private TextBox txtUserLogin;
+        private TextBox txtSearch;
         private Label label3;
         private TextBox txtHaslo;
         private Label label4;
-        private Button btnFindUserByLogin;
+        private Button btnSearchUser;
         private TabPage Wypożycz;
         private ComboBox comboBoxAccessLevel;
         private Label label1;
         private TabPage tabUprawnienia;
-        private Button btnSavePermissions;
-        private ComboBox comboBoxAccessLevels;
-        private CheckedListBox checkedListBoxUprawnienia;
-        private Label label5;
         private Button logoutbtn;
         private Label labelLoggedUser;
         private Button btnProfile;
-        private Label labelRoleName;
+        private Label lblRoleList;
+        private ListBox listBoxRoles;
+        private Label lblPermissions;
+        private CheckedListBox clbPermissions;
+        private Button btnSaveRole;
+        private Label lblNewRole;
+        private TextBox txtNewRoleName;
+        private Button btnAddRole;
+        private Label lblUserAssign;
+        private ComboBox comboBoxUsers;
+        private ComboBox comboBoxRoleAssign;
+        private Button btnAssignRole;
+        private ComboBox comboBoxSearchBy;
     }
 }
