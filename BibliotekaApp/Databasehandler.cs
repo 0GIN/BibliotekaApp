@@ -7,11 +7,9 @@ namespace BibliotekaApp
 {
     public class DatabaseHandler
     {
-
-
-        private readonly string apiBaseUrl = "http://localhost:5185";
+        //private readonly string apiBaseUrl = "http://localhost:5185";
         //private readonly string apiBaseUrl = "https://kpxzrf19-5185.euw.devtunnels.ms";
-        //private readonly string apiBaseUrl = "https://5sqcn5m9-5185.euw.devtunnels.ms";
+        private readonly string apiBaseUrl = "https://5sqcn5m9-5185.euw.devtunnels.ms";
 
         public RoleDto CheckRole(int accessLevel)
         {
@@ -84,7 +82,7 @@ namespace BibliotekaApp
                     if ((int)response.StatusCode == 403)
                     {
                         var errorMsg = response.Content.ReadAsStringAsync().Result;
-                        throw new Exception(errorMsg); // Przekazujemy komunikat z serwera
+                        throw new Exception(errorMsg);
                     }
                     throw new Exception($"Login failed: {response.ReasonPhrase}");
                 }

@@ -113,19 +113,35 @@ namespace BibliotekaApp
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    ClockSkew = TimeSpan.Zero
+                    ClockSkew = TimeSpan.FromMinutes(5)
                 }, out SecurityToken validatedToken);
 
-                var userId = int.Parse(principal.FindFirst("userId").Value);
-                var accessLevel = int.Parse(principal.FindFirst("accessLevel").Value);
+                Console.WriteLine("=== JWT Claims ===");
+                foreach (var claim in principal.Claims)
+                {
+                    Console.WriteLine($"{claim.Type}: {claim.Value}");
+                }
+
+                var userIdClaim = principal.FindFirst("userId") ?? principal.FindFirst("id");
+                var accessLevelClaim = principal.FindFirst("accessLevel") ?? principal.FindFirst("access");
+
+                if (userIdClaim == null || accessLevelClaim == null)
+                {
+                    MessageBox.Show("Token nie zawiera wymaganych danych (userId lub accessLevel)", "Błąd JWT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+
+                int userId = int.Parse(userIdClaim.Value);
+                int accessLevel = int.Parse(accessLevelClaim.Value);
                 return (userId, accessLevel);
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Błąd JWT: " + ex.Message, "Token", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Błąd JWT: " + ex.Message, "Token", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
+
         private void HideSensitiveColumns(DataGridView grid)
         {
             if (userAccessLevel < 2)

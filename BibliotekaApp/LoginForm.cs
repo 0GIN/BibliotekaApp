@@ -54,22 +54,6 @@ namespace BibliotekaApp
             }
 
         }
-        private (int userId, int accessLevel)? ParseToken(string token)
-        {
-            var parts = token.Split('.');
-            if (parts.Length < 3) return null;
-            if (int.TryParse(parts[0], out int userId) && int.TryParse(parts[1], out int accessLevel))
-            {
-                return (userId, accessLevel);
-            }
-            return null;
-        }
-
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -80,16 +64,14 @@ namespace BibliotekaApp
             {
                 var (token, forgotten, recovery, admin) = database.Login(login, password);
 
-                ParseJwtToken(token);
                 if (recovery)
                 {
                     var user = database.FindUserByLogin(login);
                     if (user != null)
                     {
-                        this.Hide(); 
+                        this.Hide();
                         ResetPasswordForm resetForm = new ResetPasswordForm(user.Id);
                         resetForm.ShowDialog();
-
                         this.Show();
                         return;
                     }
@@ -109,9 +91,10 @@ namespace BibliotekaApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void lvlRecover_Click_1(object sender, EventArgs e)
         {
