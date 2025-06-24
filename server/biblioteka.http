@@ -1,0 +1,89 @@
+### Create Database
+POST http://localhost:5185/create-database
+Content-Type: application/json
+
+###
+
+### Add User
+POST http://localhost:5185/add-user
+Content-Type: application/json
+
+{
+  "Login": "kąto3",
+  "Password": "123",
+  "Name": "typ",
+  "Surname": "niepokorny",
+  "City": "ten",
+  "PostNumber": "10001",
+  "Street": "sam choc nie podobny",
+  "PropertyNumber": "123",
+  "ApartmentNumber": 1,
+  "Pesel": "92363268515",
+  "DateOfBirth": "1990-01-01",
+  "Sex": "M",
+  "Email": "ULgd753@e.uni.lodz.plf",
+  "PhoneNumber": "772888377"
+  
+}
+
+###
+
+### Login
+POST http://localhost:5185/login
+Content-Type: application/json
+
+{
+  "Login": "johndoe3",
+  "Password": "password123"
+}
+
+###
+
+### logout
+POST http://localhost:5185/logout/3
+
+### Forget User
+POST http://localhost:5185/forget-user/1
+
+###
+
+### Get All Users
+GET https://5sqcn5m9-5185.euw.devtunnels.ms/get-all-users
+
+###
+
+### Get All Forgotten Users
+GET http://localhost:5185/get-all-forgotten
+
+### Find User by Login
+GET https://5sqcn5m9-5185.euw.devtunnels.ms/find-user-by-login/johndoe
+
+###
+
+
+###
+
+### Find User by ID
+GET http://localhost:5185/find-user-by-id/
+Content-Type: application/json
+
+###
+
+### Change User Data
+PUT https://5sqcn5m9-5185.euw.devtunnels.ms/change-user-data/4
+Content-Type: application/json
+
+{
+  "AccessLevel": 2
+}
+
+###localhost
+GET http://localhost:5185/get-all-forgotten
+Content-Type: application/json
+
+
+### Update Access Level
+PUT http://localhost:5185/update-access-level/1
+Content-Type: application/json
+
+2
