@@ -167,7 +167,7 @@ namespace BibliotekaApp
 
             if (string.IsNullOrWhiteSpace(password) || password.Length > 15)
             {
-                errorMessage = "Hasło musi mieć co najmniej 8 znaków.";
+                errorMessage = "Hasło musi mieć co mniej niż 15 znaków.";
                 return false;
             }
 
